@@ -6,8 +6,8 @@
     <!-- Basic Page Needs
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
-    <title>Finchè c'è banda c'è speranza</title>
-    <meta name="description" content="Finchè c'è banda c'è speranza">
+    <title>Noi, Internet-dipendenti</title>
+    <meta name="description" content="Noi, Internet-dipendenti">
     <meta name="author" content="Ilenia Balella - Pietro Baruzzi">
 
     <!-- Mobile Specific Metas
@@ -28,6 +28,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
+
+    <!--    <script src="js/bodyScrollLock.js"></script>-->
 
 
     <!-- SCRIPT ANIMAZIONI ********************************
@@ -50,15 +54,17 @@
                 })
                 .addIndicators() // add indicators (requires plugin)
                 .addTo(controller);
-            
-             new ScrollMagic.Scene({
+
+            new ScrollMagic.Scene({
                     triggerElement: ".main-container h2",
                     triggerHook: 'onEnter',
                     duration: "50%",
-                   offset: "50vh"
+                    offset: "50vh"
                 })
-    
-                .on("enter", function(){$(".main-container h2").css("opacity", "1")})
+
+                .on("enter", function() {
+                    $(".main-container h2").css("opacity", "1")
+                })
                 .addIndicators() // add indicators (requires plugin)
                 .addTo(controller);
 
@@ -80,173 +86,527 @@
                 .addTo(controller);
 
 
-            $("a").on('click', function(event) {
+//$(document).ready(function(){
+//  // Add smooth scrolling to all links
+//  $("a").on('click', function(event) {
+//
+//    // Make sure this.hash has a value before overriding default behavior
+//    if (this.hash !== "") {
+//      // Prevent default anchor click behavior
+//      event.preventDefault();
+//
+//      // Store hash
+//      var hash = this.hash;
+//
+//      // Using jQuery's animate() method to add smooth page scroll
+//      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+//      $('html, body').animate({
+//        scrollTop: $(hash).offset().top
+//      }, 800, function(){
+//   
+//        // Add hash (#) to URL when done scrolling (default click behavior)
+//        window.location.hash = hash;
+//      });
+//    } // End if
+//  });
+//});
 
-                // Make sure this.hash has a value before overriding default behavior
-                if (this.hash !== "") {
-                    // Prevent default anchor click behavior
-                    event.preventDefault();
 
-                    // Store hash
-                    var hash = this.hash;
+            //                   //BLOCCO SCROLL----------------------------------------------------------------------------------------------
+            //
+            //                const bodyScrollLock = require('body-scroll-lock');
+            //                const disableBodyScroll = bodyScrollLock.disableBodyScroll;
+            //                const enableBodyScroll = bodyScrollLock.enableBodyScroll;
+            //
+            //                const par1 = document.querySelector('#paragrafo1');
+            //                  const par2 = document.querySelector('#paragrafo2');
 
-                    // Using jQuery's animate() method to add smooth page scroll
-                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-                    $('html, body').animate({
-                        scrollTop: $(hash).offset().top
-                    }, 800, function() {
-
-                        // Add hash (#) to URL when done scrolling (default click behavior)
-                        window.location.hash = hash;
-                    });
-                } // End if
-            });
+            //                  disableBodyScroll(par1);
+            //                  enableBodyScroll(par2);
 
 
-            //SLIDER SVAGO/LAVORO----------------------------------------------------------------------------------------------
+
+
+            //            /SLIDER SVAGO/LAVORO----------------------------------------------------------------------------------------------
             var slider = document.getElementById("myRange1");
+            var attivaSlider = 0;
             var percentuale_svago = document.getElementById("studio_percentuale");
             var percentuale_studio = document.getElementById("svago_percentuale");
             percentuale_svago.innerHTML = slider.value;
             percentuale_studio.innerHTML = slider.value;
 
             slider.oninput = function() {
-                percentuale_svago.innerHTML = this.value;
-                percentuale_studio.innerHTML = (100 - this.value);
+                percentuale_studio.innerHTML = this.value;
+                percentuale_svago.innerHTML = (100 - this.value);
+            }
 
-                // disattiva conferma
+            $(".slider::-webkit-slider-thumb").on('click', function(event) {
+                console.log("slider cliccato");
+                attivaSlider = 1;
+            });
+
+            if (attivaSlider == 1) {
+                // attiva conferma
+                console.log('sono dentrooo per la tua opaticà');
                 $("#conferma_svago img").css({
-                    opacity: .1
+                    opacity: 1
                 }, 50);
 
-                //                if (!this.value) {
-                //                    // attiva conferma
-                //                    $("#conferma_svago").css({
-                //                        opacity: 1
-                //                    }, 50);
+                $("#conferma_svago img").click(function() {
+                    console.log("Pulsante cliccato!!!!!")
+                    $(this).animate({
+                        opacity: .2
+                    }, 50);
+                });
+
+
+            } else {
+                // disattiva conferma
+                $("#conferma_svago img").css({
+                    opacity: .5
+                }, 50);
+
             }
-            //            
 
             //PULSANTI ICONE DOMANDA 1----------------------------------------------------------------------------------------------
-           // quando la pagina e' stata caricata:
-        $(function() {
-            var conta = 0;
-            // questi due array associano gli id dei pulsanti ai nomi dei
-            // corrispondenti file,nelle due versioni per i pulsanti accesi e spenti
-            var pulsanti_accesi = {
-                "pulsante-ecommerce": "images/icone/premute/ecommerce.svg",
-                "pulsante-social": "images/icone/premute/social.svg",
-                "pulsante-informazione": "images/icone/premute/informazione.svg",
-                "pulsante-comunicazione": "images/icone/premute/comunicazione.svg",
-                "pulsante-streaming": "images/icone/premute/streaming.svg",
-                "pulsante-videochiamata": "images/icone/premute/videochiamata.svg"
-            };
-            var pulsanti_spenti = {
-                "pulsante-ecommerce": "images/icone/non-premute/ecommerce.svg",
-                "pulsante-social": "images/icone/non-premute/social.svg",
-                "pulsante-informazione": "images/icone/non-premute/informazione.svg",
-                "pulsante-comunicazione": "images/icone/non-premute/comunicazione.svg",
-                "pulsante-streaming": "images/icone/non-premute/streaming.svg",
-                "pulsante-videochiamata": "images/icone/non-premute/videochiamata.svg"
+            // quando la pagina e' stata caricata:
+            $(function() {
 
-            };
+                $("#conferma_pulsanti").css({
+                    opacity: .5
+                }, 50);
 
-            var elementiCliccati = [];
+                var conta = 0;
+                // questi due array associano gli id dei pulsanti ai nomi dei
+                // corrispondenti file,nelle due versioni per i pulsanti accesi e spenti
+                var pulsanti_accesi = {
+                    "pulsante-ecommerce": "images/icone/premute/ecommerce.svg",
+                    "pulsante-social": "images/icone/premute/social.svg",
+                    "pulsante-informazione": "images/icone/premute/informazione.svg",
+                    "pulsante-comunicazione": "images/icone/premute/comunicazione.svg",
+                    "pulsante-streaming": "images/icone/premute/streaming.svg",
+                    "pulsante-videochiamata": "images/icone/premute/videochiamata.svg"
+                };
+                var pulsanti_spenti = {
+                    "pulsante-ecommerce": "images/icone/non-premute/ecommerce.svg",
+                    "pulsante-social": "images/icone/non-premute/social.svg",
+                    "pulsante-informazione": "images/icone/non-premute/informazione.svg",
+                    "pulsante-comunicazione": "images/icone/non-premute/comunicazione.svg",
+                    "pulsante-streaming": "images/icone/non-premute/streaming.svg",
+                    "pulsante-videochiamata": "images/icone/non-premute/videochiamata.svg"
+                };
 
-            $("div.pulsante").click(function() {
-                // determina qual è il pulsante cliccato
-                var pulsante_cliccato = $(this);
+                var elementiCliccati = [];
 
-                // determina la sua ID
-                var id_cliccato = pulsante_cliccato.attr("id");
+                $("div.pulsante").click(function() {
+                    // determina qual è il pulsante cliccato
+                    var pulsante_cliccato = $(this);
+
+                    // determina la sua ID
+                    var id_cliccato = pulsante_cliccato.attr("id");
 
 
-                //Qui c'è la gestione del clicked or noot
+                    //Qui c'è la gestione del clicked or noot
 
-                if ((pulsante_cliccato.hasClass("selezionato"))) {
-                    //$(this).data("clicked", 1);
-                    // toglie la classe CSS "selezionato"
-                    conta = conta - 1;
-                    pulsante_cliccato.removeClass("selezionato");
+                    if ((pulsante_cliccato.hasClass("selezionato"))) {
+                        //$(this).data("clicked", 1);
+                        // toglie la classe CSS "selezionato"
+                        conta = conta - 1;
+                        pulsante_cliccato.removeClass("selezionato");
 
-                    pulsante_cliccato.addClass("deselezionato");
-                    // trova l'elemento IMG contenuto e gli cambia il SRC
-                    // in modo da visualizzare l'immagine "spenta" corrispondente
-                    pulsante_cliccato.find("img").attr("src", pulsanti_spenti[id_cliccato]);
-                    console.log("oggetti selezionati = " + conta);
+                        pulsante_cliccato.addClass("deselezionato");
+                        // trova l'elemento IMG contenuto e gli cambia il SRC
+                        // in modo da visualizzare l'immagine "spenta" corrispondente
+                        pulsante_cliccato.find("img").attr("src", pulsanti_spenti[id_cliccato]);
+                        console.log("oggetti selezionati = " + conta);
 
-                } else if (conta < 3) {
+                    } else if (conta < 3) {
 
-                    // $(this).data("clicked", 0);
-                    conta = conta + 1;
-                    // aggiunge la classe CSS "selezionato"
-                    pulsante_cliccato.addClass("selezionato");
-                    // trova l'elemento IMG contenuto e gli cambia il SRC
-                    // in modo da visualizzare l'immagine "accesa" corrispondente
-                    pulsante_cliccato.find("img").attr("src", pulsanti_accesi[id_cliccato]);
-                }
-                if (conta == 3) {
-                    // attiva conferma
-                    $("#conferma_pulsanti").css({
-                        opacity: 1
-                    }, 50);
-
-                    elementiCliccati = [];
-                    $("#conferma_pulsanti").click(function() {
-                        console.log("Pulsante cliccato!!!!!")
-                        $(this).animate({
-                            opacity: .2
+                        // $(this).data("clicked", 0);
+                        conta = conta + 1;
+                        // aggiunge la classe CSS "selezionato"
+                        pulsante_cliccato.addClass("selezionato");
+                        // trova l'elemento IMG contenuto e gli cambia il SRC
+                        // in modo da visualizzare l'immagine "accesa" corrispondente
+                        pulsante_cliccato.find("img").attr("src", pulsanti_accesi[id_cliccato]);
+                    }
+                    if (conta == 3) {
+                        // attiva conferma
+                        $("#conferma_pulsanti").css({
+                            opacity: 1
                         }, 50);
-                    });
-                    $(".pulsante").each(function() {
-                        if ($(this).hasClass("selezionato")) {
-                            elementiCliccati.push($(this).data("nome"));
-                            console.log(elementiCliccati);
-                        }
-                    })
 
+                        elementiCliccati = [];
+                        $("#conferma_pulsanti").click(function() {
+                            attiva_grafico(elementiCliccati);
+                            console.log("Pulsante cliccato!!!!!")
+                            $(this).animate({
+                                opacity: .2
+                            }, 50);
+                        });
+                        $(".pulsante").each(function() {
+                            if ($(this).hasClass("selezionato")) {
+                                elementiCliccati.push($(this).data("nome"));
+                                console.log(elementiCliccati);
+//                                attiva_grafico(elementiCliccati);
+                            }
+                        })
 
-                } else {
-                    // disattiva conferma
-                    $("#conferma_pulsanti").css({
-                        opacity: .5
-                    }, 50);
-                }
-
+                    } else {
+                        // disattiva conferma
+                        $("#conferma_pulsanti").css({
+                            opacity: .5
+                        }, 50);
+                    }
+                });
 
             });
 
-        });
-
 
             //SLIDER DOMANDA 2----------------------------------------------------------------------------------------------
-            var oreMattina;
-            var orePomeriggio;
-            var oreSera;
+            var oreMattina = 0;
+            var orePomeriggio = 0;
+            var oreSera = 0;
 
             var slidermattina = document.getElementById("slider2");
             var sliderpomeriggio = document.getElementById("slider3");
             var slidersera = document.getElementById("slider4");
 
             slidermattina.oninput = function() {
-                oreMattina = this.value;
+                oreMattina = parseInt(this.value);
                 console.log("mattina:" + this.value);
+                calcolo();
+
+                if (oreMattina === 0) {
+
+                    $("text#mattina-ora-0").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#mattina-ora-0").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+
+                if (oreMattina === 1) {
+
+                    $("text#mattina-ora-1").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#mattina-ora-1").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+                if (oreMattina === 2) {
+
+                    $("text#mattina-ora-2").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#mattina-ora-2").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+                if (oreMattina === 3) {
+
+                    $("text#mattina-ora-3").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#mattina-ora-3").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+                if (oreMattina === 4) {
+
+                    $("text#mattina-ora-4").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#mattina-ora-4").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+                if (oreMattina === 5) {
+
+                    $("text#mattina-ora-5").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#mattina-ora-5").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+                if (oreMattina === 6) {
+
+                    $("text#mattina-ora-6").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#mattina-ora-6").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
             }
 
             sliderpomeriggio.oninput = function() {
-                orePomeriggio = this.value;
+                orePomeriggio = parseInt(this.value);
                 console.log("pomeriggio:" + this.value);
+                calcolo();
+
+                if (orePomeriggio === 0) {
+
+                    $("text#pomeriggio-ora-0").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#pomeriggio-ora-0").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+
+                if (orePomeriggio === 1) {
+
+                    $("text#pomeriggio-ora-1").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#pomeriggio-ora-1").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+                if (orePomeriggio === 2) {
+
+                    $("text#pomeriggio-ora-2").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#pomeriggio-ora-2").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+                if (orePomeriggio === 3) {
+
+                    $("text#pomeriggio-ora-3").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#pomeriggio-ora-3").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+                if (orePomeriggio === 4) {
+
+                    $("text#pomeriggio-ora-4").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#pomeriggio-ora-4").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+                if (orePomeriggio === 5) {
+
+                    $("text#pomeriggio-ora-5").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#pomeriggio-ora-5").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+                if (orePomeriggio === 6) {
+
+                    $("text#pomeriggio-ora-6").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#pomeriggio-ora-6").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+
             }
 
             slidersera.oninput = function() {
-                oreSera = this.value;
+                oreSera = parseInt(this.value);
                 console.log("sera:" + this.value);
+                calcolo();
+
+                if (oreSera === 0) {
+
+                    $("text#sera-ora-0").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#sera-ora-0").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+
+                if (oreSera === 1) {
+
+                    $("text#sera-ora-1").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#sera-ora-1").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+                if (oreSera === 2) {
+
+                    $("text#sera-ora-2").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#sera-ora-2").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+                if (oreSera === 3) {
+                    $("text#sera-ora-3").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#sera-ora-3").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+                if (oreSera === 4) {
+
+                    $("text#sera-ora-4").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#sera-ora-4").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+                if (oreSera === 5) {
+
+                    $("text#sera-ora-5").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#sera-ora-5").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+                if (oreSera === 6) {
+
+                    $("text#sera-ora-6").animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 50);
+                } else {
+                    $("text#sera-ora-6").animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 50);
+                }
+
             }
 
             if ($("div.barra-numeri svg text") == oreMattina) {
                 console.log("è lui!");
             }
-            console.log($("div.barra-numeri svg text"));
+            //console.log($("div.barra-numeri svg text"));
+
+            var totale_ore;
+            let tuoi_consumi;
+            var consumo = 0;
+            let dimensione_consumo;
+            let dimensione_finale;
+            var altezza_mattina;
+            var altezza_pomeriggio;
+            var altezza_sera;
+
+            consumo = document.getElementById("numero_ore");
+            consumo.innerHTML = calcolo.value;
+
+            function calcolo() {
+                totale_ore = parseInt(oreMattina) + parseInt(orePomeriggio) + parseInt(oreSera);
+                consumo.innerHTML = (totale_ore * 115) / 1000;
+                //console.log(consumo.innerHTML);
+                dimensione_consumo = (18 * consumo.innerHTML) / 37843200; //dimensione sfera iniziale
+                //console.log(dimensione_consumo);
+                dimensione_finale = dimensione_consumo * 54800000;
+                console.log(dimensione_finale);
+                altezza_mattina = parseInt(oreMattina) * 21.5;
+                altezza_pomeriggio = parseInt(orePomeriggio) * 21.5;
+                altezza_sera = parseInt(oreSera) * 21.5;
+            }
+
+            //WAYPOINTS GRAFICO ORE PERSONALIZZATI----------------------------------------------------------------------------------------------
+
+
+
+            var controller = new ScrollMagic.Controller();
+
+            var grafico_interattivo_pers = new Waypoint({
+                element: document.getElementById('grafico_interattivo_1'), //byId con l'id...
+                
+                handler: function() {
+                    console.log("Hello world!");
+                    //scendi le barra
+
+                    $("#utente-mattina").animate({
+                        height: altezza_mattina
+                    }, 3000);
+
+                    $("#utente-pomeriggio").animate({
+                        height: altezza_pomeriggio
+                    }, 3250);
+
+                    $("#utente-sera").animate({
+                        height: altezza_sera
+                    }, 3450);
+                },
+                offset: '50%'
+            });
+
 
 
 
@@ -261,6 +621,10 @@
                     pushFollowers: false
                 })
                 .addIndicators() // add indicators (requires plugin)
+                .on("enter", function(e) {
+
+                    $("#chart .bubble").css("transform", "scale(0.05)");
+                })
                 .addTo(controller);
 
             new ScrollMagic.Scene({
@@ -283,10 +647,6 @@
                     pushFollowers: true
                 })
                 .addIndicators() // add indicators (requires plugin)
-                .on("enter", function(e) {
-
-                    $("#chart .bubble").css("transform", "scale(0.5)");
-                })
                 .addTo(controller);
 
             new ScrollMagic.Scene({
@@ -298,75 +658,18 @@
                     pushFollowers: true
                 })
                 .addIndicators() // add indicators (requires plugin)
-                .on("enter", function(e) {
-
-                    $("#chart .bubble").css("transform", "scale(300)");
+                .on("enter", function risultato_finale() {
+                    console.log("dimensione sfera " + dimensione_finale);
+                    $("#chart .bubble").css("transform", "scale("+dimensione_finale+")");
                 })
                 .addTo(controller);
 
 
-
             //PULSANTI ICONE PARAGRAFO 3----------------------------------------------------------------------------------------------
-            var bottoni_accesi = {
-                "bottone-germania": "images/icone-picchi/germania.svg",
-                "bottone-svizzera": "images/icone-picchi/svizzera.svg",
-                "bottone-italia": "images/icone-picchi/italia.svg",
-                "bottone-granbretagna": "images/icone-picchi/granbretagna.svg",
-                "bottone-olanda": "images/icone-picchi/olanda.svg",
-                "bottone-usa": "images/icone-picchi/usa.svg",
-                "bottone-francia": "images/icone-picchi/francia.svg",
-                "bottone-spagna": "images/icone-picchi/spagna.svg"
-            };
 
-            var bottoni_spenti = {
-                "bottone-germania": "images/icone-picchi/deselezionato.svg",
-                "bottone-svizzera": "images/icone-picchi/deselezionato.svg",
-                "bottone-italia": "images/icone-picchi/deselezionato.svg",
-                "bottone-granbretagna": "images/icone-picchi/deselezionato.svg",
-                "bottone-olanda": "images/icone-picchi/deselezionato.svg",
-                "bottone-usa": "images/icone-picchi/deselezionato.svg",
-                "bottone-francia": "images/icone-picchi/deselezionato.svg",
-                "bottone-spagna": "images/icone-picchi/deselezionato.svg"
-            };
-
-            // quando l'utente clicca su un pulsante...
-            $("div.bottone").click(function() {
-
-                console.log("bottone cliccato");
-
-                // determina qual è il pulsante cliccato
-                var bottone_cliccato = $(this);
-
-                // determina la sua ID
-                var id_cliccato = bottone_cliccato.attr("id");
-
-                // se era selezionato, lo deseleziona
-                if (bottone_cliccato.hasClass("selezionato")) {
-                    // toglie la classe CSS "selezionato"
-                    bottone_cliccato.removeClass("selezionato");
-                    // trova l'elemento IMG contenuto e gli cambia il SRC
-                    // in modo da visualizzare l'immagine "spenta" corrispondente
-                    bottone_cliccato.find("img").attr("src", bottoni_spenti[id_cliccato]);
-                }
-                // se non era selezionato, lo seleziona
-                else {
-                    // aggiunge la classe CSS "selezionato"
-                    bottone_cliccato.addClass("selezionato");
-                    // trova l'elemento IMG contenuto e gli cambia il SRC
-                    // in modo da visualizzare l'immagine "accesa" corrispondente
-                    bottone_cliccato.find("img").attr("src", bottoni_accesi[id_cliccato]);
-                }
-
-                if (bottone_cliccato.is('[bottone-germania]')) {
-                    console.log("IT'S GERMANY");
-                }
-            });
-            
-            //GAFICO NAZIONI----------------------------------------------------------------------------------------------
             $("svg g polyline").animate({
                 opacity: .1
             }, 10);
-
 
             // quando l'utente clicca su un pulsante...
 
@@ -390,30 +693,96 @@
                 "usa": "images/icone-picchi/deselezionato.svg",
                 "francia": "images/icone-picchi/deselezionato.svg",
                 "spagna": "images/icone-picchi/deselezionato.svg"
-
             };
-            
-            
-            
-               $("li").click(function() {
+
+
+            $("li").click(function() {
                 id_cliccato = $(this).attr("id");
-                   console.log(id_cliccato);
+                console.log(id_cliccato);
                 if ($(this).hasClass("selected")) {
-                    
+
                     $(this).find("img").attr("src", bottoni_spenti[id_cliccato]);
-                    
+
                     $(this).removeClass("selected");
-                    $("polyline#" + id_cliccato).css("opacity", "0.1");
-                    
+                    $("polyline#" + id_cliccato).animate({
+                        opacity: .1,
+                        easing: 'swing'
+                    }, 500);
+
                 } else {
                     $(this).addClass("selected");
                     $(this).find("img").attr("src", bottoni_accesi[id_cliccato]);
 
-                    $("polyline#" + id_cliccato).css("opacity", "1");
+                    $("polyline#" + id_cliccato).animate({
+                        opacity: 1,
+                        easing: 'swing'
+                    }, 500);
                     console.log("colora" + $("polyline#" + id_cliccato));
                 }
-
             });
+
+
+            //GRAFICO SITI PREFERITI SELEZIONATI----------------------------------------------------------------------------------------------
+
+            
+            $("svg#grafico_siti g polyline").animate({
+                opacity: 0
+            }, 10);
+
+            
+            function attiva_grafico(nome) {
+                
+
+                for (i = 0; i <= nome.length; i++) {
+                    
+//                    $('img.nomi').hide()
+
+                    if (nome[i] === "social") {
+                        //   console.log("sono qui social")
+                        $("svg g#social polyline").animate({
+                            opacity: 1,
+                        }, 50);
+                        $('img.nomi#nomi_social').show()
+                        
+                    } else if (nome[i] === "streaming") {
+                        //  console.log("sono qui streaming")
+                        $("svg g#streaming polyline").animate({
+                            opacity: 1,
+                    
+                        }, 50);
+                        $('img.nomi#nomi_intrattenimento').show()
+                    } else if (nome[i] === "informazione") {
+                        // console.log("sono qui informazione")
+                        $("svg g#news polyline").animate({
+                            opacity: 1,
+                  
+                        }, 50);
+                        $('img.nomi#nomi_news').show()
+                    } else if (nome[i] === "videochiamata") {
+                        // console.log("sono qui videochiamata")
+                        $("svg g#chiamate polyline").animate({
+                            opacity: 1,
+                 
+                        }, 50);
+                        $('img.nomi#nomi_videocall').show()
+                    } else if (nome[i] === "comunicazione") {
+                        // console.log("sono qui comunicazione")
+                        $("svg g#chat polyline").animate({
+                            opacity: 1,
+                          
+                        }, 50);
+                        $('img.nomi#nomi_chat').show()
+                    } else if (nome[i] === "e-commerce") {
+                        // console.log("sono qui e-commerce")
+                        $("svg g#acquisti polyline").animate({
+                            opacity: 1,
+                            
+                        }, 50);
+                        $('img.nomi#nomi_acquisti').show()
+                    }
+                }
+            }
+            
         });
 
     </script>
@@ -434,11 +803,9 @@
         <div class="row" id="titolo">
             <div class="columns offset-by-three six">
 
-                <h1>Noi,<br />internet-dipendenti</h1>
+                <h1>Noi, internet-dipendenti</h1>
                 <p>
-                    Le nostre vite, società e relazioni sono internet-dipendenti. Ma le crisi recenti ci hanno
-                    rivelato anche quanto queste connessioni possano essere fragili. Quanto sappiamo davvero
-                    di come funziona la rete e di quello che possiamo fare per preservarla?
+                    Le nostre vite, società e relazioni sono internet-dipendenti. Ma le crisi recenti ci hanno rivelato anche quanto queste connessioni possano essere fragili. Quanto sappiamo davvero di come funziona la rete e di quello che possiamo fare per preservarla?
                 </p>
 
             </div>
@@ -448,7 +815,7 @@
             <h2>Dimmi come consumi internet e ti dirò chi sei</h2>
             <div class="row" id="paragrafo1">
                 <div class="columns offset-by-three six">
-                    <p>Per prima cosa, rispondi a due veloci domande per rendere l’esperienza personalizzata</p>
+                    <p>Per prima cosa, rispondi a tre domande per rendere l’esperienza personalizzata.</p>
 
                     <div class="conferma">
                         <a href="#domanda3"> <img src="images/cominciamo.svg" /> </a>
@@ -460,7 +827,7 @@
             <div class="row" id="domanda3">
                 <div class="columns offset-by-three six">
 
-                    <p>Perchè passi tempo su internet?</p>
+                    <p>Qual è l’uso primario che fai di internet?</p>
 
                     <div class="linea" id="linea5">
                         <img src="images/cavi/linea-5.svg" />
@@ -500,14 +867,13 @@
             <div class="row" id="domanda1">
                 <div class="columns offset-by-three six">
 
-                    <p>Seleziona, tra quelle indicate, le 3 categorie di
-                        piattaforme web che utilizzi maggiormente:</p>
+                    <p>Per quali scopi utilizzi internet con più frequenza? Scegline tre.</p>
 
 
                     <!-- il bottone con class selezionato è quello inizialmente attivo -->
 
 
-                    <div class="pulsante" id="pulsante-social"  data-nome="social">
+                    <div class="pulsante" id="pulsante-social" data-nome="social">
                         <img src="images/icone/non-premute/social.svg" />
                         <h3>SOCIAL</h3>
                     </div>
@@ -551,8 +917,7 @@
             <div class="row" id="domanda2">
                 <div class="columns offset-by-three six">
 
-                    <p>Quante ore trascorri in media
-                        su internet, ogni giorno?</p>
+                    <p>Quante ore passi su internet in ogni momento della giornata, in media?</p>
 
 
                     <h3 id="titolo_mattina">MATTINA</h3>
@@ -561,18 +926,18 @@
                         <svg class="barra-numeri" x="0px" y="0px" viewBox="0 0 218.5 34.7" style="enable-background:new 0 0 218.5 34.7;" xml:space="preserve">
 
                             <path id="Path_602" class="barra_0" d="M217.4,31H1.9H1.8l0,0l0,0c-0.3,0.1-0.6,0.2-0.8,0.5l0,0l-0.4,0.7L0.8,32c0,0.1,0,0.3,0,0.4
-	c0,0.8,0.5,1.4,1.1,1.4h215.6c0.6,0,1.1-0.6,1.1-1.4C218.6,31.6,218,31,217.4,31z" />
+  c0,0.8,0.5,1.4,1.1,1.4h215.6c0.6,0,1.1-0.6,1.1-1.4C218.6,31.6,218,31,217.4,31z" />
                             <path id="Path_603" class="barra_1" d="M218.1,33.4c0.3-0.3,0.4-0.6,0.4-1c0-0.7-0.6-1.4-1.3-1.4l0,0l-0.9,0.9v2.8l0.4-0.9h0.4
-	c0.1,0,0.1,0,0.2,0v0.4L218.1,33.4L218.1,33.4L218.1,33.4L218.1,33.4z" />
+  c0.1,0,0.1,0,0.2,0v0.4L218.1,33.4L218.1,33.4L218.1,33.4L218.1,33.4z" />
                             <path id="Rectangle_897" class="barra_2" d="M1.4,31.9h214.8c0.8,0,1.4,0.6,1.4,1.4l0,0c0,0.8-0.6,1.4-1.4,1.4H1.4
-	c-0.8,0-1.4-0.6-1.4-1.4l0,0C0,32.5,0.6,31.9,1.4,31.9z" />
-                            <text transform="matrix(1 0 0 1 13.7016 9.9473)" class="barra_3 barra_4 barra_5">0</text>
-                            <text transform="matrix(1 0 0 1 137.122 9.9473)" class="barra_3 barra_4 barra_5">4</text>
-                            <text transform="matrix(1 0 0 1 168.208 9.9473)" class="barra_3 barra_4 barra_5">5</text>
-                            <text transform="matrix(1 0 0 1 199.3369 9.9473)" class="barra_3 barra_4 barra_5">6</text>
-                            <text transform="matrix(1 0 0 1 75.1674 9.9473)" class="barra_3 barra_4 barra_5">2</text>
-                            <text transform="matrix(1 0 0 1 106.08 9.9473)" class="barra_3 barra_4 barra_5">3</text>
-                            <text transform="matrix(1 0 0 1 45.2041 9.9473)" class="barra_3 barra_4 barra_5">1</text>
+  c-0.8,0-1.4-0.6-1.4-1.4l0,0C0,32.5,0.6,31.9,1.4,31.9z" />
+                            <text id="mattina-ora-0" transform="matrix(1 0 0 1 13.7016 9.9473)" class="barra_3 barra_4 barra_5">0</text>
+                            <text id="mattina-ora-4" transform="matrix(1 0 0 1 137.122 9.9473)" class="barra_3 barra_4 barra_5">4</text>
+                            <text id="mattina-ora-5" transform="matrix(1 0 0 1 168.208 9.9473)" class="barra_3 barra_4 barra_5">5</text>
+                            <text id="mattina-ora-6" transform="matrix(1 0 0 1 199.3369 9.9473)" class="barra_3 barra_4 barra_5">6</text>
+                            <text id="mattina-ora-2" transform="matrix(1 0 0 1 75.1674 9.9473)" class="barra_3 barra_4 barra_5">2</text>
+                            <text id="mattina-ora-3" transform="matrix(1 0 0 1 106.08 9.9473)" class="barra_3 barra_4 barra_5">3</text>
+                            <text id="mattina-ora-1" transform="matrix(1 0 0 1 45.2041 9.9473)" class="barra_3 barra_4 barra_5">1</text>
                         </svg>
                     </div>
 
@@ -582,18 +947,18 @@
                         <svg class="barra-numeri" x="0px" y="0px" viewBox="0 0 218.5 34.7" style="enable-background:new 0 0 218.5 34.7;" xml:space="preserve">
 
                             <path id="Path_602" class="barra_0" d="M217.4,31H1.9H1.8l0,0l0,0c-0.3,0.1-0.6,0.2-0.8,0.5l0,0l-0.4,0.7L0.8,32c0,0.1,0,0.3,0,0.4
-	c0,0.8,0.5,1.4,1.1,1.4h215.6c0.6,0,1.1-0.6,1.1-1.4C218.6,31.6,218,31,217.4,31z" />
+  c0,0.8,0.5,1.4,1.1,1.4h215.6c0.6,0,1.1-0.6,1.1-1.4C218.6,31.6,218,31,217.4,31z" />
                             <path id="Path_603" class="barra_1" d="M218.1,33.4c0.3-0.3,0.4-0.6,0.4-1c0-0.7-0.6-1.4-1.3-1.4l0,0l-0.9,0.9v2.8l0.4-0.9h0.4
-	c0.1,0,0.1,0,0.2,0v0.4L218.1,33.4L218.1,33.4L218.1,33.4L218.1,33.4z" />
+  c0.1,0,0.1,0,0.2,0v0.4L218.1,33.4L218.1,33.4L218.1,33.4L218.1,33.4z" />
                             <path id="Rectangle_897" class="barra_2" d="M1.4,31.9h214.8c0.8,0,1.4,0.6,1.4,1.4l0,0c0,0.8-0.6,1.4-1.4,1.4H1.4
-	c-0.8,0-1.4-0.6-1.4-1.4l0,0C0,32.5,0.6,31.9,1.4,31.9z" />
-                            <text transform="matrix(1 0 0 1 13.7016 9.9473)" class="barra_3 barra_4 barra_5">0</text>
-                            <text transform="matrix(1 0 0 1 137.122 9.9473)" class="barra_3 barra_4 barra_5">4</text>
-                            <text transform="matrix(1 0 0 1 168.208 9.9473)" class="barra_3 barra_4 barra_5">5</text>
-                            <text transform="matrix(1 0 0 1 199.3369 9.9473)" class="barra_3 barra_4 barra_5">6</text>
-                            <text transform="matrix(1 0 0 1 75.1674 9.9473)" class="barra_3 barra_4 barra_5">2</text>
-                            <text transform="matrix(1 0 0 1 106.08 9.9473)" class="barra_3 barra_4 barra_5">3</text>
-                            <text transform="matrix(1 0 0 1 45.2041 9.9473)" class="barra_3 barra_4 barra_5">1</text>
+  c-0.8,0-1.4-0.6-1.4-1.4l0,0C0,32.5,0.6,31.9,1.4,31.9z" />
+                            <text id="pomeriggio-ora-0" transform="matrix(1 0 0 1 13.7016 9.9473)" class="barra_3 barra_4 barra_5">0</text>
+                            <text id="pomeriggio-ora-4" transform="matrix(1 0 0 1 137.122 9.9473)" class="barra_3 barra_4 barra_5">4</text>
+                            <text id="pomeriggio-ora-5" transform="matrix(1 0 0 1 168.208 9.9473)" class="barra_3 barra_4 barra_5">5</text>
+                            <text id="pomeriggio-ora-6" transform="matrix(1 0 0 1 199.3369 9.9473)" class="barra_3 barra_4 barra_5">6</text>
+                            <text id="pomeriggio-ora-2" transform="matrix(1 0 0 1 75.1674 9.9473)" class="barra_3 barra_4 barra_5">2</text>
+                            <text id="pomeriggio-ora-3" transform="matrix(1 0 0 1 106.08 9.9473)" class="barra_3 barra_4 barra_5">3</text>
+                            <text id="pomeriggio-ora-1" transform="matrix(1 0 0 1 45.2041 9.9473)" class="barra_3 barra_4 barra_5">1</text>
                         </svg>
                     </div>
 
@@ -603,18 +968,18 @@
                         <svg class="barra-numeri" x="0px" y="0px" viewBox="0 0 218.5 34.7" style="enable-background:new 0 0 218.5 34.7;" xml:space="preserve">
 
                             <path id="Path_602" class="barra_0" d="M217.4,31H1.9H1.8l0,0l0,0c-0.3,0.1-0.6,0.2-0.8,0.5l0,0l-0.4,0.7L0.8,32c0,0.1,0,0.3,0,0.4
-	c0,0.8,0.5,1.4,1.1,1.4h215.6c0.6,0,1.1-0.6,1.1-1.4C218.6,31.6,218,31,217.4,31z" />
+  c0,0.8,0.5,1.4,1.1,1.4h215.6c0.6,0,1.1-0.6,1.1-1.4C218.6,31.6,218,31,217.4,31z" />
                             <path id="Path_603" class="barra_1" d="M218.1,33.4c0.3-0.3,0.4-0.6,0.4-1c0-0.7-0.6-1.4-1.3-1.4l0,0l-0.9,0.9v2.8l0.4-0.9h0.4
-	c0.1,0,0.1,0,0.2,0v0.4L218.1,33.4L218.1,33.4L218.1,33.4L218.1,33.4z" />
+  c0.1,0,0.1,0,0.2,0v0.4L218.1,33.4L218.1,33.4L218.1,33.4L218.1,33.4z" />
                             <path id="Rectangle_897" class="barra_2" d="M1.4,31.9h214.8c0.8,0,1.4,0.6,1.4,1.4l0,0c0,0.8-0.6,1.4-1.4,1.4H1.4
-	c-0.8,0-1.4-0.6-1.4-1.4l0,0C0,32.5,0.6,31.9,1.4,31.9z" />
-                            <text transform="matrix(1 0 0 1 13.7016 9.9473)" class="barra_3 barra_4 barra_5">0</text>
-                            <text transform="matrix(1 0 0 1 137.122 9.9473)" class="barra_3 barra_4 barra_5">4</text>
-                            <text transform="matrix(1 0 0 1 168.208 9.9473)" class="barra_3 barra_4 barra_5">5</text>
-                            <text transform="matrix(1 0 0 1 199.3369 9.9473)" class="barra_3 barra_4 barra_5">6</text>
-                            <text transform="matrix(1 0 0 1 75.1674 9.9473)" class="barra_3 barra_4 barra_5">2</text>
-                            <text transform="matrix(1 0 0 1 106.08 9.9473)" class="barra_3 barra_4 barra_5">3</text>
-                            <text transform="matrix(1 0 0 1 45.2041 9.9473)" class="barra_3 barra_4 barra_5">1</text>
+  c-0.8,0-1.4-0.6-1.4-1.4l0,0C0,32.5,0.6,31.9,1.4,31.9z" />
+                            <text id="sera-ora-0" transform="matrix(1 0 0 1 13.7016 9.9473)" class="barra_3 barra_4 barra_5">0</text>
+                            <text id="sera-ora-4" transform="matrix(1 0 0 1 137.122 9.9473)" class="barra_3 barra_4 barra_5">4</text>
+                            <text id="sera-ora-5" transform="matrix(1 0 0 1 168.208 9.9473)" class="barra_3 barra_4 barra_5">5</text>
+                            <text id="sera-ora-6" transform="matrix(1 0 0 1 199.3369 9.9473)" class="barra_3 barra_4 barra_5">6</text>
+                            <text id="sera-ora-2" transform="matrix(1 0 0 1 75.1674 9.9473)" class="barra_3 barra_4 barra_5">2</text>
+                            <text id="sera-ora-3" transform="matrix(1 0 0 1 106.08 9.9473)" class="barra_3 barra_4 barra_5">3</text>
+                            <text id="sera-ora-1" transform="matrix(1 0 0 1 45.2041 9.9473)" class="barra_3 barra_4 barra_5">1</text>
                         </svg>
                     </div>
 
@@ -626,7 +991,6 @@
                         <a href="#paragrafo2"> <img src="images/conferma.svg" /> </a>
                     </div>
 
-
                 </div>
             </div> <!-- chiusura domanda 2 -->
         </main>
@@ -634,16 +998,20 @@
         <div class="row" id="paragrafo2">
             <div class="columns offset-by-three six">
 
-                <h2>Il consumo di internet</h2>
+                <h2>Internet è ovunque</h2>
 
                 <p>
-                    Internet è parte integrante del nostro tessuto sociale. È la porta da cui accediamo a passioni, relazioni, servizi, prodotti. Internet non è più qualcosa che si ha; è qualcosa che, semplicemente, c’è.
+                    Internet è parte integrante delle nostre società. È la porta da cui accediamo a passioni, relazioni, servizi, prodotti ed esperienze. Internet non è più qualcosa che si ha; è qualcosa che, semplicemente, c’è.
                     <br />
                     <br />
-                    Decine di punti di connessione ci seguono durante le nostre giornate - in piazza o nel salotto di casa, in una sala d’attesa o su un treno ad alta velocità - mantendoci sempre connessi attraverso un’esperienza fluida e priva di interruzioni e “dando vita” ai nostri device: i nostri telefoni, senza una connessione funzionante, sarebbero quasi inutili.
+                    Nel mondo sono 4.5 miliardi le persone che utilizzano internet ogni giorno, con una penetrazione media del 59%, in forte aumento nei paesi in via di sviluppo in Medio Oriente, Africa e Asia. I paesi in cui l’accesso a internet è più diffuso sono Islanda e Kuwait - qui, il 99% della popolazione è connesso a internet - mentre quelli più in ritardo sono Eritrea e Sud Sudan (dove internet è ancora un bene prezioso, accessibile solo all’8% dei cittadini).
                     <br />
                     <br />
-                    Eppure, ci fermiamo raramente a pensare all’utilizzo che facciamo della rete. Nel grafico che segue puoi vedere come i tuoi consumi (megabyte/ora) si rapportano ai dati di navigazione medi degli altri italiani, nelle varie fasi della giornata.
+                    I nostri smartphone sono oggi la porta d’accesso privilegiata a internet (53%) e, nel solo 2019, la velocità di connessione dei telefoni è aumentata mediamente del 28%: sono molti di più gli utenti mobile che oggi effettuano attività online che richiedono un maggiore consumo di banda, come lo streaming video e l’online gaming.
+                    <br />
+                    <br />
+                    Nonostante questa invadenza di internet nel nostro spazio-tempo, ci fermiamo raramente a pensare all’utilizzo che facciamo della rete. Nel grafico che segue puoi vedere come i tuoi consumi (in megabyte/ora) si rapportano ai dati di navigazione medi degli altri utenti nel corso di una giornata, in Italia:
+
                 </p>
 
                 <div id="icona_orologio">
@@ -696,14 +1064,12 @@
                 <h3 id="consumo_medio" class="legenda_consumo">CONSUMO MEDIO</h3>
                 <h3 id="consumo_personale" class="legenda_consumo">I TUOI CONSUMI</h3>
 
-                <p>
-                    Internet è parte integrante del nostro tessuto sociale. È la porta da cui accediamo a passioni, relazioni, servizi, prodotti. Internet non è più qualcosa che si ha; è qualcosa che, semplicemente, c’è.
+                <p><br />
+                    In Italia gli utilizzatori di internet sono oggi 49 milioni, con una penetrazione dell’82% sulla popolazione totale e una crescita del 2,4% rispetto all’anno precedente. La rete internet nel corso degli anni ha raggiunto una diffusione capillare - nella maggior parte delle regioni italiane possiamo connetterci al web in piazza o sul divano di casa, in una sala d’attesa o su un treno ad alta velocità, godendoci un’esperienza fluida e quasi priva di interruzioni.
                     <br />
                     <br />
-                    Decine di punti di connessione ci seguono durante le nostre giornate - in piazza o nel salotto di casa, in una sala d’attesa o su un treno ad alta velocità - mantendoci sempre connessi attraverso un’esperienza fluida e priva di interruzioni e “dando vita” ai nostri device: i nostri telefoni, senza una connessione funzionante, sarebbero quasi inutili.
-                    <br />
-                    <br />
-                    Eppure, ci fermiamo raramente a pensare all’utilizzo che facciamo della rete. Nel grafico che segue puoi vedere come i tuoi consumi (megabyte/ora) si rapportano ai dati di navigazione medi degli altri italiani, nelle varie fasi della giornata.
+                    In media, gli italiani utilizzano la rete internet per sei ore al giorno, di cui quasi due passate sui social. Quasi tutti gli italiani connessi accedono a internet anche attraverso il proprio telefono (92%). Da mobile, Internet viene utilizzato soprattutto per comunicare via chat (92% del totale), navigare sui social network (91%), utilizzare le mappe (79%), guardare video (73%), e fare acquisti (68%).
+
                 </p>
 
 
@@ -712,7 +1078,7 @@
                         <div class="bubble">&nbsp;</div>
                         <div class="bubble1">&nbsp;</div>
                         <h3 id="descrizione_numero">
-                            <span id="numero_ore"></span> GB/h
+                            <span id="numero_ore">consumo</span> GB
                             </br>
                             il tuo consumo giornaliero</h3>
                     </div>
@@ -741,38 +1107,33 @@
 
             <h2>Come è fatto internet?</h2>
 
-            <p>Internet è trasparente, etereo, impercettibile: semplicemente “esiste” e per questo tendiamo a darlo per scontato. Raramente ci fermiamo a pensare all’infrastruttura di internet: succede solo quando, preoccupati, ci rendiamo conto che internet “non c’è” o “non va”.
+            <p>
+                Internet è trasparente, etereo, impercettibile; è qualcosa che per noi semplicemente “esiste”, e perciò tendiamo a darlo per scontato. Raramente ci fermiamo a pensare all’infrastruttura di internet: succede solo quando, preoccupati, ci rendiamo conto che internet “non c’è” o “non va”. Eppure, quanti di noi sarebbero davvero in grado di descrivere come è fatto internet?
                 <br />
                 <br />
-                La questione è tornata di attualità recentemente, nel pieno dell’emergenza coronavirus, quando intere strutture sociali e organizzative - costrette a funzionare a distanza - si sono appoggiate a internet per continuare a operare anche da remoto.
-                <br />
-                <br />
-                Eppure, quanti di noi sarebbero davvero in grado di descrivere la struttura di internet?
-                <br />
-                <br />
-                La rete è molto più fisica di quanto immaginiamo. Poggia su un’infrastruttura nascosta alla nostra vista ma quanto mai fisica e reale, fatta di antenne, data center, centri di interscambio e cavi sottomarini, su cui viaggiano i bit che compongono i nostri messaggi, le nostre videochiamate, i film che guardiamo su Netflix o le fotografie che carichiamo su Instagram.
+                La rete è molto più fisica di quanto immaginiamo. Poggia su un’infrastruttura nascosta alla vista ma quantomai fisica e reale, fatta di antenne, data center, centri di interscambio e cavi sottomarini, su cui viaggiano i bit che compongono i nostri messaggi, le nostre videochiamate, i film che guardiamo su Netflix o le fotografie che carichiamo su Instagram.
             </p>
 
             <div id="cellulare" class="icone_paragrafo3">
-                <img src="images/cellulare.svg" />
+                <img src="images/gif/cellulare.gif" />
             </div>
 
             <div id="wifi" class="icone_paragrafo3">
-                <img src="images/Wifi.svg" />
+                <img src="images/gif/Wifi.gif" />
             </div>
 
             <div id="modem" class="icone_paragrafo3">
-                <img src="images/modem.svg" />
+                <img src="images/gif/unnamed.gif" />
             </div>
 
             <p>
-                Questi dati vengono stipati e veicolati attraverso i data center, grossi centri che ospitano le apparecchiature ed i servizi di gestione dei dati. Solo in Italia ce ne sono oltre 50, il più grande dei quali si trova in provincia di Bergamo, in una zona a bassa intensità sismica. Il più vasto al mondo si trova in Cina, a Langfang, è di proprietà del governo cinese e occupa un’area grande quanto 60 campi da calcio.
+                Questi dati vengono stipati e veicolati attraverso i data center, grossi centri che ospitano le apparecchiature ed i servizi di gestione dei dati. Solo in Italia ce ne sono oltre 50, il più grande dei quali si trova in provincia di Bergamo, in una zona a bassa intensità sismica per evitarne il danneggiamento. Il più vasto data center al mondo si trova in Cina, nella città di Langfang, è di proprietà del governo cinese e occupa un’area grande quanto 60 campi da calcio.
                 <br />
                 <br />
-                Un’altra sorprendente rivelazione riguarda i cavi poggiati sul fondo degli oceani che, se sommati, arrivano a misurare oltre 1 milione e 200mila chilometri: un’infrastruttura costantemente in pericolo, esposta a disastri naturali, trivellazioni, e persino agli attacchi degli squali. Alcuni di questi cavi sono di proprietà pubblica, ma oltre metà appartengono a grandi tech corporation private come Amazon, Microsoft, Facebook e Google.
+                Il grosso dei dati che attraversano il pianeta viaggiano su decine di cavi poggiati sul fondo degli oceani e che, se sommati nella loro lunghezza, arrivano a misurare oltre 1 milione e 200mila chilometri: un’infrastruttura costantemente a rischio, esposta a disastri naturali, trivellazioni, e persino agli attacchi degli squali. Alcuni di questi grossi cavi sono di proprietà pubblica, ma oltre la metà appartengono a grandi corporation private come Amazon, Microsoft, Facebook e Google.
                 <br />
                 <br />
-                Concetti come nuvola o cloud appaiono quindi molto equivoci una volta che ci si ferma a ragionare sull’estrema materialità della struttura di internet. Il sociologo Vincent Mosco ha riassunto questo concetto in una frase celebre: “Non esiste nessun cloud, è solo il computer di qualcun altro”.
+                I concetti come quello di “nuvola” o “cloud ”appaiono quindi molto equivoci una volta che ci si ferma a ragionare sull’estrema materialità della struttura di internet. Il sociologo Vincent Mosco ha riassunto questo concetto in una frase diventata iconica: “Non esiste nessun cloud, è solo il computer di qualcun altro”.
             </p>
 
             <div id="server">
@@ -782,187 +1143,192 @@
 
         </div> <!-- chiusura paragrafo3-->
 
-<div class="row" id="paragrafo4">
+        <div class="row" id="paragrafo4">
 
-            <h2>Cosa succede se internet si stressa?</h2>
+            <h2>Anche internet si stressa</h2>
 
             <p>
-                L’essenza fisica di internet render la rete soggetta a momenti di “stress”, anche improvvisi: senza che ce rendiamo conto, ogni anno, le interruzioni di servizio sono decine di migliaia, la maggior parte delle quali causate da guasti tecnici agli Internet Service Provider, o da disastri naturali in grado di incidere sull’infrastruttura fisica di internet o sull’energia elettrica in grado di alimentarla, come nel caso dei terremoti.
+                L’essenza fisica della rete internet la rende soggetta a momenti di “stress” anche improvvisi: ogni anno, le interruzioni di servizio sono decine di migliaia, la maggior parte delle quali causate da guasti tecnici agli Internet Service Provider o da disastri naturali - come tsunami o terremoti - che incidono sulla sua infrastruttura fisica o sull’energia elettrica in grado di alimentarla.
                 <br />
                 <br />
-                La questione è tornata di attualità recentemente, nel pieno dell’emergenza coronavirus, quando intere strutture sociali e organizzative - costrette a funzionare a distanza - si sono appoggiate a internet per continuare a operare anche da remoto. Generando un effetto di questo tipo:
+                La questione è tornata di attualità recentemente, nel pieno dell’emergenza coronavirus, quando intere strutture sociali e organizzative - costrette a riprogrammarsi per funzionare a distanza - si sono appoggiate a internet per continuare a operare anche da remoto. Generando picchi di utilizzo senza precedenti nella storia:
             </p>
-            <div id="grafico_nazioni_scroll">
-                <svg id="grafico_nazioni" class="container_grafico" x="0px" y="0px" viewBox="0 0 641.2 423" style="enable-background:new 0 0 641.2 423;" xml:space="preserve">
 
-                    <g id="Tacche">
-                        <g id="Group_90" transform="translate(2187.811 3068.866)">
-                            <line id="Line_5" class="grafico_nazioni_8" x1="-2126.4" y1="-2734.6" x2="-2126.4" y2="-2741.1" />
-                            <line id="Line_6" class="grafico_nazioni_8" x1="-2091.7" y1="-2734.6" x2="-2091.7" y2="-2741.1" />
-                            <line id="Line_7" class="grafico_nazioni_8" x1="-2057.1" y1="-2734.6" x2="-2057.1" y2="-2741.1" />
-                            <line id="Line_8" class="grafico_nazioni_8" x1="-2022.5" y1="-2734.6" x2="-2022.5" y2="-2741.1" />
-                            <line id="Line_9" class="grafico_nazioni_8" x1="-1987.9" y1="-2734.6" x2="-1987.9" y2="-2741.1" />
-                            <line id="Line_10" class="grafico_nazioni_8" x1="-1953.3" y1="-2734.6" x2="-1953.3" y2="-2741.1" />
-                            <line id="Line_11" class="grafico_nazioni_8" x1="-1918.6" y1="-2734.6" x2="-1918.6" y2="-2741.1" />
-                            <line id="Line_12" class="grafico_nazioni_8" x1="-1884" y1="-2734.6" x2="-1884" y2="-2741.1" />
-                            <line id="Line_13" class="grafico_nazioni_8" x1="-1849.4" y1="-2734.6" x2="-1849.4" y2="-2741.1" />
-                            <line id="Line_14" class="grafico_nazioni_8" x1="-1814.8" y1="-2734.6" x2="-1814.8" y2="-2741.1" />
-                            <line id="Line_15" class="grafico_nazioni_8" x1="-1780.1" y1="-2734.6" x2="-1780.1" y2="-2741.1" />
-                            <line id="Line_16" class="grafico_nazioni_8" x1="-1745.5" y1="-2734.6" x2="-1745.5" y2="-2741.1" />
-                            <line id="Line_17" class="grafico_nazioni_8" x1="-1710.9" y1="-2734.6" x2="-1710.9" y2="-2741.1" />
-                            <line id="Line_18" class="grafico_nazioni_8" x1="-1676.3" y1="-2734.6" x2="-1676.3" y2="-2741.1" />
-                            <line id="Line_19" class="grafico_nazioni_8" x1="-1641.7" y1="-2734.6" x2="-1641.7" y2="-2741.1" />
-                            <line id="Line_20" class="grafico_nazioni_8" x1="-1607" y1="-2734.6" x2="-1607" y2="-2741.1" />
+            <div id="grafico_e_bottoni">
+                <div id="grafico_nazioni_scroll">
+                    <svg id="grafico_nazioni" class="container_grafico" x="0px" y="0px" viewBox="0 0 641.2 423" style="enable-background:new 0 0 641.2 423;" xml:space="preserve">
+
+                        <g id="Tacche">
+                            <g id="Group_90" transform="translate(2187.811 3068.866)">
+                                <line id="Line_5" class="grafico_nazioni_8" x1="-2126.4" y1="-2734.6" x2="-2126.4" y2="-2741.1" />
+                                <line id="Line_6" class="grafico_nazioni_8" x1="-2091.7" y1="-2734.6" x2="-2091.7" y2="-2741.1" />
+                                <line id="Line_7" class="grafico_nazioni_8" x1="-2057.1" y1="-2734.6" x2="-2057.1" y2="-2741.1" />
+                                <line id="Line_8" class="grafico_nazioni_8" x1="-2022.5" y1="-2734.6" x2="-2022.5" y2="-2741.1" />
+                                <line id="Line_9" class="grafico_nazioni_8" x1="-1987.9" y1="-2734.6" x2="-1987.9" y2="-2741.1" />
+                                <line id="Line_10" class="grafico_nazioni_8" x1="-1953.3" y1="-2734.6" x2="-1953.3" y2="-2741.1" />
+                                <line id="Line_11" class="grafico_nazioni_8" x1="-1918.6" y1="-2734.6" x2="-1918.6" y2="-2741.1" />
+                                <line id="Line_12" class="grafico_nazioni_8" x1="-1884" y1="-2734.6" x2="-1884" y2="-2741.1" />
+                                <line id="Line_13" class="grafico_nazioni_8" x1="-1849.4" y1="-2734.6" x2="-1849.4" y2="-2741.1" />
+                                <line id="Line_14" class="grafico_nazioni_8" x1="-1814.8" y1="-2734.6" x2="-1814.8" y2="-2741.1" />
+                                <line id="Line_15" class="grafico_nazioni_8" x1="-1780.1" y1="-2734.6" x2="-1780.1" y2="-2741.1" />
+                                <line id="Line_16" class="grafico_nazioni_8" x1="-1745.5" y1="-2734.6" x2="-1745.5" y2="-2741.1" />
+                                <line id="Line_17" class="grafico_nazioni_8" x1="-1710.9" y1="-2734.6" x2="-1710.9" y2="-2741.1" />
+                                <line id="Line_18" class="grafico_nazioni_8" x1="-1676.3" y1="-2734.6" x2="-1676.3" y2="-2741.1" />
+                                <line id="Line_19" class="grafico_nazioni_8" x1="-1641.7" y1="-2734.6" x2="-1641.7" y2="-2741.1" />
+                                <line id="Line_20" class="grafico_nazioni_8" x1="-1607" y1="-2734.6" x2="-1607" y2="-2741.1" />
+                            </g>
+                            <line id="Line_12_1_" class="grafico_nazioni_8" x1="38.4" y1="325.3" x2="31.8" y2="325.3" />
+                            <line id="Line_13_1_" class="grafico_nazioni_8" x1="39.4" y1="280.7" x2="32.8" y2="280.7" />
+                            <line id="Line_13_2_" class="grafico_nazioni_8" x1="39.4" y1="302.7" x2="32.8" y2="302.7" />
+                            <line id="Line_13_3_" class="grafico_nazioni_8" x1="39.4" y1="258.7" x2="32.8" y2="258.7" />
+                            <line id="Line_13_4_" class="grafico_nazioni_8" x1="39.4" y1="213.7" x2="32.8" y2="213.7" />
+                            <line id="Line_13_5_" class="grafico_nazioni_8" x1="39.4" y1="168.7" x2="32.8" y2="168.7" />
+                            <line id="Line_13_6_" class="grafico_nazioni_8" x1="39.4" y1="124.7" x2="32.8" y2="124.7" />
+                            <line id="Line_13_7_" class="grafico_nazioni_8" x1="39.4" y1="79.7" x2="32.8" y2="79.7" />
+                            <line id="Line_14_1_" class="grafico_nazioni_8" x1="39.4" y1="236.1" x2="32.8" y2="236.1" />
+                            <line id="Line_15_1_" class="grafico_nazioni_8" x1="39.4" y1="191.5" x2="32.8" y2="191.5" />
+                            <line id="Line_16_1_" class="grafico_nazioni_8" x1="39.4" y1="146.8" x2="32.8" y2="146.8" />
+                            <line id="Line_18_1_" class="grafico_nazioni_8" x1="39.4" y1="101.6" x2="32.8" y2="101.6" />
+                            <line id="Line_19_1_" class="grafico_nazioni_8" x1="39.4" y1="57" x2="32.8" y2="57" />
+                            <line class="linea-zero" x1="48.3" y1="280.6" x2="580.3" y2="280.6" />
                         </g>
-                        <line id="Line_12_1_" class="grafico_nazioni_8" x1="38.4" y1="325.3" x2="31.8" y2="325.3" />
-                        <line id="Line_13_1_" class="grafico_nazioni_8" x1="39.4" y1="280.7" x2="32.8" y2="280.7" />
-                        <line id="Line_13_2_" class="grafico_nazioni_8" x1="39.4" y1="302.7" x2="32.8" y2="302.7" />
-                        <line id="Line_13_3_" class="grafico_nazioni_8" x1="39.4" y1="258.7" x2="32.8" y2="258.7" />
-                        <line id="Line_13_4_" class="grafico_nazioni_8" x1="39.4" y1="213.7" x2="32.8" y2="213.7" />
-                        <line id="Line_13_5_" class="grafico_nazioni_8" x1="39.4" y1="168.7" x2="32.8" y2="168.7" />
-                        <line id="Line_13_6_" class="grafico_nazioni_8" x1="39.4" y1="124.7" x2="32.8" y2="124.7" />
-                        <line id="Line_13_7_" class="grafico_nazioni_8" x1="39.4" y1="79.7" x2="32.8" y2="79.7" />
-                        <line id="Line_14_1_" class="grafico_nazioni_8" x1="39.4" y1="236.1" x2="32.8" y2="236.1" />
-                        <line id="Line_15_1_" class="grafico_nazioni_8" x1="39.4" y1="191.5" x2="32.8" y2="191.5" />
-                        <line id="Line_16_1_" class="grafico_nazioni_8" x1="39.4" y1="146.8" x2="32.8" y2="146.8" />
-                        <line id="Line_18_1_" class="grafico_nazioni_8" x1="39.4" y1="101.6" x2="32.8" y2="101.6" />
-                        <line id="Line_19_1_" class="grafico_nazioni_8" x1="39.4" y1="57" x2="32.8" y2="57" />
-                        <line class="linea-zero" x1="48.3" y1="280.6" x2="580.3" y2="280.6" />
-                    </g>
-                    <g  class="picchi">
-                        <polyline id="svizzera" class="grafico_nazioni_0" points="580.8,199.8 553.5,237.8 526.1,228.8 498.8,219.9 471.5,139.5 444.2,103.8 416.9,112.7 389.6,251.2 
+                        <g class="picchi">
+                            <polyline id="svizzera" class="grafico_nazioni_0" points="580.8,199.8 553.5,237.8 526.1,228.8 498.8,219.9 471.5,139.5 444.2,103.8 416.9,112.7 389.6,251.2 
 		362.2,278 334.9,293.6 307.6,300.3 280.3,293.6 253,295.8 225.7,293.6 198.4,307 171,295.8 143.7,284.7 116.4,298.1 89.1,300.3 
 		61.8,282.4 	" />
-                    </g>
-                    <g  class="picchi">
-                        <polyline id="italia" class="grafico_nazioni_1" points="580.8,231.1 553.5,193.1 526.1,197.6 498.8,197.6 471.5,161.8 444.2,112.7 416.9,112.7 389.6,90.4 
+                        </g>
+                        <g class="picchi">
+                            <polyline id="italia" class="grafico_nazioni_1" points="580.8,231.1 553.5,193.1 526.1,197.6 498.8,197.6 471.5,161.8 444.2,112.7 416.9,112.7 389.6,90.4 
 		362.2,248.9 334.9,273.5 307.6,298.1 280.3,295.8 253,286.9 225.7,291.4 198.4,293.6 171,291.4 143.7,295.8 116.4,313.7 89.1,307 
 		61.8,298.1 	" />
-                    </g>
-                    <g  class="picchi">
-                        <polyline id="olanda" class="grafico_nazioni_2" points="580.8,226.6 553.5,231.1 526.1,211 498.8,208.7 471.5,186.4 444.2,170.8 416.9,188.6 389.6,273.5 
+                        </g>
+                        <g class="picchi">
+                            <polyline id="olanda" class="grafico_nazioni_2" points="580.8,226.6 553.5,231.1 526.1,211 498.8,208.7 471.5,186.4 444.2,170.8 416.9,188.6 389.6,273.5 
 		362.2,291.4 334.9,284.7 307.6,289.1 280.3,278 253,291.4 225.7,286.9 198.4,295.8 171,295.8 143.7,293.6 116.4,293.6 89.1,300.3 
 		61.8,302.5 	" />
-                    </g>
-                    <g  class="picchi">
-                        <polyline id="spagna" class="grafico_nazioni_3" points="580.8,168.5 553.5,237.8 526.1,226.6 498.8,226.6 471.5,193.1 444.2,166.3 416.9,213.2 389.6,262.3 
+                        </g>
+                        <g class="picchi">
+                            <polyline id="spagna" class="grafico_nazioni_3" points="580.8,168.5 553.5,237.8 526.1,226.6 498.8,226.6 471.5,193.1 444.2,166.3 416.9,213.2 389.6,262.3 
 		362.2,278 334.9,286.9 307.6,284.7 280.3,286.9 253,291.4 225.7,289.1 198.4,286.9 171,280.2 143.7,284.7 116.4,282.4 89.1,284.7 
 		61.8,286.9 	" />
-                    </g>
-                    <g  class="picchi">
-                        <polyline id="granbretagna" class="grafico_nazioni_4" points="580.8,246.7 553.5,224.4 526.1,235.5 498.8,237.8 471.5,217.7 444.2,213.2 416.9,161.8 389.6,233.3 
+                        </g>
+                        <g class="picchi">
+                            <polyline id="granbretagna" class="grafico_nazioni_4" points="580.8,246.7 553.5,224.4 526.1,235.5 498.8,237.8 471.5,217.7 444.2,213.2 416.9,161.8 389.6,233.3 
 		362.2,273.5 334.9,273.5 307.6,271.3 280.3,286.9 253,289.1 225.7,289.1 198.4,291.4 171,291.4 143.7,300.3 116.4,311.5 89.1,307 
 		61.8,291.4 	" />
-                    </g>
-                    <g  class="picchi">
-                        <polyline id="usa" class="grafico_nazioni_5" points="580.8,233.3 553.5,211 526.1,186.4 498.8,177.5 471.5,150.7 444.2,130.6 416.9,159.6 389.6,260.1 
+                        </g>
+                        <g class="picchi">
+                            <polyline id="usa" class="grafico_nazioni_5" points="580.8,233.3 553.5,211 526.1,186.4 498.8,177.5 471.5,150.7 444.2,130.6 416.9,159.6 389.6,260.1 
 		362.2,293.6 334.9,304.8 307.6,300.3 280.3,300.3 253,304.8 225.7,307 198.4,289.1 171,291.4 143.7,286.9 116.4,271.3 89.1,271.3 
 		61.8,282.4 	" />
-                    </g>
-                    <g  class="picchi">
-                        <polyline id="francia" class="grafico_nazioni_6" points="580.8,235.5 553.5,235.5 526.1,224.4 498.8,228.8 471.5,224.4 444.2,190.9 416.9,108.2 389.6,260.1 
+                        </g>
+                        <g class="picchi">
+                            <polyline id="francia" class="grafico_nazioni_6" points="580.8,235.5 553.5,235.5 526.1,224.4 498.8,228.8 471.5,224.4 444.2,190.9 416.9,108.2 389.6,260.1 
 		362.2,291.4 334.9,286.9 307.6,284.7 280.3,293.6 253,300.3 225.7,300.3 198.4,300.3 171,298.1 143.7,298.1 116.4,291.4 
 		89.1,275.7 61.8,280.2 	" />
-                    </g>
-                    <g  class="picchi">
-                        <polyline id="germania" class="grafico_nazioni_7" points="580.8,244.5 553.5,264.6 526.1,240 498.8,242.2 471.5,181.9 444.2,144 416.9,170.8 389.6,248.9 
+                        </g>
+                        <g class="picchi">
+                            <polyline id="germania" class="grafico_nazioni_7" points="580.8,244.5 553.5,264.6 526.1,240 498.8,242.2 471.5,181.9 444.2,144 416.9,170.8 389.6,248.9 
 		362.2,264.6 334.9,257.9 307.6,262.3 280.3,295.8 253,302.5 225.7,289.1 198.4,295.8 171,286.9 143.7,291.4 116.4,282.4 
 		89.1,271.3 61.8,273.5 	" />
-                    </g>
-                    <g id="_x32_6MAR">
-                        <g id="Group_115_1_" transform="translate(411 18)">
-                            <text transform="matrix(1 0 0 1 -12.6167 331.2407)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">26</text>
-                            <text transform="matrix(1 0 0 1 -15.3853 343.7612)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_12">MAR</text>
                         </g>
-                    </g>
-                    <g id="_x32_3GEN">
-                        <g id="Group_117" transform="translate(231 18)">
-                            <text transform="matrix(1 0 0 1 -5.707 331.2407)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">23</text>
-                            <text transform="matrix(1 0 0 1 -8.2354 343.7612)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_12">GEN</text>
+                        <g id="_x32_6MAR">
+                            <g id="Group_115_1_" transform="translate(411 18)">
+                                <text transform="matrix(1 0 0 1 -12.6167 331.2407)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">26</text>
+                                <text transform="matrix(1 0 0 1 -15.3853 343.7612)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_12">MAR</text>
+                            </g>
                         </g>
-                    </g>
-                    <g id="_x31_6DIC">
-                        <g id="Group_118_1_" transform="translate(52 18)">
-                            <text transform="matrix(1 0 0 1 1.0586 331.2407)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">16</text>
-                            <text transform="matrix(1 0 0 1 0.5234 343.7612)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_12">DIC</text>
+                        <g id="_x32_3GEN">
+                            <g id="Group_117" transform="translate(231 18)">
+                                <text transform="matrix(1 0 0 1 -5.707 331.2407)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">23</text>
+                                <text transform="matrix(1 0 0 1 -8.2354 343.7612)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_12">GEN</text>
+                            </g>
                         </g>
-                        <text transform="matrix(1 0 0 1 2.1122 329.2161)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">-20</text>
-                        <text transform="matrix(1 0 0 1 17.6025 284.5958)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">0</text>
-                        <text transform="matrix(1 0 0 1 8.5966 239.9752)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">20</text>
-                        <text transform="matrix(1 0 0 1 8.3998 195.3547)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">40</text>
-                        <text transform="matrix(1 0 0 1 7.9252 150.7332)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">60</text>
-                        <text transform="matrix(1 0 0 1 7.7123 105.4921)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">80</text>
-                        <text transform="matrix(1 0 0 1 -7.629395e-05 60.8706)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">100</text>
-                        <text transform="matrix(1 0 0 1 14.8921 26.6919)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_13">%</text>
-                    </g>
-                    <g id="_x30_5APR">
-                        <g id="Group_116" transform="translate(591 18)">
-                            <text transform="matrix(1 0 0 1 -19.3462 331.2407)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">05</text>
-                            <text transform="matrix(1 0 0 1 -20.8755 343.7612)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_12">APR</text>
+                        <g id="_x31_6DIC">
+                            <g id="Group_118_1_" transform="translate(52 18)">
+                                <text transform="matrix(1 0 0 1 1.0586 331.2407)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">16</text>
+                                <text transform="matrix(1 0 0 1 0.5234 343.7612)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_12">DIC</text>
+                            </g>
+                            <text transform="matrix(1 0 0 1 2.1122 329.2161)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">-20</text>
+                            <text transform="matrix(1 0 0 1 17.6025 284.5958)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">0</text>
+                            <text transform="matrix(1 0 0 1 8.5966 239.9752)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">20</text>
+                            <text transform="matrix(1 0 0 1 8.3998 195.3547)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">40</text>
+                            <text transform="matrix(1 0 0 1 7.9252 150.7332)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">60</text>
+                            <text transform="matrix(1 0 0 1 7.7123 105.4921)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">80</text>
+                            <text transform="matrix(1 0 0 1 -7.629395e-05 60.8706)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">100</text>
+                            <text transform="matrix(1 0 0 1 14.8921 26.6919)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_13">%</text>
                         </g>
-                    </g>
+                        <g id="_x30_5APR">
+                            <g id="Group_116" transform="translate(591 18)">
+                                <text transform="matrix(1 0 0 1 -19.3462 331.2407)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_11">05</text>
+                                <text transform="matrix(1 0 0 1 -20.8755 343.7612)" class="grafico_nazioni_9 grafico_nazioni_10 grafico_nazioni_12">APR</text>
+                            </g>
+                        </g>
 
-                </svg>
-            </div> <!--   chiusura grafico_nazioni_scroll-->
-
-
-            <ul>
-                <li class="bottone picchi" id="germania">
-                    <img src="images/icone-picchi/deselezionato.svg" />
-                    <h3>Germania</h3>
-                </li>
-
-                <li class="bottone picchi" id="svizzera">
-                    <img src="images/icone-picchi/deselezionato.svg" />
-                    <h3>Svizzera</h3>
-                </li>
-
-                <li class="bottone picchi" id="italia">
-                    <img src="images/icone-picchi/deselezionato.svg" />
-                    <h3>Italia</h3>
-                </li>
-
-                <li class="bottone picchi" id="granbretagna">
-                    <img src="images/icone-picchi/deselezionato.svg" />
-                    <h3>U.K.</h3>
-                </li>
-            </ul>
-
-            <!--        -----------------------------------------------------------    ---------------->
-
-            <ul>
-                <li class="bottone picchi" id="olanda">
-                    <img src="images/icone-picchi/deselezionato.svg" />
-                    <h3>Olanda</h3>
-                </li>
-
-                <li class="bottone picchi" id="usa">
-                    <img src="images/icone-picchi/deselezionato.svg" />
-                    <h3>U.S.A.</h3>
-                </li>
-
-                <li class="bottone picchi" id="francia">
-                    <img src="images/icone-picchi/deselezionato.svg" />
-                    <h3>Francia</h3>
-                </li>
-
-                <li class="bottone picchi" id="spagna">
-                    <img src="images/icone-picchi/deselezionato.svg" />
-                    <h3>Spagna</h3>
-                </li>
-            </ul>
-
-        </div>
-    </div> <!-- chiusura paragrafo-grafico-picchi -->
+                    </svg>
+                </div> <!--   chiusura grafico_nazioni_scroll-->
 
 
+                <ul>
+                    <li class="bottone picchi" id="germania">
+                        <img src="images/icone-picchi/deselezionato.svg" />
+                        <h3>Germania</h3>
+                    </li>
 
-    </div> <!-- chiusura paragrafo4-->
+                    <li class="bottone picchi" id="svizzera">
+                        <img src="images/icone-picchi/deselezionato.svg" />
+                        <h3>Svizzera</h3>
+                    </li>
+
+                    <li class="bottone picchi" id="italia">
+                        <img src="images/icone-picchi/deselezionato.svg" />
+                        <h3>Italia</h3>
+                    </li>
+
+                    <li class="bottone picchi" id="granbretagna">
+                        <img src="images/icone-picchi/deselezionato.svg" />
+                        <h3>U.K.</h3>
+                    </li>
+                </ul>
+
+                <!--        -----------------------------------------------------------    ---------------->
+
+                <ul>
+                    <li class="bottone picchi" id="olanda">
+                        <img src="images/icone-picchi/deselezionato.svg" />
+                        <h3>Olanda</h3>
+                    </li>
+
+                    <li class="bottone picchi" id="usa">
+                        <img src="images/icone-picchi/deselezionato.svg" />
+                        <h3>U.S.A.</h3>
+                    </li>
+
+                    <li class="bottone picchi" id="francia">
+                        <img src="images/icone-picchi/deselezionato.svg" />
+                        <h3>Francia</h3>
+                    </li>
+
+                    <li class="bottone picchi" id="spagna">
+                        <img src="images/icone-picchi/deselezionato.svg" />
+                        <h3>Spagna</h3>
+                    </li>
+                </ul>
+
+            </div>
+
+            <p>
+                Tra marzo e aprile 2020, in seguito all’implementazione globale delle misure di distanziamento sociale, si è creata una situazione inaudita: con scuole e uffici chiusi e la necessità di mantenere l’operatività di lavoratori e studenti, le app di videochiamate - da Zoom a Google Meet, passando per Microsoft Teams e Skype - sono diventate parte della quotidianità di miliardi di persone.
+                <br />
+                <br />
+                E non solo: anche fuori dall’orario di lavoro, tra aperitivi cancellati e ristoranti chiusi, tantissime persone hanno aumentato le ore di consumo di intrattenimento online, trascorrendo ore e ore sui propri computer o sulle smart tv guardando film, serie televisive o video su YouTube.
+            </p>
+        </div> <!-- chiusura paragrafo4-->
 
 
         <div class="row" id="paragrafo5">
 
-            <h2>Cosa pesa di più sulla rete?</h2>
+            <h2>Cosa “pesa” di più sulla rete?</h2>
 
             <div id="grafico_siti_scroll">
                 <svg id="grafico_siti" x="0px" y="0px" viewBox="0 0 635.9 365.8" style="enable-background:new 0 0 635.9 365.8;" xml:space="preserve">
@@ -1012,44 +1378,50 @@
                         <polyline class="grafico_siti_7" points="620,178.5 577,157.1 534,156.2 491,156.4 448,156.5 405,156 362,161.1 319,174.6 276,179.6 
 			233,178.7 190,179 147.1,177.7 104.1,177.4 		" />
                     </g>
-
-
                     <g id="chat">
                         <polyline class="grafico_siti_8" points="620,273.9 577,269.5 534,269.9 491,246.3 448,278.7 405,279.5 362,281.5 319,284 276,284.7 
 			233,285.2 190,285 147.1,284.6 104.1,284.7 		" />
                     </g>
-
-
                     <g id="news">
                         <polyline class="grafico_siti_9" points="620,277.7 577,274.2 534,274.2 491,274.3 448,274.6 405,274.9 362,276.3 319,277.8 276,278.1 
 			233,278.4 190,278.8 147.1,278.1 104.1,278 		" />
                     </g>
-
-
                     <g id="acquisti">
                         <line class="grafico_siti_10" x1="92.3" y1="280.6" x2="624.3" y2="280.6" />
                         <polyline class="grafico_siti_11" points="620,281.5 577,278.9 534,279.1 491,279.8 448,280.3 405,281.1 362,281.2 319,282.1 276,282.1 
 			233,282 190,282.1 147.1,282.3 104.1,282.1 		" />
                     </g>
-
-
                     <g id="chiamate">
                         <polyline class="grafico_siti_12" points="620,283 577,280 534,282.5 491,283.7 448,282.5 405,285.2 362,290.6 319,296.1 276,297.2 
 			233,297.4 190,297.5 147.1,297.5 104.1,297.6 		" />
                     </g>
-
-
                     <g id="social">
                         <polyline class="grafico_siti_13" points="620,81.8 577,44.6 534,43.8 491,43.3 448,46.7 405,52.1 362,66.4 319,86.5 276,92.5 233,88.5 
 			190,90.4 147.1,90 104.1,89.7 		" />
                     </g>
 
                 </svg>
+                <div id="nomi_siti">
+                    
+                    <img class="nomi" id="nomi_acquisti" src="images/nomi/acquisti.svg" />
+                    <img class="nomi" id="nomi_chat" src="images/nomi/chat.svg" />
+                    <img class="nomi" id="nomi_intrattenimento" src="images/nomi/intrattenimento.svg" />
+                    <img class="nomi" id="nomi_news" src="images/nomi/news.svg" />
+                    <img class="nomi" id="nomi_social" src="images/nomi/social.svg" />
+                    <img class="nomi" id="nomi_videocall" src="images/nomi/videocall.svg" />
+                    
+                </div>
 
             </div> <!-- chiusura grafico_siti_scroll-->
 
             <p>
-                Video is basically eating the internet. It made up 12% of all traffic in 2006 (pdf), but by 2010 it became the largest category of internet traffic, according to Cisco (pdf) A big reason why that’s happening is a rapid expansion in a special kind of infrastructure that gets viewers their video interruption-free. These are content delivery networks (CDNs), private networks owned by the world’s biggest tech companies—Facebook, Google, Apple, Netflix—and a handful of firms that specialize in their operation, that run in parallel to the internet’s core traffic routes. The shift has been so pronounced that nearly half of all traffic flowing over the internet today actually traverses these parallel routes, according to data from research firm TeleGeography.
+                Costretti a distanziarci, abbiamo cercato rifugio nella comunicazione online—soprattutto in videochiamata: il numero di utenti attivi di Zoom, società californiana di servizi di teleconferenza, è quasi decuplicato nel giro di qualche settimana. Un trend simile si è riscontrato su Microsoft Teams, Google Meet e servizi analoghi.
+                <br />
+                <br />
+                In generale, lo streaming video è il principale fattore di ‘stress’ per la rete internet - che già dal 2010 è la prima categoria per traffico web, sia per l’ampio consumo di dati legato al medium in sé, sia perché i miglioramenti all’infrastruttura di internet hanno reso possibili attività un tempo difficili da immaginare—come le videochiamate con decine di partecipanti o la fruizione di serie tv in alta definizione, in contemporanea, per miliardi di utenti.
+                <br />
+                <br />
+                Ma il picco nell’uso di banda causato dall’emergenza coronavirus ha avuto un impatto su tutte le tipologie di utilizzo, non solo i video: messaggistica online, social network, e-commerce. Per arginare un possibile sovraccarico della rete, tra marzo e aprile 2020 aziende come YouTube, Amazon e Netflix hanno annunciato misure per ridurre la qualità dei propri streaming video, nel tentativo di garantire una velocità adeguata di trasmissione dei dati anche a fronte di una domanda di utilizzo mai così estesa ed elevata.
             </p>
 
         </div> <!-- chiusura paragrafo5-->
@@ -1059,7 +1431,7 @@
             <h2>Internet può collassare?</h2>
 
             <p>
-                Questa situazione anomala parlare della possibilità di un ‘blackout’ della rete, anche se internet di per sé non ha un limite di banda; semmai, a incidere potrebbe essere l’aumentare della complessità dell’infrastruttura - per esempio, lo spostamento di migliaia di dipendenti al lavoro da remoto sposta il fulcro del centro di stress da un singolo data center a una miriade di punti di connessione decentralizzati.
+                A pesare sulla rete internet durante la crisi del coronavirus non è stata solo l’intensità di utilizzo, ma anche la tipologia di sovraccarico sofferta dall’infrastruttura: con lo smart working e milioni di lavoratori collegati in videoconferenza dalle loro case, il consumo di banda si è spostato dalle connessioni aziendali (progettate, almeno in teoria, per sopportare la trasmissione di ingenti flussi di dati) ai nodi privati delle singole abitazioni, mettendo sotto stress una miriade di punti di connessione decentralizzati. Questa situazione anomala ha spinto gli analisti del settore a prevedere la possibilità di un ‘blackout’ di internet.
             </p>
 
             <div id="groviglio">
@@ -1067,10 +1439,13 @@
             </div>
 
             <p>
-                Ma la rete è fatta per assorbire i colpi… If one domain server is out, your request goes to another. Our data is passed back and forth in a container called a packet, and packet loss is part of what networks are designed to tolerate. Even the idea of a packet is a way to minimize errors with clever design. Streaming video is one of the most fault-tolerant, with long buffers and video-quality sliders that adjust automatically to your connection.
+                Ma la rete, per nostra fortuna, è stata progettata per assorbire gli shock: se un server è fuori uso, i dati in arrivo vengono dirottati su un nodo funzionante, e questo senza che l’utente se ne accorga. E anche quando alcuni di questi dati vanno perduti, i problemi sono limitati: la rete è stata infatti progettata per tollerare i cosiddetti “packet loss”, all’interno di un certo margine. Lo vediamo accadere ogni tanto anche in prima persona, quando il nostro video va in buffering oppure la qualità dello streaming si riduce automaticamente per adeguarsi alla banda disponibile. Quindi, nonostante i timori, anche in un periodo emergenziale non si sono verificati particolari disservizi: internet ha dimostrato quindi di poter reggere urti di grandi dimensioni.
                 <br />
                 <br />
-                Riflessione un po’ più “alta” per chiudere
+                L’emergenza ci ha insegnato comunque che internet è la nostra safety net: il fluido che permette di collegare le terre emerse delle nostre relazioni, preservando lavoro, affetti, salute fisica e mentale. Arcipelaghi che possono esistere e funzionare solo in relazione tra loro, soprattutto in condizioni estreme.
+                <br />
+                <br />
+                Ricordiamoci però che la rete è una casa fragile, instabile, che non possiamo dare per scontata. E allora ricordiamoci di proteggerla. Perché anche per superare la prossima crisi avremo bisogno di internet. Ecco quindi alcuni consigli su come possiamo limitare il nostro consumo di internet, o almeno, per riuscire a utilizzarlo in modo più consapevole.
             </p>
 
         </div> <!-- chiusura paragrafo6-->
