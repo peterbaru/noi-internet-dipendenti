@@ -48,11 +48,13 @@ html {
     font-size: 12px;
     font-family: 'Sole24Sans-Regular';
     overflow-x: hidden !important;
+    scroll-behavior: smooth;
 }
 
 body {
     background-color: var(--grigio-color);
     margin: 0;
+    overflow-x: hidden !important;
 }
 
 h1 {
@@ -470,14 +472,15 @@ p {
     top: 84vh;
 }
 
+.barra-numeri text{
+    opacity: .1
+}
+
 .slider {
     -webkit-appearance: none;
     width: 100%;
     outline: none;
     background-color: var(--trasparente-color);
-    /*    background: url("../images/barra-slider.svg")no-repeat;*/
-    /*    background-position: center;*/
-    /*    background-size: cover;*/
 }
 
 .slider::-webkit-slider-thumb {
@@ -495,12 +498,9 @@ p {
     width: 15px;
     height: 35px;
     border: none;
-    /*    background: url("../images/slider.svg")no-repeat;*/
     cursor: pointer;
     z-index: 100;
 }
-
-
 
 #paragrafo2 {
     height: 650vh;
@@ -523,7 +523,7 @@ p {
 #grafico_interattivo_1 {
     position: absolute;
     left: 50%;
-    top: 23.55%;
+    top: 1159px;
     transform: translate(-50%, -50%);
     width: 270px;
 }
@@ -548,7 +548,7 @@ p {
     position: absolute;
     width: 28px;
     left: 17.4%;
-    top: 18.8%;
+    top: 960px;
 }
 
 .momento_giornata {
@@ -561,6 +561,10 @@ p {
 
 #icona_mattina {
     margin-left: 34%;
+}
+
+#icona_sera {
+    margin-right: 22px;
 }
 
 .legenda_grafico_0 {
@@ -611,8 +615,8 @@ p {
 }
 
 .bubble {
-    width: 2px;
-    height: 2px;
+    width: 20px;
+    height: 20px;
     background-color: var(--rosso-color);
     margin: auto;
     border-radius: 50%;
@@ -626,11 +630,15 @@ p {
     width: 360px;
     height: 360px;
     border: solid;
+    border-width: 1px;
+    opacity: .5;
     border-color: var(--blu-color);
     border-radius: 50%;
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
+    margin-top: -10px;
+    overflow-x: hidden;
 }
 
 #chart {
@@ -658,6 +666,10 @@ p {
     background-color: var(--grigio-color);
 }
 
+#paragrafo3 h2 {
+    margin-top: 100px;
+}
+
 #paragrafo3 p {
     color: var(--blu-color);
     padding-left: 10%;
@@ -672,17 +684,14 @@ p {
 }
 
 #cellulare {
-    width: 160px;
     margin-top: 46%;
 }
 
 #wifi {
-    width: 146px;
     margin-top: -8%;
 }
 
 #modem {
-    width: 200px;
     margin-top: 11%;
 }
 
@@ -695,7 +704,7 @@ p {
 }
 
 #paragrafo4 {
-    height: 217vh;
+    height: 243vh;
     position: relative;
     background-color: var(--blu-color);
 }
@@ -707,13 +716,9 @@ p {
 
 #paragrafo4 p {
     color: var(--grigio-color);
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
     margin-top: 0px;
-}
-
-#grafico_nazioni_scroll {
-    overflow-x: scroll;
 }
 
 .grafico_nazioni_0 {
@@ -825,11 +830,11 @@ p {
 }
 
 #grafico_nazioni {
-
-    width: 600px;
-    padding-left: 18px;
-    padding-right: 18px;
-    margin-top: -40px;
+    width: 380px;
+    position: relative;
+    top: 104px;
+    left: 53%;
+    transform: translate(-50%, -50%);
 }
 
 ul li {
@@ -843,13 +848,14 @@ ul li {
 ul {
     list-style-type: none;
     width: 100%;
-    margin: 0;
+    margin-top: -20px;
     padding: 0;
+    margin-bottom: 5px;
 }
 
 
 #paragrafo5 {
-    height: 161vh;
+    height: 180vh;
     position: relative;
     background-image: url(../images/cavi/linea-7.svg);
     background-color: var(--grigio-color);
@@ -857,7 +863,7 @@ ul {
 
 #paragrafo5 h2 {
     padding-top: 40px;
-    color: var(--blue-color);
+    color: var(--blu-color);
 }
 
 #paragrafo5 p {
@@ -868,16 +874,16 @@ ul {
 }
 
 #grafico_siti {
-    width: 600px
+    width: 352px;
+    position: relative;
+    top: 95px;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #grafico_siti_scroll {
     overflow-x: scroll;
 }
-
-/* #lato-sinistro-da-bloccare{
-            position: fixed;
-        }*/
 
 .grafico_siti_0 {
     fill: none;
@@ -975,7 +981,7 @@ ul {
 
 #paragrafo6 h2 {
     padding-top: 40px;
-    color: var(--blue-color);
+    color: var(--blu-color);
 }
 
 #paragrafo6 p {
@@ -988,4 +994,33 @@ ul {
 #groviglio {
     margin-top: -170px;
     margin-bottom: -110px;
+}
+
+.nomi {
+    width: 122px;
+    display: none;
+}
+
+#cellulare img {
+position: relative;
+    width: 120px;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#modem img {
+position: relative;
+    width: 240px;
+    top: 31px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#wifi img {
+position: relative;
+    width: 120px;
+    top: 6px;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
