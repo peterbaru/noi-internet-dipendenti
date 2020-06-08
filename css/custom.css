@@ -1008,3 +1008,11 @@ ul {
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+#loading {
+        margin-top:10%;
+     position: relative;
+    width: 70%;
+    left: 50%;
+    transform: translate(-50%, -25%);
+}
