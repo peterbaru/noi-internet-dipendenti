@@ -1,13 +1,13 @@
    $(document).ready(function () {
 
        //            BLOCCO SCROLL ----------------------------------------------------------------------------------------------
-       $("#titolo img").on("click", function () {
+       $("#titolo .conferma_iniziale").on("click", function () {
            $(".longer-div").animate({
                top: "-100vh"
            }, 500)
        })
 
-       $("#paragrafo1 img").on("click", function () {
+       $("#paragrafo1 .conferma").on("click", function () {
            $(".longer-div").animate({
                top: "-200vh"
            }, 500)
@@ -53,7 +53,7 @@
 
            //--   SCROLL
 
-           $("#domanda3 #conferma_svago img").on("click", function () {
+           $("#domanda3 #conferma_svago").on("click", function () {
                //  console.log("Pulsante cliccato!!!!!");
 
                $(this).animate({
@@ -485,9 +485,9 @@
            altezza_pomeriggio = parseInt(orePomeriggio) * 21.5;
            altezza_sera = parseInt(oreSera) * 21.5;
 
-           $("#conferma_ore img").css("opacity", "1");
+           $("#conferma_ore").css("opacity", "1");
 
-           $("#conferma_ore img").click(function () {
+           $("#conferma_ore").click(function () {
                console.log("Pulsante cliccato!!!!!")
 
                $(".longer-div").animate({
@@ -525,23 +525,23 @@
                    height: 22.5
                }, 3000);
 
-               $("#italiano-pomeriggio").delay(1000).animate({
+               $("#italiano-pomeriggio").delay(500).animate({
                    height: 42.9
                }, 3000);
 
-               $("#italiano-sera").delay(2000).animate({
+               $("#italiano-sera").delay(1500).animate({
                    height: 52.4
                }, 3000);
 
-               $("#utente-mattina").delay(500).animate({
+               $("#utente-mattina").delay(0).animate({
                    height: altezza_mattina
                }, 3000);
 
-               $("#utente-pomeriggio").delay(1500).animate({
+               $("#utente-pomeriggio").delay(1000).animate({
                    height: altezza_pomeriggio
                }, 3000);
 
-               $("#utente-sera").delay(2500).animate({
+               $("#utente-sera").delay(2000).animate({
                    height: altezza_sera
                }, 3000);
 
@@ -564,7 +564,7 @@
            .setPin("#chart", {
                pushFollowers: false
            })
-           .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
            .on("enter", function (e) {
 
                $(".bubble").css({
@@ -583,7 +583,7 @@
            .setPin("#caption-1", {
                pushFollowers: true
            })
-           .addIndicators() // add indicators (requires plugin)
+         //  .addIndicators() // add indicators (requires plugin)
            .addTo(controller);
 
        new ScrollMagic.Scene({
@@ -594,7 +594,7 @@
            .setPin("#caption-2", {
                pushFollowers: true
            })
-           .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
            .addTo(controller);
 
        new ScrollMagic.Scene({
@@ -605,7 +605,7 @@
            .setPin("#caption-3", {
                pushFollowers: true
            })
-           .addIndicators() // add indicators (requires plugin)
+        //   .addIndicators() // add indicators (requires plugin)
            .on("enter", function risultato_finale() {
                console.log("dimensione sfera " + dimensione_finale);
                $("#chart .bubble").css("transform", "scale(" + dimensione_finale + ")");
@@ -613,64 +613,30 @@
            .addTo(controller);
 
 
-//       //ZOOM SERVER----------------------------------------------------------------------------------------------
-//       // init
-//
-//       var controller = new ScrollMagic.Controller();
-//
-//       new ScrollMagic.Scene({
-//               triggerElement: "#server-2",
-//               offset: "0",
-//               duration: "0.01%"
-//           })
-//           .setPin("#server-2", {
-//               pushFollowers: true
-//           })
-//           .addIndicators() // add indicators (requires plugin)
-//           .on("enter", function (e) {
-//
-//               $("#server-container .server").css("transform", "scale(1)");
-//
-//
-//
-//           })
-//           .addTo(controller);
-//
-//
-//       new ScrollMagic.Scene({
-//               triggerElement: "#server-container",
-//               triggerHook: 'onLeave',
-//               duration: "300%"
-//           })
-//           .setPin("#server-container", {
-//               pushFollowers: false
-//           })
-//           .addIndicators() // add indicators (requires plugin)
-//           .on("enter", function (e) {
-//
-//               $("#server-container .server").css("transform", "scale(1)");
-//
-//           })
-//           .addTo(controller);
-//
-//
-//
-//       new ScrollMagic.Scene({
-//               triggerElement: "#server-3",
-//               offset: "0",
-//               duration: "0.01%"
-//           })
-//           .setPin("#server-3", {
-//               pushFollowers: true
-//           })
-//           .addIndicators() // add indicators (requires plugin)
-//           .on("enter", function (e) {
-//
-//               $("#server-container .server").css("transform", "scale(100)");
-//
-//           })
-//           .addTo(controller);
+       //       //ZOOM SERVER----------------------------------------------------------------------------------------------
+       // init
 
+       var controller = new ScrollMagic.Controller();
+
+       new ScrollMagic.Scene({
+               triggerElement: "#server-container",
+               triggerHook: 'onLeave',
+               duration: "100%"
+           })
+           .setPin("#server-container", {
+               pushFollowers: false
+           })
+      //     .addIndicators() // add indicators (requires plugin)
+
+           .on("progress", function (e) {
+
+               prog = e.progress.toFixed(2);
+
+
+               $("#server-3").css("opacity", prog * 5);
+
+           })
+           .addTo(controller);
 
        //PULSANTI ICONE PARAGRAFO 3----------------------------------------------------------------------------------------------
 
@@ -702,6 +668,7 @@
            "spagna": "images/icone-picchi/deselezionato.svg"
        };
 
+       $( "polyline#italia" ).trigger( "click" );
 
        $("li").click(function () {
            id_cliccato = $(this).attr("id");
