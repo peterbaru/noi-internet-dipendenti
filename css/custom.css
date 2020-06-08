@@ -125,7 +125,7 @@ p {
     height: 100vh;
     text-align: center;
     position: relative;
-    background-image: url(../images/gif/cavi/linea-1.gif);
+    background-image: url(../images/gif/linea1.gif);
     background-size: cover;
 }
 
@@ -139,7 +139,7 @@ p {
     top: 0px;
     left: 0px;
     width: 100%;
-    z-index: 10000;
+    z-index: 30000000;
 }
 
 .single-screen {
@@ -152,7 +152,7 @@ p {
     text-align: center;
     position: relative;
     background-color: var(--grigio-color);
-    background-image: url(../images/gif/cavi/linea-4.gif);
+    background-image: url(../images/gif/linea4.gif);
     background-size: cover;
 }
 
@@ -170,7 +170,7 @@ p {
     text-align: center;
     position: relative;
     background-color: var(--grigio-color);
-    background-image: url("../images/gif/cavi/linea-2.gif");
+    background-image: url("../images/gif/linea7.gif");
     background-size: cover;
 }
 
@@ -328,7 +328,7 @@ p {
     text-align: center;
     position: relative;
     background-color: var(--grigio-color);
-    background-image: url("../images/gif/cavi/linea-3.gif");
+    background-image: url("../images/gif/linea3.gif");
     background-size: cover;
 }
 
@@ -348,25 +348,70 @@ p {
     width: 76px;
     margin-left: 10%;
     position: relative;
+    cursor: pointer;
 }
 
-.conferma {
+.conferma_iniziale {
     width: 170px;
+    height: 30px;
+    border-radius: 100px;
+    background-color: var(--grigio-color);
     position: absolute;
     top: 90vh;
     left: 50%;
     transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.conferma_iniziale p {
+    padding: 5px;
+    color: var(--blu-color);
+}
+
+.conferma {
+    width: 170px;
+    height: 30px;
+    border-radius: 100px;
+    background-color: var(--blu-color);
+    position: absolute;
+    top: 90vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.conferma#pulsante_cominciamo p {
+    padding: 5px;
+    margin: 0;
+    color: var(--grigio-color);
+}
+
+.conferma#conferma_svago p {
+    padding: 5px;
+    margin: 0;
+    color: var(--grigio-color);
+}
+
+.conferma#conferma_pulsanti p {
+    padding: 5px;
+    margin: 0;
+    color: var(--grigio-color);
+}
+
+.conferma#conferma_ore p {
+    padding: 5px;
+    margin: 0;
+    color: var(--grigio-color);
 }
 
 .indietro {
-    width: 42px;
+    width: 30px;
     position: absolute;
-    top: 90vh;
-    /* left: 19%; */
-    transform: translate(100%, -50%);
+    top: 90.7vh;
+    transform: translate(160%, -50%);
 }
 
-#conferma_ore img {
+#conferma_ore {
     opacity: .5;
 }
 
@@ -375,7 +420,7 @@ p {
     text-align: center;
     position: relative;
     background-color: var(--grigio-color);
-    background-image: url("../images/gif/cavi/linea-5.gif");
+    background-image: url("../images/gif/linea5.gif");
     background-size: cover;
 }
 
@@ -443,7 +488,7 @@ p {
 }
 
 #grafico_automatico {
-    position:relative;
+    position: relative;
 }
 
 #consumo_medio {
@@ -552,7 +597,6 @@ p {
 }
 
 #paragrafo3 {
-    height: 450vh;
     position: relative;
     background-color: var(--grigio-color);
 }
@@ -568,10 +612,26 @@ p {
     margin-top: -20px;
 }
 
+#paragrafo3-1 {
+    position: relative;
+    background-color: var(--grigio-color);
+}
+
+#paragrafo3-1 h2 {
+    margin-top: 100px;
+}
+
+#paragrafo3-1 p {
+    color: var(--blu-color);
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: -20px;
+}
+
 #icone_dispositivi {
-    position: absolute;
+    position: relative;
     height: 122vh;
-    background-image: url(../images/gif/cell-wifi-modem-cavo.gif);
+    background-image: url(../images/gif/elementi.gif);
     background-size: cover;
     background-position: center;
 }
@@ -579,6 +639,10 @@ p {
 #paragrafo4 {
     position: relative;
     background-color: var(--blu-color);
+    -webkit-box-shadow: 0px 0px 30px 36px rgba(39, 35, 77, 1);
+    -moz-box-shadow: 0px 0px 30px 36px rgba(39, 35, 77, 1);
+    box-shadow: 0px 0px 30px 36px rgba(39, 35, 77, 1);
+    z-index: 1000000;
 }
 
 #paragrafo4 h2 {
@@ -695,6 +759,7 @@ p {
 
 .bottone img {
     width: 47px;
+    cursor: pointer;
 }
 
 .bottone h3 {
@@ -729,6 +794,7 @@ ul {
 #paragrafo5 {
     position: relative;
     background-color: var(--grigio-color);
+    z-index: 2000000;
 }
 
 #paragrafo5 h2 {
@@ -859,7 +925,7 @@ ul {
 #groviglio {
     position: relative;
     height: 100vh;
-    background-image: url(../images/gif/cavi/cavi-groviglio01.gif);
+    background-image: url(../images/gif/groviglio.gif);
     background-size: cover;
     background-position: center;
 }
@@ -869,28 +935,6 @@ ul {
     display: none;
 }
 
-#cellulare img {
-    position: relative;
-    width: 120px;
-    /*    top: 50px;*/
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#modem img {
-    position: relative;
-    width: 240px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#wifi img {
-    position: relative;
-    width: 120px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 .box-server {
     height: 100vh;
     width: 100%;
@@ -898,28 +942,69 @@ ul {
     padding: 0;
 }
 
-#server-2 {
-    height: 1vh;
+#server-3 {
+    height: 100vh;
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+    background-color: var(--blu-color);
 }
 
 .server {
     margin: auto;
-    /*    transform-origin: center;
-    transform: scale(1);
-    transition: all 0.5s;*/
+    transform-origin: center;
     position: relative;
-    /*    background-image: url("../images/cellulare.svg");
-    background-size: cover;
-    background-position: center;*/
 }
 
 #server-container {
     text-align: center;
+    background-image: url(../images/gif/linea-server.gif);
+    background-size: cover;
+    background-position: center;
 }
 
-#server-container .content-server {
+#suggerimenti {
+    background-color: var(--blu-color);
+}
+
+#suggerimenti h2 {
+    color: var(--grigio-color);
+}
+
+#suggerimenti h3 {
+    color: var(--giallo-color);
+}
+
+#suggerimenti p {
+    color: var(--grigio-color);
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 0px;
+}
+
+.suggerimento {
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: center;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    border-radius: 10px;
+}
+
+#ringraziamenti h3 {
+    margin-top:20%;
+    text-align: left;
+}
+
+#ringraziamenti p {
+  color: var(--blu-color);
+        padding-left: 10%;
+    padding-right: 10%;
+} 
+
+#collaborazione {
+    margin-top:10%;
+     position: relative;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
