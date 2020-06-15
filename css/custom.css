@@ -343,20 +343,6 @@ p {
     color: var(--blu-color);
 }
 
-#preload-social { background: url(../images/icone/non-premute/social.svg) no-repeat -9999px -9999px; }
-#preload-streaming { background: url(../images/icone/non-premute/streaming.svg) no-repeat -9999px -9999px; }
-#preload-news { background: url(../images/icone/non-premute/informazione.svg) no-repeat -9999px -9999px; }
-#preload-videocall { background: url(../images/icone/non-premute/videochiamata.svg) no-repeat -9999px -9999px; }
-#preload-chat { background: url(../images/icone/non-premute/comunicazione.svg) no-repeat -9999px -9999px; }
-#preload-acquisti { background: url(../images/icone/non-premute/ecommerce.svg) no-repeat -9999px -9999px; }
-
-#preload-social-premute { background: url(../images/icone/premute/social.svg) no-repeat -9999px -9999px; }
-#preload-streaming-premute { background: url(../images/icone/premute/streaming.svg) no-repeat -9999px -9999px; }
-#preload-news-premute { background: url(../images/icone/premute/informazione.svg) no-repeat -9999px -9999px; }
-#preload-videocall-premute { background: url(../images/icone/premute/videochiamata.svg) no-repeat -9999px -9999px; }
-#preload-chat-premute { background: url(../images/icone/premute/comunicazione.svg) no-repeat -9999px -9999px; }
-#preload-acquisti-premute { background: url(../images/icone/premute/ecommerce.svg) no-repeat -9999px -9999px; }
-
 .pulsante {
     float: left;
     width: 76px;
