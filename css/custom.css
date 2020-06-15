@@ -170,7 +170,7 @@ p {
     text-align: center;
     position: relative;
     background-color: var(--grigio-color);
-    background-image: url("../images/gif/linea7.gif");
+    background-image: url("../images/gif/linea2.gif");
     background-size: cover;
 }
 
@@ -247,7 +247,7 @@ p {
 
 #svago {
     position: relative;
-    left: -41%;
+    left: -34%;
     float: left;
 }
 
@@ -281,7 +281,7 @@ p {
 
 #numero_studio {
     float: left;
-    margin-left: 36%;
+    margin-left: 32%;
     position: relative;
 }
 
@@ -342,6 +342,20 @@ p {
     margin-bottom: 3%;
     color: var(--blu-color);
 }
+
+#preload-social { background: url(../images/icone/non-premute/social.svg) no-repeat -9999px -9999px; }
+#preload-streaming { background: url(../images/icone/non-premute/streaming.svg) no-repeat -9999px -9999px; }
+#preload-news { background: url(../images/icone/non-premute/informazione.svg) no-repeat -9999px -9999px; }
+#preload-videocall { background: url(../images/icone/non-premute/videochiamata.svg) no-repeat -9999px -9999px; }
+#preload-chat { background: url(../images/icone/non-premute/comunicazione.svg) no-repeat -9999px -9999px; }
+#preload-acquisti { background: url(../images/icone/non-premute/ecommerce.svg) no-repeat -9999px -9999px; }
+
+#preload-social-premute { background: url(../images/icone/premute/social.svg) no-repeat -9999px -9999px; }
+#preload-streaming-premute { background: url(../images/icone/premute/streaming.svg) no-repeat -9999px -9999px; }
+#preload-news-premute { background: url(../images/icone/premute/informazione.svg) no-repeat -9999px -9999px; }
+#preload-videocall-premute { background: url(../images/icone/premute/videochiamata.svg) no-repeat -9999px -9999px; }
+#preload-chat-premute { background: url(../images/icone/premute/comunicazione.svg) no-repeat -9999px -9999px; }
+#preload-acquisti-premute { background: url(../images/icone/premute/ecommerce.svg) no-repeat -9999px -9999px; }
 
 .pulsante {
     float: left;
@@ -547,6 +561,14 @@ p {
     padding: 0;
 }
 
+.panel h3 {
+    background-color: #F4F4F499;
+}
+
+#caption-3 h3 {
+    background-color: var(--trasparente-color);
+}
+
 .panel.blue {
     background-color: var(--grigio-color);
 }
@@ -597,7 +619,6 @@ p {
 }
 
 #paragrafo3 {
-    position: relative;
     background-color: var(--grigio-color);
 }
 
@@ -968,10 +989,14 @@ ul {
 }
 
 #suggerimenti h2 {
+    padding-top: 20%;
     color: var(--grigio-color);
 }
 
 #suggerimenti h3 {
+    font-size: 1.3rem;
+    padding-left: 20px;
+    padding-right: 20px;
     color: var(--giallo-color);
 }
 
@@ -984,35 +1009,67 @@ ul {
 
 .suggerimento {
     position: relative;
-    width: 100%;
+    width: 90%;
     left: 50%;
     transform: translate(-50%, 0%);
     border-radius: 10px;
 }
 
 #ringraziamenti h3 {
-    margin-top:20%;
+    margin-top: 20%;
     text-align: left;
 }
 
 #ringraziamenti p {
-  color: var(--blu-color);
-        padding-left: 10%;
+    color: var(--blu-color);
+    padding-left: 10%;
     padding-right: 10%;
-} 
+    margin-top: 30px;
+}
 
 #collaborazione {
-    margin-top:10%;
-     position: relative;
-    width: 100%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    position: relative;
+    width: 78%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 #loading {
-        margin-top:10%;
-     position: relative;
+    margin-top: 10%;
+    position: relative;
     width: 70%;
     left: 50%;
     transform: translate(-50%, -25%);
+}
+
+.note {
+    font-size: 1rem;
+    text-align: left;
+    color: #b5b5b5;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+
+a:link {
+    font-size: 1rem;
+    color: var(--blu-color);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:visited {
+    font-size: 1rem;
+    color: var(--giallo-color);
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:hover {
+    font-size: 1rem;
+    color: var(--rosso-color);
+    background-color: transparent;
+    text-decoration: underline;
 }
