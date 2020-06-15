@@ -71,36 +71,35 @@
                //PRECARICARE IMMAGINI PULSANTI----------------------------------------------------------------------------------------------
                // quando la pagina e' stata caricata:
 
-               $(function () {
-
-                       function preloader() {
-                           if (document.getElementById) {
-
-                               document.getElementById("preload-social").style.background = "url(../images/icone/non-premute/social.svg) no-repeat -9999px -9999px";
-                               document.getElementById("preload-streaming").style.background = "url(../images/icone/non-premute/streaming.svg) no-repeat -9999px -9999px";
-                               document.getElementById("preload-news").style.background = "url(../images/icone/non-premute/informazione.svg) no-repeat -9999px -9999px";
-                               document.getElementById("preload-videocall").style.background = "url(../images/icone/non-premute/videochiamata.svg) no-repeat -9999px -9999px";
-                               document.getElementById("preload-chat").style.background = "url(../images/icone/non-premute/comunicazione.svg) no-repeat -9999px -9999px";
-                               document.getElementById("preload-acquisti").style.background = "url(../images/icone/non-premute/ecommerce.svg) no-repeat -9999px -9999px";
-                           }
-                       }
-
-                       function addLoadEvent(func) {
-                           var oldonload = window.onload;
-                           if (typeof window.onload != 'function') {
-                               window.onload = func;
-                           } else {
-                               window.onload = function () {
-                                   if (oldonload) {
-                                       oldonload();
-                                   }
-                                   func();
-                               }
-                           }
-                       }
-                       addLoadEvent(preloader);
-
-                   });
+//               $(function () {
+//
+//                       function preloader() {
+//                           if (document.getElementById) {
+//
+//                               document.getElementById("pulsante-social").style.background = "url(../images/icone/non-premute/social.svg) no-repeat -9999px -9999px";
+//                               document.getElementById("pulsante-streaming").style.background = "url(../images/icone/non-premute/streaming.svg) no-repeat -9999px -9999px";
+//                               document.getElementById("pulsante-informazione").style.background = "url(../images/icone/non-premute/informazione.svg) no-repeat -9999px -9999px";
+//                               document.getElementById("pulsante-videochiamata").style.background = "url(../images/icone/non-premute/videochiamata.svg) no-repeat -9999px -9999px";
+//                               document.getElementById("pulsante-comunicazione").style.background = "url(../images/icone/non-premute/comunicazione.svg) no-repeat -9999px -9999px";
+//                               document.getElementById("pulsante-ecommerce").style.background = "url(../images/icone/non-premute/ecommerce.svg) no-repeat -9999px -9999px";
+//                           }
+//                       }
+//
+//                       function addLoadEvent(func) {
+//                           var oldonload = window.onload;
+//                           if (typeof window.onload != 'function') {
+//                               window.onload = func;
+//                           } else {
+//                               window.onload = function () {
+//                                   if (oldonload) {
+//                                       oldonload();
+//                                   }
+//                                   func();
+//                               }
+//                           }
+//                       }
+//                       addLoadEvent(preloader);
+//                   });
 
 
                    //PULSANTI ICONE DOMANDA 1----------------------------------------------------------------------------------------------
