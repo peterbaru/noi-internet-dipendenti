@@ -239,6 +239,7 @@ p {
     z-index: 10;
 }
 
+/*
 #studio_lavoro {
     position: relative;
     left: 43%;
@@ -250,13 +251,16 @@ p {
     left: -34%;
     float: left;
 }
+*/
 
+/*
 #nomi_svagoelav {
     position: absolute;
     left: 50%;
     top: 15vh;
     transform: translate(-50%, -50%)
 }
+*/
 
 #valori_numerici {
     position: relative;
@@ -273,6 +277,24 @@ p {
     font-size: 60px;
 }
 
+ul li.li-slider {
+    display: inline-block;
+    width: 40%;
+    padding: 0;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+ul.ul-slider {
+    list-style-type: none;
+    width: 100%;
+    margin-top: 63px;
+    padding: 0;
+    margin-bottom: 0px;
+}
+
+/*
 #numero_svago {
     float: left;
     margin-left: 10%;
@@ -284,6 +306,7 @@ p {
     margin-left: 32%;
     position: relative;
 }
+*/
 
 .slidecontainer {
     width: 253px;
@@ -344,14 +367,6 @@ p {
 }
 
 /*
-#pulsante-social { background: url(../images/icone/non-premute/social.svg) no-repeat -9999px -9999px; }
-#pulsante-streaming { background: url(../images/icone/non-premute/streaming.svg) no-repeat -9999px -9999px; }
-#pulsante-informazione { background: url(../images/icone/non-premute/informazione.svg) no-repeat -9999px -9999px; }
-#pulsante-videochiamata { background: url(../images/icone/non-premute/videochiamata.svg) no-repeat -9999px -9999px; }
-#pulsante-comunicazione { background: url(../images/icone/non-premute/comunicazione.svg) no-repeat -9999px -9999px; }
-#pulsante-ecommerce { background: url(../images/icone/non-premute/ecommerce.svg) no-repeat -9999px -9999px; }
-*/
-
 .pulsante {
     float: left;
     width: 76px;
@@ -359,6 +374,25 @@ p {
     position: relative;
     cursor: pointer;
 }
+*/
+
+ul li.pulsante {
+    display: inline-block;
+    width: 22%;
+    padding: 0;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+ul.ul-pulsante {
+    list-style-type: none;
+    width: 100%;
+    margin-top: -14px;
+    padding: 0;
+    margin-bottom: 0px;
+}
+
 
 .conferma_iniziale {
     width: 170px;
@@ -446,17 +480,17 @@ p {
 
 #titolo_mattina {
     position: relative;
-    top: -12px;
+    top: -28px;
 }
 
 #titolo_pomeriggio {
     position: relative;
-    top: 61px;
+    top: 34px;
 }
 
 #titolo_sera {
     position: relative;
-    top: 134px;
+    top: 96px;
 }
 
 #slider_domanda2_mattina {
@@ -507,7 +541,12 @@ p {
 }
 
 #consumo_medio_bubble {
-    margin-top: -52%;
+margin-top: -53%;
+    padding: 30p;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
 }
 
 #tuoi_consumi {
@@ -539,13 +578,25 @@ p {
     stroke-miterlimit: 10;
 }
 
+.grafico_automatico_5 {
+    font-size: 18px;
+}
+
+.grafico_automatico_6 {
+    fill: none;
+    stroke: var(--grigio-color);
+    stroke-width: 0.25;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+}
+
 #paragrafo_grafico_interattivo {
     position: relative;
     top: 5%;
 }
 
 #descrizione_numero {
-    margin-top: 43%;
+margin-top: -33px;
     color: var(--rosso-color);
 }
 
@@ -674,102 +725,116 @@ p {
 }
 
 .grafico_nazioni_0 {
-    fill: none;
-    stroke: var(--grigio-color);
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-miterlimit: 10;
+    fill: var(--grigio-color);
 }
 
 .grafico_nazioni_1 {
-    fill: none;
-    stroke: var(--arancione-color);
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-miterlimit: 10;
+    font-family: 'Sole24Sans';
+    color: var(--grigio-color);
 }
 
 .grafico_nazioni_2 {
-    fill: none;
-    stroke: #8FDE00;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-miterlimit: 10;
+    font-size: 16.3745px;
+    color: var(--grigio-color);
 }
 
 .grafico_nazioni_3 {
-    fill: none;
-    stroke: var(--rosso-color);
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-miterlimit: 10;
+    font-size: 11.5585px;
+    color: var(--grigio-color);
 }
 
 .grafico_nazioni_4 {
-    fill: none;
-    stroke: var(--giallo-color);
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-miterlimit: 10;
+    font-size: 18px;
+    color: var(--grigio-color);
 }
+
+
 
 .grafico_nazioni_5 {
     fill: none;
-    stroke: var(--verdeAcqua-color);
-    stroke-width: 2;
+    stroke: var(--grigio-color);
+    stroke-width: 0.25;
     stroke-linecap: round;
     stroke-miterlimit: 10;
 }
 
 .grafico_nazioni_6 {
     fill: none;
-    stroke: #A244DA;
-    stroke-width: 2;
-    stroke-linecap: round;
+    stroke: var(--blu-color);
+    stroke-width: 0.25;
     stroke-miterlimit: 10;
 }
 
 .grafico_nazioni_7 {
     fill: none;
-    stroke: #FF0000;
+    stroke: var(--arancione-color);
     stroke-width: 2;
     stroke-linecap: round;
+    stroke-linejoin: round;
     stroke-miterlimit: 10;
 }
 
 .grafico_nazioni_8 {
     fill: none;
     stroke: var(--grigio-color);
-    stroke-width: 1.3;
+    stroke-width: 2;
     stroke-linecap: round;
-    stroke-miterlimit: 10;
-}
-
-.linea-zero {
-    fill: none;
-    stroke: var(--grigio-color);
-    stroke-width: 0.25;
+    stroke-linejoin: round;
     stroke-miterlimit: 10;
 }
 
 .grafico_nazioni_9 {
-    fill: var(--grigio-color);
+    fill: none;
+    stroke: var(--verdeAcqua-color);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
 }
 
 .grafico_nazioni_10 {
-    font-family: 'Sole24Sans';
+    fill: none;
+    stroke: #A244DA;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
 }
 
 .grafico_nazioni_11 {
-    font-size: 19.4665px;
+    fill: none;
+    stroke: #FF0000;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
 }
 
 .grafico_nazioni_12 {
-    font-size: 13.741px;
+    fill: none;
+    stroke: #8FDE00;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
 }
 
 .grafico_nazioni_13 {
-    font-size: 32.4128px;
+    fill: none;
+    stroke: var(--giallo-color);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.grafico_nazioni_14 {
+    fill: none;
+    stroke: var(--rosso-color);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
 }
 
 
@@ -783,14 +848,10 @@ p {
 }
 
 #grafico_nazioni {
-    width: 380px;
     position: relative;
-    top: 104px;
-    left: 53%;
-    transform: translate(-50%, -50%);
 }
 
-ul li {
+ul li.bottone {
     display: inline-block;
     width: 22%;
     padding: 0;
@@ -798,9 +859,10 @@ ul li {
     text-align: center;
 }
 
-ul {
+ul.ul-nazioni {
     list-style-type: none;
     width: 100%;
+    transform: translate(2%, 21%);
     margin-top: -20px;
     padding: 0;
     margin-bottom: 5px;
@@ -826,46 +888,62 @@ ul {
 }
 
 #grafico_siti {
-    width: 352px;
     position: relative;
-    top: 95px;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .grafico_siti_0 {
+    fill: var(--blu-color);
+}
+
+.grafico_siti_1 {
+    font-family: 'Sole24Sans';
+}
+
+.grafico_siti_2 {
+    font-size: 18px;
+}
+
+.grafico_siti_3 {
     fill: none;
     stroke: var(--blu-color);
-    stroke-width: 1.3;
+    stroke-width: 0.25;
     stroke-linecap: round;
     stroke-miterlimit: 10;
 }
 
-.grafico_siti_1 {
-    fill: var(--blu-color);
-}
-
-.grafico_siti_2 {
-    font-family: 'Sole24Sans';
-}
-
-.grafico_siti_3 {
+.grafico_siti_4 {
     font-size: 16.3745px;
 }
 
-.grafico_siti_4 {
+.grafico_siti_5 {
     font-size: 11.5585px;
 }
 
-.grafico_siti_5 {
-    font-size: 12.8961px;
-}
-
 .grafico_siti_6 {
-    font-size: 13.2501px;
+    enable-background: new;
 }
 
 .grafico_siti_7 {
+    font-size: 14.2512px;
+}
+
+.grafico_siti_8 {
+    fill: none;
+    stroke: var(--blu-color);
+    stroke-width: 0.25;
+    stroke-miterlimit: 10;
+}
+
+.grafico_siti_9 {
+    fill: none;
+    stroke: #56D854;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-miterlimit: 10;
+}
+
+.grafico_siti_10 {
     fill: none;
     stroke: var(--arancione-color);
     stroke-width: 3;
@@ -873,14 +951,14 @@ ul {
     stroke-linejoin: round;
 }
 
-.grafico_siti_8 {
+.grafico_siti_11 {
     fill: none;
     stroke: var(--verdeAcqua-color);
     stroke-width: 3;
     stroke-linecap: round;
 }
 
-.grafico_siti_9 {
+.grafico_siti_12 {
     fill: none;
     stroke: var(--giallo-color);
     stroke-width: 3;
@@ -888,14 +966,7 @@ ul {
     stroke-linejoin: round;
 }
 
-.grafico_siti_10 {
-    fill: none;
-    stroke: var(--grigio-color);
-    stroke-width: 0.25;
-    stroke-miterlimit: 10;
-}
-
-.grafico_siti_11 {
+.grafico_siti_13 {
     fill: none;
     stroke: var(--blu-color);
     stroke-width: 3;
@@ -903,18 +974,9 @@ ul {
     stroke-linejoin: round;
 }
 
-.grafico_siti_12 {
+.grafico_siti_14 {
     fill: none;
     stroke: var(--rosso-color);
-    stroke-width: 3;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-miterlimit: 10;
-}
-
-.grafico_siti_13 {
-    fill: none;
-    stroke: #56D854;
     stroke-width: 3;
     stroke-linecap: round;
     stroke-linejoin: round;
@@ -947,7 +1009,7 @@ ul {
 }
 
 .nomi {
-    width: 122px;
+    width: 32%;
     display: none;
 }
 
@@ -1040,17 +1102,17 @@ ul {
 }
 
 .note {
-    font-size: 1rem;
+font-size: 1rem;
     text-align: left;
     color: #b5b5b5;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
 
 }
 
 a:link {
     font-size: 1rem;
-    color: var(--blu-color);
+    color: var(--giallo-color);
     background-color: transparent;
     text-decoration: underline;
 }
@@ -1067,4 +1129,9 @@ a:hover {
     color: var(--rosso-color);
     background-color: transparent;
     text-decoration: underline;
+}
+
+.modifica_grafico {
+ margin: 5%;
+        
 }
