@@ -343,6 +343,15 @@ p {
     color: var(--blu-color);
 }
 
+/*
+#pulsante-social { background: url(../images/icone/non-premute/social.svg) no-repeat -9999px -9999px; }
+#pulsante-streaming { background: url(../images/icone/non-premute/streaming.svg) no-repeat -9999px -9999px; }
+#pulsante-informazione { background: url(../images/icone/non-premute/informazione.svg) no-repeat -9999px -9999px; }
+#pulsante-videochiamata { background: url(../images/icone/non-premute/videochiamata.svg) no-repeat -9999px -9999px; }
+#pulsante-comunicazione { background: url(../images/icone/non-premute/comunicazione.svg) no-repeat -9999px -9999px; }
+#pulsante-ecommerce { background: url(../images/icone/non-premute/ecommerce.svg) no-repeat -9999px -9999px; }
+*/
+
 .pulsante {
     float: left;
     width: 76px;
