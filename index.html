@@ -35,6 +35,28 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"></script>
 
     <script type="text/javascript" src="js/script.js"></script>
+    
+
+	<script type="text/javascript">
+		//--><![CDATA[//><!--
+			var images = new Array()
+			function preload() {
+				for (i = 0; i < preload.arguments.length; i++) {
+                    console.log("sono dentro1");
+					images[i] = new Image()
+					images[i].src = preload.arguments[i]
+				}
+			}
+			preload(
+				"images/icone/non-premute/social.svg",
+                "images/icone/non-premute/streaming.svg",
+                "images/icone/non-premute/informazione.svg",
+                "images/icone/non-premute/videochiamata.svg",
+                "images/icone/non-premute/comunicazione.svg",
+                "images/icone/non-premute/ecommerce.svg",
+			)
+		//--><!]]>
+	</script>
 
 
 </head>
@@ -60,7 +82,7 @@
                     </p>
 
                     <div class="conferma_iniziale">
-                        <p>Leggi l'articolo!</p>
+                        <p>Inizia l'esperienza</p>
                     </div>
 
                 </div>
@@ -74,7 +96,7 @@
                     <p>Per prima cosa, rispondi a tre domande per rendere l’esperienza personalizzata.</p>
 
                     <div class="conferma" id="pulsante_cominciamo">
-                        <p class="pulsante-invio">Cominciamo!</p>
+                        <p class="pulsante-invio">Cominciamo</p>
                     </div>
 
                 </div>
@@ -254,7 +276,7 @@
         </div>
 
         <div class="row" id="paragrafo2">
-            <div class="columns offset-by-four four">
+            <div class="columns offset-by-three six">
 
                 <h2>Internet è ovunque</h2>
 
@@ -307,6 +329,7 @@
                     <line id="Line_63_1_" class="grafico_automatico_4" x1="12.3" y1="25" x2="243.6" y2="25" />
                 </svg>
 
+                <h5 class="note">Note: I grafici sono stati calcolati prendendo i dati del consumo di internet annuale, prima dell'emergenza COVID-19. Source: <a href="https://www.mix-it.net/statistiche/">mix-it.net</a></h5>
 
                 <p id="paragrafo_grafico_interattivo"> In Italia gli utilizzatori di internet sono oggi 49 milioni, con una penetrazione dell’82% sulla popolazione totale e una crescita del 2,4% rispetto all’anno precedente. La rete internet nel corso degli anni ha raggiunto una diffusione capillare - nella maggior parte delle regioni italiane possiamo connetterci al web in piazza o sul divano di casa, in una sala d’attesa o su un treno ad alta velocità, godendoci un’esperienza fluida e quasi priva di interruzioni.
                     <br />
@@ -350,7 +373,7 @@
         </div> <!-- chiusura paragrafo2-->
 
         <div class="row" id="paragrafo3">
-            <div class="columns offset-by-four four">
+            <div class="columns offset-by-three six">
                 <h2>Come è fatto internet?</h2>
 
                 <p>
@@ -366,7 +389,7 @@
         </div>
 
         <div class="row" id="paragrafo3-1">
-            <div class="columns offset-by-four four">
+            <div class="columns offset-by-three six">
                 <p>
                     Questi dati vengono stipati e veicolati attraverso i data center, grossi centri che ospitano le apparecchiature ed i servizi di gestione dei dati. Solo in Italia ce ne sono oltre 50, il più grande dei quali si trova in provincia di Bergamo, in una zona a bassa intensità sismica per evitarne il danneggiamento. Il più vasto data center al mondo si trova in Cina, nella città di Langfang, è di proprietà del governo cinese e occupa un’area grande quanto 60 campi da calcio.
                     <br />
@@ -394,7 +417,7 @@
         </div>
 
         <div class="row" id="paragrafo4">
-            <div class="columns offset-by-four four">
+            <div class="columns offset-by-three six">
                 <h2>Anche internet si stressa</h2>
 
                 <p>
@@ -518,6 +541,8 @@
                         </svg>
                     </div> <!--   chiusura grafico_nazioni_scroll-->
 
+                    <h5 class="note">Note: Dati selezionati dal database fornito sul sito Ookla Speedtest. Source: <a href="https://www.speedtest.net/insights/blog/tracking-covid-19-impact-global-internet-performance/#/">speedtest.net</a></h5>
+
 
                     <ul>
                         <li class="bottone picchi" id="germania">
@@ -578,7 +603,7 @@
 
 
         <div class="row" id="paragrafo5">
-            <div class="columns offset-by-four four">
+            <div class="columns offset-by-three six">
                 <h2>Cosa “pesa” di più sulla rete?</h2>
 
                 <div id="grafico_siti_scroll">
@@ -665,6 +690,9 @@
 
                 </div> <!-- chiusura grafico_siti_scroll-->
 
+                <h5 class="note">Note: I dati riportati derivano dalle medie dei consumi riportati dal database SimilarWeb. Source: <a href="https://www.similarweb.com">SimilarWeb.com</a></h5>
+
+
                 <p>
                     Costretti a distanziarci, abbiamo cercato rifugio nella comunicazione online—soprattutto in videochiamata: il numero di utenti attivi di Zoom, società californiana di servizi di teleconferenza, è quasi decuplicato nel giro di qualche settimana. Un trend simile si è riscontrato su Microsoft Teams, Google Meet e servizi analoghi.
                     <br />
@@ -678,7 +706,7 @@
         </div> <!-- chiusura paragrafo5-->
 
         <div class="row" id="paragrafo6">
-            <div class="columns offset-by-four four">
+            <div class="columns offset-by-three six">
 
                 <h2>Internet può collassare?</h2>
 
@@ -691,18 +719,19 @@
 
             </div>
 
-            <div id="paragrafo6_pt2" class="columns offset-by-four four">
+            <div id="paragrafo6_pt2" class="columns offset-by-three six">
+
                 <p>
                     Ma la rete, per nostra fortuna, è stata progettata per assorbire gli shock: se un server è fuori uso, i dati in arrivo vengono dirottati su un nodo funzionante, e questo senza che l’utente se ne accorga. E anche quando alcuni di questi dati vanno perduti, i problemi sono limitati: la rete è stata infatti progettata per tollerare i cosiddetti “packet loss”, all’interno di un certo margine. Lo vediamo accadere ogni tanto anche in prima persona, quando il nostro video va in buffering oppure la qualità dello streaming si riduce automaticamente per adeguarsi alla banda disponibile. Quindi, nonostante i timori, anche in un periodo emergenziale non si sono verificati particolari disservizi: internet ha dimostrato quindi di poter reggere urti di grandi dimensioni.
                     <br />
                     <br />
                     L’emergenza ci ha insegnato comunque che internet è la nostra safety net: il fluido che permette di collegare le terre emerse delle nostre relazioni, preservando lavoro, affetti, salute fisica e mentale. Arcipelaghi che possono esistere e funzionare solo in relazione tra loro, soprattutto in condizioni estreme.
                 </p>
-                
-                <div >
-                <img id="loading" src="images/gif/cell-loading.gif" />
+
+                <div>
+                    <img id="loading" src="images/gif/cell-loading.gif" />
                 </div>
-                  <p>
+                <p>
                     Ricordiamoci però che la rete è una casa fragile, instabile, che non possiamo dare per scontata. E allora ricordiamoci di proteggerla. Perché anche per superare la prossima crisi avremo bisogno di internet. Ecco quindi alcuni consigli su come possiamo limitare il nostro consumo di internet, o almeno, per riuscire a utilizzarlo in modo più consapevole.
                 </p>
             </div>
@@ -710,7 +739,7 @@
         </div> <!-- chiusura paragrafo6-->
 
         <div class="row" id="suggerimenti">
-            <div class="columns offset-by-four four">
+            <div class="columns offset-by-three six">
 
                 <h2> Consumare meno banda: una mini-guida </h2>
 
@@ -757,7 +786,7 @@
         </div> <!-- chiusura suggerimenti-->
 
         <div class="row" id="ringraziamenti">
-            <div class="columns offset-by-four four">
+            <div class="columns offset-by-three six">
 
                 <p>Progetto in collaborazione con gli studenti del lab. di design dei sistemi del corso di laurea magistrale in design della Università degli studi della Repubblica di San Marino</p>
 
@@ -770,245 +799,295 @@
 
 
 
-<svg version="1.1" id="collaborazione" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 264.6 33.4" style="enable-background:new 0 0 264.6 33.4;" xml:space="preserve">
-<style type="text/css">
-	.st0{clip-path:url(#SVGID_2_);}
-	.st1{clip-path:url(#SVGID_4_);}
-	.st2{clip-path:url(#SVGID_6_);}
-	.st3{clip-path:url(#SVGID_8_);}
-	.st4{clip-path:url(#SVGID_10_);}
-	.st5{clip-path:url(#SVGID_12_);}
-	.st6{clip-path:url(#SVGID_14_);}
-	.st7{clip-path:url(#SVGID_16_);}
-	.st8{clip-path:url(#SVGID_18_);}
-	.st9{clip-path:url(#SVGID_20_);}
-	.st10{clip-path:url(#SVGID_22_);}
-	.st11{clip-path:url(#SVGID_24_);}
-	.st12{clip-path:url(#SVGID_26_);}
-	.st13{clip-path:url(#SVGID_28_);}
-	.st14{fill:none;stroke:#D4024A;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;}
-	.st15{fill:#FFFFFF;}
-</style>
-<g>
-	<g>
-		<g>
-			<g>
-				<defs>
-					<rect id="SVGID_1_" width="53.7" height="33.4"/>
-				</defs>
-				<clipPath id="SVGID_2_">
-					<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
-				</clipPath>
-				<path class="st0" d="M0,12.8c0,7.1,5.7,12.8,12.8,12.8c7.1,0,12.8-5.7,12.8-12.8V0H0V12.8z"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g>
-				<defs>
-					<rect id="SVGID_3_" width="53.7" height="33.4"/>
-				</defs>
-				<clipPath id="SVGID_4_">
-					<use xlink:href="#SVGID_3_"  style="overflow:visible;"/>
-				</clipPath>
-				<path class="st1" d="M41,25.3c7,0,12.6-5.6,12.6-12.6S48,0.1,41,0.1H28.4v25.2C28.4,25.3,41,25.3,41,25.3z"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g>
-				<defs>
-					<rect id="SVGID_5_" width="53.7" height="33.4"/>
-				</defs>
-				<clipPath id="SVGID_6_">
-					<use xlink:href="#SVGID_5_"  style="overflow:visible;"/>
-				</clipPath>
-				<path class="st2" d="M3.7,28.5h0.6v3.2c0,0.3-0.1,0.6-0.2,0.9c-0.2,0.3-0.4,0.5-0.6,0.6c-0.3,0.1-0.6,0.2-1,0.2s-0.7-0.1-1-0.2
+                <svg version="1.1" id="collaborazione" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 264.6 33.4" style="enable-background:new 0 0 264.6 33.4;" xml:space="preserve">
+                    <style type="text/css">
+                        .st0 {
+                            clip-path: url(#SVGID_2_);
+                        }
+
+                        .st1 {
+                            clip-path: url(#SVGID_4_);
+                        }
+
+                        .st2 {
+                            clip-path: url(#SVGID_6_);
+                        }
+
+                        .st3 {
+                            clip-path: url(#SVGID_8_);
+                        }
+
+                        .st4 {
+                            clip-path: url(#SVGID_10_);
+                        }
+
+                        .st5 {
+                            clip-path: url(#SVGID_12_);
+                        }
+
+                        .st6 {
+                            clip-path: url(#SVGID_14_);
+                        }
+
+                        .st7 {
+                            clip-path: url(#SVGID_16_);
+                        }
+
+                        .st8 {
+                            clip-path: url(#SVGID_18_);
+                        }
+
+                        .st9 {
+                            clip-path: url(#SVGID_20_);
+                        }
+
+                        .st10 {
+                            clip-path: url(#SVGID_22_);
+                        }
+
+                        .st11 {
+                            clip-path: url(#SVGID_24_);
+                        }
+
+                        .st12 {
+                            clip-path: url(#SVGID_26_);
+                        }
+
+                        .st13 {
+                            clip-path: url(#SVGID_28_);
+                        }
+
+                        .st14 {
+                            fill: none;
+                            stroke: #D4024A;
+                            stroke-width: 4;
+                            stroke-linecap: round;
+                            stroke-miterlimit: 10;
+                        }
+
+                        .st15 {
+                            fill: #FFFFFF;
+                        }
+
+                    </style>
+                    <g>
+                        <g>
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_1_" width="53.7" height="33.4" />
+                                    </defs>
+                                    <clipPath id="SVGID_2_">
+                                        <use xlink:href="#SVGID_1_" style="overflow:visible;" />
+                                    </clipPath>
+                                    <path class="st0" d="M0,12.8c0,7.1,5.7,12.8,12.8,12.8c7.1,0,12.8-5.7,12.8-12.8V0H0V12.8z" />
+                                </g>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_3_" width="53.7" height="33.4" />
+                                    </defs>
+                                    <clipPath id="SVGID_4_">
+                                        <use xlink:href="#SVGID_3_" style="overflow:visible;" />
+                                    </clipPath>
+                                    <path class="st1" d="M41,25.3c7,0,12.6-5.6,12.6-12.6S48,0.1,41,0.1H28.4v25.2C28.4,25.3,41,25.3,41,25.3z" />
+                                </g>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_5_" width="53.7" height="33.4" />
+                                    </defs>
+                                    <clipPath id="SVGID_6_">
+                                        <use xlink:href="#SVGID_5_" style="overflow:visible;" />
+                                    </clipPath>
+                                    <path class="st2" d="M3.7,28.5h0.6v3.2c0,0.3-0.1,0.6-0.2,0.9c-0.2,0.3-0.4,0.5-0.6,0.6c-0.3,0.1-0.6,0.2-1,0.2s-0.7-0.1-1-0.2
 					S1,32.9,0.8,32.6c-0.2-0.3-0.2-0.5-0.2-0.9v-3.2h0.6v3.1c0,0.2,0.1,0.4,0.2,0.6s0.3,0.3,0.4,0.4c0.2,0.1,0.4,0.2,0.7,0.2
-					c0.3,0,0.5-0.1,0.7-0.2s0.3-0.2,0.4-0.4c0.1-0.2,0.2-0.4,0.2-0.6L3.7,28.5L3.7,28.5z"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g>
-				<defs>
-					<rect id="SVGID_7_" width="53.7" height="33.4"/>
-				</defs>
-				<clipPath id="SVGID_8_">
-					<use xlink:href="#SVGID_7_"  style="overflow:visible;"/>
-				</clipPath>
-				<polygon class="st3" points="9.3,28.5 9.3,33.3 8.7,33.3 6.1,29.5 6.1,29.5 6.1,33.3 5.5,33.3 5.5,28.5 6.1,28.5 8.7,32.2 
-					8.7,32.2 8.7,28.5 				"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g>
-				<defs>
-					<rect id="SVGID_9_" width="53.7" height="33.4"/>
-				</defs>
-				<clipPath id="SVGID_10_">
-					<use xlink:href="#SVGID_9_"  style="overflow:visible;"/>
-				</clipPath>
-				<rect x="10.5" y="28.5" class="st4" width="0.6" height="4.8"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g>
-				<defs>
-					<rect id="SVGID_11_" width="53.7" height="33.4"/>
-				</defs>
-				<clipPath id="SVGID_12_">
-					<use xlink:href="#SVGID_11_"  style="overflow:visible;"/>
-				</clipPath>
-				<path class="st5" d="M12.2,33.3v-4.8h1.6c0.4,0,0.7,0.1,0.9,0.2c0.2,0.1,0.4,0.3,0.5,0.5s0.2,0.5,0.2,0.8s-0.1,0.5-0.2,0.8
+					c0.3,0,0.5-0.1,0.7-0.2s0.3-0.2,0.4-0.4c0.1-0.2,0.2-0.4,0.2-0.6L3.7,28.5L3.7,28.5z" />
+                                </g>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_7_" width="53.7" height="33.4" />
+                                    </defs>
+                                    <clipPath id="SVGID_8_">
+                                        <use xlink:href="#SVGID_7_" style="overflow:visible;" />
+                                    </clipPath>
+                                    <polygon class="st3" points="9.3,28.5 9.3,33.3 8.7,33.3 6.1,29.5 6.1,29.5 6.1,33.3 5.5,33.3 5.5,28.5 6.1,28.5 8.7,32.2 
+					8.7,32.2 8.7,28.5 				" />
+                                </g>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_9_" width="53.7" height="33.4" />
+                                    </defs>
+                                    <clipPath id="SVGID_10_">
+                                        <use xlink:href="#SVGID_9_" style="overflow:visible;" />
+                                    </clipPath>
+                                    <rect x="10.5" y="28.5" class="st4" width="0.6" height="4.8" />
+                                </g>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_11_" width="53.7" height="33.4" />
+                                    </defs>
+                                    <clipPath id="SVGID_12_">
+                                        <use xlink:href="#SVGID_11_" style="overflow:visible;" />
+                                    </clipPath>
+                                    <path class="st5" d="M12.2,33.3v-4.8h1.6c0.4,0,0.7,0.1,0.9,0.2c0.2,0.1,0.4,0.3,0.5,0.5s0.2,0.5,0.2,0.8s-0.1,0.5-0.2,0.8
 					c-0.1,0.2-0.3,0.4-0.5,0.5s-0.5,0.2-0.9,0.2h-1.3V31h1.3c0.3,0,0.5,0,0.6-0.1c0.2-0.1,0.3-0.2,0.3-0.3s0.1-0.3,0.1-0.5
-					s0-0.4-0.1-0.5s-0.2-0.3-0.3-0.3c-0.2-0.1-0.4-0.1-0.6-0.1h-1v4.3h-0.6V33.3z M14.5,31.1l1.2,2.2H15l-1.2-2.2H14.5z"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g>
-				<defs>
-					<rect id="SVGID_13_" width="53.7" height="33.4"/>
-				</defs>
-				<clipPath id="SVGID_14_">
-					<use xlink:href="#SVGID_13_"  style="overflow:visible;"/>
-				</clipPath>
-				<path class="st6" d="M19,29.7c0-0.2-0.1-0.4-0.3-0.6c-0.2-0.1-0.4-0.2-0.7-0.2c-0.2,0-0.4,0-0.6,0.1s-0.3,0.2-0.4,0.3
+					s0-0.4-0.1-0.5s-0.2-0.3-0.3-0.3c-0.2-0.1-0.4-0.1-0.6-0.1h-1v4.3h-0.6V33.3z M14.5,31.1l1.2,2.2H15l-1.2-2.2H14.5z" />
+                                </g>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_13_" width="53.7" height="33.4" />
+                                    </defs>
+                                    <clipPath id="SVGID_14_">
+                                        <use xlink:href="#SVGID_13_" style="overflow:visible;" />
+                                    </clipPath>
+                                    <path class="st6" d="M19,29.7c0-0.2-0.1-0.4-0.3-0.6c-0.2-0.1-0.4-0.2-0.7-0.2c-0.2,0-0.4,0-0.6,0.1s-0.3,0.2-0.4,0.3
 					c-0.1,0.1-0.1,0.3-0.1,0.4s0,0.2,0.1,0.3c0.1,0.1,0.1,0.2,0.2,0.2c0.1,0.1,0.2,0.1,0.3,0.1c0.1,0,0.2,0.1,0.3,0.1l0.5,0.1
 					c0.1,0,0.3,0.1,0.4,0.1c0.2,0.1,0.3,0.1,0.4,0.2s0.3,0.2,0.3,0.4c0.1,0.2,0.1,0.3,0.1,0.6c0,0.3-0.1,0.5-0.2,0.7
 					S19,32.9,18.7,33c-0.3,0.1-0.6,0.2-0.9,0.2s-0.6-0.1-0.9-0.2s-0.4-0.3-0.6-0.5c-0.1-0.2-0.2-0.4-0.2-0.7h0.6
 					c0,0.2,0.1,0.3,0.2,0.4s0.2,0.2,0.4,0.3c0.2,0.1,0.3,0.1,0.5,0.1s0.4,0,0.6-0.1s0.3-0.2,0.4-0.3c0.1-0.1,0.2-0.3,0.2-0.5
 					s0-0.3-0.1-0.4s-0.2-0.2-0.4-0.2C18.4,31,18.2,31,18,30.9l-0.6-0.2c-0.4-0.1-0.7-0.3-0.9-0.5c-0.2-0.2-0.3-0.5-0.3-0.8
 					s0.1-0.5,0.2-0.7s0.3-0.4,0.6-0.5c0.2-0.1,0.5-0.2,0.8-0.2s0.6,0.1,0.8,0.2c0.2,0.1,0.4,0.3,0.6,0.5c0.1,0.2,0.2,0.4,0.2,0.6H19
-					V29.7z"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g>
-				<defs>
-					<rect id="SVGID_15_" width="53.7" height="33.4"/>
-				</defs>
-				<clipPath id="SVGID_16_">
-					<use xlink:href="#SVGID_15_"  style="overflow:visible;"/>
-				</clipPath>
-				<polygon class="st7" points="20.6,28.5 21.3,28.5 23,32.4 23,32.4 24.6,28.5 25.3,28.5 25.3,33.3 24.8,33.3 24.8,29.6 
-					24.7,29.6 23.2,33.3 22.7,33.3 21.2,29.6 21.2,29.6 21.2,33.3 20.6,33.3 				"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g>
-				<defs>
-					<rect id="SVGID_17_" width="53.7" height="33.4"/>
-				</defs>
-				<clipPath id="SVGID_18_">
-					<use xlink:href="#SVGID_17_"  style="overflow:visible;"/>
-				</clipPath>
-				<path class="st8" d="M29.8,33.3h-1.5v-4.8h1.5c0.5,0,0.9,0.1,1.2,0.3c0.3,0.2,0.6,0.5,0.8,0.8c0.2,0.4,0.3,0.8,0.3,1.3
+					V29.7z" />
+                                </g>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_15_" width="53.7" height="33.4" />
+                                    </defs>
+                                    <clipPath id="SVGID_16_">
+                                        <use xlink:href="#SVGID_15_" style="overflow:visible;" />
+                                    </clipPath>
+                                    <polygon class="st7" points="20.6,28.5 21.3,28.5 23,32.4 23,32.4 24.6,28.5 25.3,28.5 25.3,33.3 24.8,33.3 24.8,29.6 
+					24.7,29.6 23.2,33.3 22.7,33.3 21.2,29.6 21.2,29.6 21.2,33.3 20.6,33.3 				" />
+                                </g>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_17_" width="53.7" height="33.4" />
+                                    </defs>
+                                    <clipPath id="SVGID_18_">
+                                        <use xlink:href="#SVGID_17_" style="overflow:visible;" />
+                                    </clipPath>
+                                    <path class="st8" d="M29.8,33.3h-1.5v-4.8h1.5c0.5,0,0.9,0.1,1.2,0.3c0.3,0.2,0.6,0.5,0.8,0.8c0.2,0.4,0.3,0.8,0.3,1.3
 					s-0.1,0.9-0.3,1.3S31.4,32.8,31,33C30.7,33.2,30.3,33.3,29.8,33.3 M28.9,32.7h0.9c0.4,0,0.7-0.1,1-0.2c0.3-0.2,0.5-0.4,0.6-0.7
-					c0.1-0.3,0.2-0.6,0.2-1s-0.1-0.7-0.2-1c-0.1-0.3-0.3-0.5-0.6-0.6C30.5,29,30.2,29,29.9,29H29v3.7C29,32.7,28.9,32.7,28.9,32.7z"
-					/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g>
-				<defs>
-					<rect id="SVGID_19_" width="53.7" height="33.4"/>
-				</defs>
-				<clipPath id="SVGID_20_">
-					<use xlink:href="#SVGID_19_"  style="overflow:visible;"/>
-				</clipPath>
-				<polygon class="st9" points="33.1,33.3 33.1,28.5 36,28.5 36,29 33.7,29 33.7,30.6 35.8,30.6 35.8,31.1 33.7,31.1 33.7,32.7 
-					36,32.7 36,33.3 				"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g>
-				<defs>
-					<rect id="SVGID_21_" width="53.7" height="33.4"/>
-				</defs>
-				<clipPath id="SVGID_22_">
-					<use xlink:href="#SVGID_21_"  style="overflow:visible;"/>
-				</clipPath>
-				<path class="st10" d="M39.7,29.7c0-0.2-0.1-0.4-0.3-0.6c-0.2-0.1-0.4-0.2-0.7-0.2c-0.2,0-0.4,0-0.6,0.1s-0.3,0.2-0.4,0.3
+					c0.1-0.3,0.2-0.6,0.2-1s-0.1-0.7-0.2-1c-0.1-0.3-0.3-0.5-0.6-0.6C30.5,29,30.2,29,29.9,29H29v3.7C29,32.7,28.9,32.7,28.9,32.7z" />
+                                </g>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_19_" width="53.7" height="33.4" />
+                                    </defs>
+                                    <clipPath id="SVGID_20_">
+                                        <use xlink:href="#SVGID_19_" style="overflow:visible;" />
+                                    </clipPath>
+                                    <polygon class="st9" points="33.1,33.3 33.1,28.5 36,28.5 36,29 33.7,29 33.7,30.6 35.8,30.6 35.8,31.1 33.7,31.1 33.7,32.7 
+					36,32.7 36,33.3 				" />
+                                </g>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_21_" width="53.7" height="33.4" />
+                                    </defs>
+                                    <clipPath id="SVGID_22_">
+                                        <use xlink:href="#SVGID_21_" style="overflow:visible;" />
+                                    </clipPath>
+                                    <path class="st10" d="M39.7,29.7c0-0.2-0.1-0.4-0.3-0.6c-0.2-0.1-0.4-0.2-0.7-0.2c-0.2,0-0.4,0-0.6,0.1s-0.3,0.2-0.4,0.3
 					c-0.1,0.1-0.1,0.3-0.1,0.4s0,0.2,0.1,0.3c0.1,0.1,0.1,0.2,0.2,0.2c0.1,0.1,0.2,0.1,0.3,0.1s0.2,0.1,0.3,0.1l0.5,0.1
 					c0.1,0,0.3,0.1,0.4,0.1c0.2,0.1,0.3,0.1,0.4,0.2c0.1,0.1,0.3,0.2,0.3,0.4c0.1,0.2,0.1,0.3,0.1,0.6c0,0.3-0.1,0.5-0.2,0.7
 					c-0.1,0.2-0.3,0.4-0.6,0.5s-0.6,0.2-0.9,0.2c-0.3,0-0.6-0.1-0.9-0.2c-0.3-0.1-0.4-0.3-0.6-0.5c-0.1-0.2-0.2-0.4-0.2-0.7h0.6
 					c0,0.2,0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.2,0.4,0.3c0.2,0.1,0.3,0.1,0.5,0.1s0.4,0,0.6-0.1c0.2-0.1,0.3-0.2,0.4-0.3
 					c0.1-0.1,0.2-0.3,0.2-0.5s0-0.3-0.1-0.4s-0.2-0.2-0.4-0.2c-0.1-0.1-0.3-0.1-0.5-0.2l-0.6-0.2c-0.4-0.1-0.7-0.3-0.9-0.5
 					s-0.3-0.5-0.3-0.8s0.1-0.5,0.2-0.7c0.1-0.2,0.3-0.4,0.6-0.5c0.2-0.1,0.5-0.2,0.8-0.2s0.6,0.1,0.8,0.2s0.4,0.3,0.6,0.5
-					c0.1,0.2,0.2,0.4,0.2,0.6h-0.4L39.7,29.7L39.7,29.7z"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g>
-				<defs>
-					<rect id="SVGID_23_" width="53.7" height="33.4"/>
-				</defs>
-				<clipPath id="SVGID_24_">
-					<use xlink:href="#SVGID_23_"  style="overflow:visible;"/>
-				</clipPath>
-				<rect x="41.2" y="28.5" class="st11" width="0.6" height="4.8"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g>
-				<defs>
-					<rect id="SVGID_25_" width="53.7" height="33.4"/>
-				</defs>
-				<clipPath id="SVGID_26_">
-					<use xlink:href="#SVGID_25_"  style="overflow:visible;"/>
-				</clipPath>
-				<path class="st12" d="M46.3,30c-0.1-0.2-0.1-0.3-0.2-0.4c-0.1-0.1-0.2-0.2-0.3-0.3c-0.1-0.1-0.2-0.2-0.4-0.2
+					c0.1,0.2,0.2,0.4,0.2,0.6h-0.4L39.7,29.7L39.7,29.7z" />
+                                </g>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_23_" width="53.7" height="33.4" />
+                                    </defs>
+                                    <clipPath id="SVGID_24_">
+                                        <use xlink:href="#SVGID_23_" style="overflow:visible;" />
+                                    </clipPath>
+                                    <rect x="41.2" y="28.5" class="st11" width="0.6" height="4.8" />
+                                </g>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_25_" width="53.7" height="33.4" />
+                                    </defs>
+                                    <clipPath id="SVGID_26_">
+                                        <use xlink:href="#SVGID_25_" style="overflow:visible;" />
+                                    </clipPath>
+                                    <path class="st12" d="M46.3,30c-0.1-0.2-0.1-0.3-0.2-0.4c-0.1-0.1-0.2-0.2-0.3-0.3c-0.1-0.1-0.2-0.2-0.4-0.2
 					c-0.1,0-0.3-0.1-0.5-0.1c-0.3,0-0.5,0.1-0.8,0.2c-0.2,0.1-0.4,0.4-0.6,0.6c-0.1,0.3-0.2,0.6-0.2,1.1c0,0.4,0.1,0.8,0.2,1.1
 					c0.1,0.3,0.3,0.5,0.6,0.6c0.2,0.1,0.5,0.2,0.8,0.2s0.5-0.1,0.7-0.2s0.4-0.3,0.5-0.5s0.2-0.5,0.2-0.8h0.2h-1.4v-0.5h1.8v0.6
 					c0,0.4-0.1,0.7-0.3,1s-0.4,0.5-0.7,0.7s-0.6,0.2-1,0.2s-0.8-0.1-1.1-0.3c-0.3-0.2-0.6-0.5-0.7-0.9c-0.2-0.4-0.3-0.8-0.3-1.3
 					c0-0.4,0.1-0.7,0.2-1c0.1-0.3,0.2-0.6,0.4-0.8c0.2-0.2,0.4-0.4,0.7-0.5s0.5-0.2,0.8-0.2s0.5,0,0.7,0.1s0.4,0.2,0.6,0.3
-					c0.2,0.1,0.3,0.3,0.4,0.5c0.1,0.2,0.2,0.4,0.2,0.6h-0.5L46.3,30L46.3,30z"/>
-			</g>
-		</g>
-	</g>
-	<g>
-		<g>
-			<g>
-				<defs>
-					<rect id="SVGID_27_" width="53.7" height="33.4"/>
-				</defs>
-				<clipPath id="SVGID_28_">
-					<use xlink:href="#SVGID_27_"  style="overflow:visible;"/>
-				</clipPath>
-				<polygon class="st13" points="51.7,28.5 51.7,33.3 51.1,33.3 48.5,29.5 48.5,29.5 48.5,33.3 47.9,33.3 47.9,28.5 48.5,28.5 
-					51.1,32.2 51.1,32.2 51.1,28.5 				"/>
-			</g>
-		</g>
-	</g>
-</g>
-<g>
-	<line class="st14" x1="80.8" y1="9.9" x2="94.4" y2="23.5"/>
-	<line class="st14" x1="80.8" y1="23.5" x2="94.4" y2="9.9"/>
-</g>
-<path d="M256.3,6.3c0,1.2,0,2.3,0,3.5c0.4,0,0.7,0,1,0s0.4,0.1,0.6,0.3c1,1.2,2,2.4,3.1,3.6c0.3,0.4,0.4,0.8,0.4,1.3c0,2,0,4,0,6
+					c0.2,0.1,0.3,0.3,0.4,0.5c0.1,0.2,0.2,0.4,0.2,0.6h-0.5L46.3,30L46.3,30z" />
+                                </g>
+                            </g>
+                        </g>
+                        <g>
+                            <g>
+                                <g>
+                                    <defs>
+                                        <rect id="SVGID_27_" width="53.7" height="33.4" />
+                                    </defs>
+                                    <clipPath id="SVGID_28_">
+                                        <use xlink:href="#SVGID_27_" style="overflow:visible;" />
+                                    </clipPath>
+                                    <polygon class="st13" points="51.7,28.5 51.7,33.3 51.1,33.3 48.5,29.5 48.5,29.5 48.5,33.3 47.9,33.3 47.9,28.5 48.5,28.5 
+					51.1,32.2 51.1,32.2 51.1,28.5 				" />
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                    <g>
+                        <line class="st14" x1="80.8" y1="9.9" x2="94.4" y2="23.5" />
+                        <line class="st14" x1="80.8" y1="23.5" x2="94.4" y2="9.9" />
+                    </g>
+                    <path d="M256.3,6.3c0,1.2,0,2.3,0,3.5c0.4,0,0.7,0,1,0s0.4,0.1,0.6,0.3c1,1.2,2,2.4,3.1,3.6c0.3,0.4,0.4,0.8,0.4,1.3c0,2,0,4,0,6
 	c0,0.2,0.1,0.4,0.2,0.5c0.9,0.9,1.9,1.7,2.8,2.6c0.1,0.1,0.2,0.3,0.2,0.4c0,2.7,0,5.5,0,8.2c0,0.3-0.1,0.3-0.3,0.3
 	c-5.8,0-11.5,0-17.3,0c-0.1,0-0.3-0.1-0.4-0.2c-1.1-1.2-2.2-2.4-3.3-3.7c-0.1-0.1-0.2-0.3-0.2-0.5c0-0.3,0-0.6,0-0.8
 	c0-0.2,0-0.3,0.3-0.3c1.2-0.2,2.1-1,2.3-2.1c0-0.1,0-0.3,0-0.4c0-6.2,0-12.4,0-18.6c0-0.3-0.1-0.5-0.2-0.6c-0.8-1-1.6-2-2.4-3.1
@@ -1023,8 +1102,8 @@
 	c0-0.1,0-0.3,0-0.4c0-2.3,0-4.7,0-7c0-0.3-0.1-0.4-0.4-0.4c-5.5,0-11,0-16.5,0c-0.1,0-0.2,0-0.4,0c0,0.3,0,0.6,0,0.9
 	c1.7,0.1,2.8,1.3,2.7,3c0,0.7,0,1.4,0,2.1c0,5.7,0,11.5,0,17.2c0,0.4,0,0.8-0.1,1.2c-0.3,1.3-1.2,2-2.5,2.2
 	C243.5,28,243.5,28.3,243.5,28.6z M256.3,26.4c0.8-0.3,2.1-1.6,2.5-2.4c-0.4-0.6-0.8-1.1-1.3-1.7c-0.4-0.6-0.8-1.1-1.2-1.8
-	C256.3,22.6,256.3,24.5,256.3,26.4z"/>
-<path d="M154.8,20.1c-1.3-0.5-2.5-1.3-3.4-2.3c-1.6-1.8-2.9-3.8-3.3-6.3c-0.3-2.1,0.1-4.2,0.9-6.2c0.6-1.5,1.6-2.8,3-3.7
+	C256.3,22.6,256.3,24.5,256.3,26.4z" />
+                    <path d="M154.8,20.1c-1.3-0.5-2.5-1.3-3.4-2.3c-1.6-1.8-2.9-3.8-3.3-6.3c-0.3-2.1,0.1-4.2,0.9-6.2c0.6-1.5,1.6-2.8,3-3.7
 	c1-0.6,2.2-1,3.4-1c1.7-0.1,3.3,0,4.9,0.6c3.5,1.2,5.6,3.6,6.6,7c0.5,1.7,0.8,3.5,0.8,5.3c0,2.8-0.9,5.4-2.7,7.6
 	c-0.1,0.1-0.2,0.2-0.3,0.3c0.7,0.8,1.4,1.6,2.1,2.3c0.9,1,0.9,1,0.9,2.3c0,2.1,0,4.3,0,6.4c0,0.3-0.1,0.4-0.4,0.4
 	c-5.5,0-11,0-16.4,0c-0.2,0-0.4-0.1-0.5-0.3c-0.9-1.2-1.8-2.4-2.6-3.5c-0.1-0.1-0.1-0.3-0.1-0.4c0-0.4,0-0.8,0-1.2
@@ -1035,8 +1114,8 @@
 	c0.8-0.5,1.2-1.2,1.5-2c0.4-1.2,0.5-2.3,0.4-3.5c-0.1-0.6-0.2-1.2-0.5-1.8c-0.5-1.1-1.5-1.5-2.6-1c-0.7,0.3-1.2,0.8-1.7,1.4
 	c-0.2,0.2-0.3,0.2-0.5-0.1c0-0.1-0.1-0.1-0.1-0.2c-0.4-1.6-0.1-3,0.9-4.2c0.8-1,1.8-1.3,3-1c0.9,0.2,1.4,0.9,1.7,1.7
 	c0.5,1.3,0.7,2.7,0.7,4c0,1.5,0,2.9-0.1,4.4c-0.1,1.2-0.2,2.3-0.4,3.5c-0.5,2.9-1.8,5.3-3.7,7.4c-1.3,1.3-2.7,2.4-4.3,3.4
-	c-0.1,0.1-0.3,0.2-0.3,0.3c0,0.4,0,0.7,0,1.1c5.3,0,10.5,0,15.8,0C163.7,26.2,163.7,23.7,163.7,21.2z"/>
-<path d="M238.9,17.1c0.6,0.7,1.1,1.3,1.6,2c0.7,0.9,1.1,1.9,1.2,3c0,0.1,0,0.2,0,0.4c0,1.8,0,3.7,0,5.5c0,0.2,0.1,0.4,0.2,0.6
+	c-0.1,0.1-0.3,0.2-0.3,0.3c0,0.4,0,0.7,0,1.1c5.3,0,10.5,0,15.8,0C163.7,26.2,163.7,23.7,163.7,21.2z" />
+                    <path d="M238.9,17.1c0.6,0.7,1.1,1.3,1.6,2c0.7,0.9,1.1,1.9,1.2,3c0,0.1,0,0.2,0,0.4c0,1.8,0,3.7,0,5.5c0,0.2,0.1,0.4,0.2,0.6
 	c0.5,0.8,1.1,1.5,1.6,2.3c0.1,0.1,0.1,0.2,0.1,0.4c0,0.4,0,0.9,0,1.3c0,0.2-0.1,0.3-0.3,0.3c-2,0-4,0-6.1,0c-0.2,0-0.3-0.1-0.5-0.1
 	c-1-0.4-2.1-0.8-3.1-1.2c-0.1,0-0.2-0.1-0.3-0.1c0,0.4,0,0.7,0,1c0,0.2-0.1,0.3-0.3,0.3c-0.1,0-0.1,0-0.2,0c-3.7,0-7.4,0-11.1,0
 	c-0.3,0-0.4-0.1-0.6-0.3c-1.1-1.1-2.2-2.3-3.2-3.4c-0.1-0.1-0.1-0.3-0.2-0.4v-0.1c0-0.3-0.1-0.7,0-1c0.1-0.2,0.6-0.2,0.9-0.3
@@ -1048,8 +1127,8 @@
 	c0,0.3,0,0.6,0,0.9c0.3,0,0.6,0.1,1,0.1c0.9,0.1,1.6,0.8,1.8,1.7c0.1,0.4,0.1,0.9,0.1,1.3c0,6.5,0,12.9,0,19.4c0,0.7-0.1,1.4-0.5,2
 	c-0.5,0.7-1.2,1.2-2.1,1.3c0,0.3,0,0.5,0,0.8c3.8,0,7.5,0,11.3,0c0-0.3,0-0.6,0-0.9c-0.1,0-0.2,0-0.2,0c-1.2-0.1-2.4-1.2-2.4-2.4
 	c0-3.2,0-6.4,0-9.6c0-0.2,0.1-0.3,0.3-0.3c0.5,0,1,0,1.5,0.1c1.3,0.1,2,0.7,2.3,1.9c0.2,0.7,0.2,1.5,0.1,2.2c0,1.7,0,3.4,0,5.1
-	c0,1.1,0.2,2,0.9,2.9c0.6,0.7,1.2,1.1,2.1,1.1c1.8,0,3.6,0,5.4,0c0.1,0,0.2,0,0.4,0C240,28.4,240,28.2,240,28z"/>
-<path d="M188,26.5c-0.2,0.8,0,1.4,0.5,2c0.7,0.8,1.3,1.6,1.9,2.5c0.1,0.1,0.1,0.3,0.1,0.4c0,0.4,0,0.8,0,1.2c0,0.2-0.1,0.3-0.3,0.3
+	c0,1.1,0.2,2,0.9,2.9c0.6,0.7,1.2,1.1,2.1,1.1c1.8,0,3.6,0,5.4,0c0.1,0,0.2,0,0.4,0C240,28.4,240,28.2,240,28z" />
+                    <path d="M188,26.5c-0.2,0.8,0,1.4,0.5,2c0.7,0.8,1.3,1.6,1.9,2.5c0.1,0.1,0.1,0.3,0.1,0.4c0,0.4,0,0.8,0,1.2c0,0.2-0.1,0.3-0.3,0.3
 	c-0.1,0-0.2,0-0.2,0c-4.2,0-8.3,0-12.5,0c-0.3,0-0.5-0.1-0.7-0.3c-1.1-1.1-2.2-2.2-3.3-3.3c-0.1-0.1-0.2-0.4-0.2-0.6
 	c0-0.3,0-0.6,0-0.9s0.1-0.4,0.4-0.3c0.8,0,1.6-0.2,2.2-0.8c0.1-0.1,0.3-0.2,0.4-0.2c0-0.1-0.1-0.1-0.1-0.2c-0.1,0-0.2,0-0.3,0
 	c-1.7,0-3.4,0-5.2,0c-0.2,0-0.4-0.1-0.5-0.2c-1.1-1.1-2.1-2.2-3.2-3.4c-0.1-0.1-0.1-0.2-0.1-0.4c0-0.4,0-0.8,0-1.2
@@ -1061,55 +1140,54 @@
 	c0,1,0,1.9,0,2.9c0,0.1,0,0.3-0.1,0.4c-0.4,0.9-1.2,1.5-2.2,1.8c-0.3,0.1-0.7,0.1-1,0.1c0,0.3,0,0.6,0,0.8c4.4,0,8.7,0,13.1,0
 	c0-0.4,0-0.7,0-1.1c-0.5,0-1.1,0-1.6,0c-1.1,0-2.2-1.1-2.1-2.2c0-0.9,0-1.9,0-2.8c0-0.3,0.1-0.4,0.3-0.4c1,0,2,0,2.9,0
 	c0.2,0,0.4,0,0.5,0c0-0.4,0-0.7,0-1.1c-0.1,0-0.2,0-0.3,0c-1,0-2,0-3,0c-0.5,0-0.5,0-0.5-0.5c0-6.3,0-12.6,0-19c0-0.1,0-0.3,0-0.4
-	C181,1.9,178.9,1.9,176.7,1.5z"/>
-<path d="M218.4,18.2c0,3.6-0.6,6.8-2.1,9.8c-0.8,1.7-1.9,3.2-3.5,4.2c-1,0.7-2.2,1.1-3.4,1.1c-2.7,0.1-5-0.7-7.1-2.3
+	C181,1.9,178.9,1.9,176.7,1.5z" />
+                    <path d="M218.4,18.2c0,3.6-0.6,6.8-2.1,9.8c-0.8,1.7-1.9,3.2-3.5,4.2c-1,0.7-2.2,1.1-3.4,1.1c-2.7,0.1-5-0.7-7.1-2.3
 	c-2.7-2.1-4.3-5-5.5-8.2c-0.6-1.7-1-3.4-1.2-5.2c-0.2-1.6-0.2-3.2,0-4.7c0.2-2.2,0.7-4.4,1.6-6.4s2.1-3.8,4-5.1
 	c2.2-1.6,4.6-1.7,7.1-0.7c1.9,0.8,3.5,2.1,4.9,3.6c2.1,2.3,3.6,4.9,4.5,7.8c0.4,1.4,0.7,2.8,0.7,4.2
 	C218.3,17.1,218.4,17.8,218.4,18.2z M214.4,15.1c-0.1-0.9-0.1-1.8-0.2-2.6c-0.2-2-0.7-4-1.6-5.8c-0.9-1.9-2-3.6-3.7-4.8
 	c-1.4-1-3-1.5-4.7-1.2c-1.5,0.2-2.7,1-3.8,2c-1.3,1.2-2.2,2.7-2.9,4.4c-1.4,3.4-1.8,7-1.5,10.6c0.2,1.7,0.6,3.4,1.2,5
-	c0.9,2.2,2.1,4.2,4,5.7c2.3,1.7,5.1,1.9,7.4,0.3c1.7-1.1,2.8-2.6,3.7-4.3C213.7,21.4,214.3,18.3,214.4,15.1z"/>
-<path d="M131.2,8.6c0-0.9,0-1.7,0-2.5c0.2-0.1,0.3,0,0.3,0.2c0.2,0.6,0.4,1.2,0.9,1.6c0.5,0.3,1,0.5,1.6,0.3
+	c0.9,2.2,2.1,4.2,4,5.7c2.3,1.7,5.1,1.9,7.4,0.3c1.7-1.1,2.8-2.6,3.7-4.3C213.7,21.4,214.3,18.3,214.4,15.1z" />
+                    <path d="M131.2,8.6c0-0.9,0-1.7,0-2.5c0.2-0.1,0.3,0,0.3,0.2c0.2,0.6,0.4,1.2,0.9,1.6c0.5,0.3,1,0.5,1.6,0.3
 	c0.4-0.1,0.7-0.4,0.8-0.9c0.1-0.4-0.1-0.8-0.4-1c-0.3-0.2-0.7-0.4-1.1-0.6c-0.5-0.3-1.1-0.6-1.5-0.9c-0.7-0.6-0.7-1.3-0.4-2.1
 	c0.3-0.8,0.9-1.1,1.7-1.2c0.6-0.1,1.2,0,1.7,0.2c0.3,0.1,0.5,0.2,0.7-0.2c0,0,0.1-0.1,0.2-0.1s0.1,0.1,0.1,0.2c0,0.6,0,1.2,0,1.9
 	c0,0.1-0.1,0.1-0.1,0.2c-0.1-0.1-0.2-0.1-0.2-0.2c-0.2-0.6-0.5-1.1-1.1-1.5s-1.3-0.3-1.7,0.1c-0.3,0.3-0.3,0.9,0,1.2
 	c0.2,0.2,0.4,0.3,0.6,0.4c0.5,0.3,1.1,0.5,1.6,0.8c0.9,0.4,1.4,1.3,1.2,2.2c-0.2,0.9-0.9,1.6-1.9,1.8c-0.7,0.1-1.3,0-2-0.2
-	c-0.3-0.1-0.6-0.2-0.7,0.2C131.4,8.6,131.3,8.6,131.2,8.6z"/>
-<path d="M125.2,8.4c-1.2,0-2.4,0-3.7,0c0.1-0.1,0.2-0.2,0.3-0.3c0.7-0.1,0.8-0.2,0.8-0.9c0-1.5,0-3,0-4.6c0-0.6-0.1-0.7-0.7-0.8
+	c-0.3-0.1-0.6-0.2-0.7,0.2C131.4,8.6,131.3,8.6,131.2,8.6z" />
+                    <path d="M125.2,8.4c-1.2,0-2.4,0-3.7,0c0.1-0.1,0.2-0.2,0.3-0.3c0.7-0.1,0.8-0.2,0.8-0.9c0-1.5,0-3,0-4.6c0-0.6-0.1-0.7-0.7-0.8
 	c-0.1,0-0.2-0.1-0.3-0.2V1.5c0.1,0,0.1,0,0.2,0c1,0,2.1,0,3.1,0c0.1,0,0.2,0.1,0.3,0.1c-0.1,0.1-0.2,0.1-0.3,0.2
-	c-0.6,0.1-0.7,0.2-0.7,0.8c0,1.5,0,3.1,0,4.6c0,0.6,0.2,0.8,0.8,0.9C125.1,8.2,125.2,8.3,125.2,8.4C125.3,8.4,125.3,8.4,125.2,8.4z"
-	/>
-<path d="M136.4,6.1c0.1-0.9,0.3-1.6,1-2.1c1-0.7,2.4-0.4,2.9,0.8c0.4,0.9,0.4,1.8-0.1,2.7c-0.4,0.7-1.1,1.1-1.9,1s-1.4-0.5-1.7-1.3
+	c-0.6,0.1-0.7,0.2-0.7,0.8c0,1.5,0,3.1,0,4.6c0,0.6,0.2,0.8,0.8,0.9C125.1,8.2,125.2,8.3,125.2,8.4C125.3,8.4,125.3,8.4,125.2,8.4z" />
+                    <path d="M136.4,6.1c0.1-0.9,0.3-1.6,1-2.1c1-0.7,2.4-0.4,2.9,0.8c0.4,0.9,0.4,1.8-0.1,2.7c-0.4,0.7-1.1,1.1-1.9,1s-1.4-0.5-1.7-1.3
 	C136.5,6.9,136.5,6.5,136.4,6.1z M137.7,6.3c0,0.4,0.1,1,0.2,1.5c0.1,0.3,0.3,0.5,0.6,0.5c0.3,0,0.6-0.2,0.6-0.7c0-0.9,0-1.9,0-2.8
-	c0-0.2-0.2-0.6-0.4-0.7c-0.4-0.2-0.8,0.1-0.9,0.6C137.8,5.2,137.8,5.6,137.7,6.3z"/>
-<path d="M128.1,8.4c-0.9,0-1.7,0-2.6,0c0.1-0.1,0.2-0.2,0.2-0.3C126,8,126,7.8,126,7.5c0-1.7,0-3.4,0-5.2c0-0.3-0.1-0.5-0.4-0.6
+	c0-0.2-0.2-0.6-0.4-0.7c-0.4-0.2-0.8,0.1-0.9,0.6C137.8,5.2,137.8,5.6,137.7,6.3z" />
+                    <path d="M128.1,8.4c-0.9,0-1.7,0-2.6,0c0.1-0.1,0.2-0.2,0.2-0.3C126,8,126,7.8,126,7.5c0-1.7,0-3.4,0-5.2c0-0.3-0.1-0.5-0.4-0.6
 	c-0.1,0-0.1-0.1-0.1-0.2c0.1,0,0.1-0.1,0.2-0.1c0.6,0,1.1,0,1.8,0c0,0.2,0,0.3,0,0.4c0,1.8,0,3.5,0,5.3c0,0.4,0,0.8,0.5,0.9
-	C128,8.2,128,8.3,128.1,8.4z"/>
-<path d="M146.7,6c-0.8,0-1.6,0-2.5,0c0.1,0.5,0.2,1,0.4,1.4c0.3,0.7,1.1,0.7,1.7,0.1c0.1-0.1,0.2-0.3,0.4-0.1
+	C128,8.2,128,8.3,128.1,8.4z" />
+                    <path d="M146.7,6c-0.8,0-1.6,0-2.5,0c0.1,0.5,0.2,1,0.4,1.4c0.3,0.7,1.1,0.7,1.7,0.1c0.1-0.1,0.2-0.3,0.4-0.1
 	c-0.5,1-1.4,1.5-2.3,1.2c-0.4-0.1-0.7-0.4-1-0.7c-0.6-0.9-0.5-2.6,0.2-3.5c0.7-0.9,2.4-0.9,2.8,0.5C146.6,5.1,146.6,5.5,146.7,6z
 	 M144.3,5.5c0.5,0,0.9,0,1.3,0c0-0.4-0.1-0.7-0.1-1.1c0-0.3-0.2-0.5-0.5-0.5c-0.3,0-0.5,0.2-0.5,0.4C144.4,4.8,144.3,5.1,144.3,5.5z
-	"/>
-<path d="M140.6,8.4c0.1-0.1,0.1-0.2,0.2-0.2c0.2-0.1,0.3-0.3,0.3-0.6c0-1.7,0-3.4,0-5.2c0-0.3-0.1-0.5-0.4-0.6
+	" />
+                    <path d="M140.6,8.4c0.1-0.1,0.1-0.2,0.2-0.2c0.2-0.1,0.3-0.3,0.3-0.6c0-1.7,0-3.4,0-5.2c0-0.3-0.1-0.5-0.4-0.6
 	c-0.1,0-0.1-0.1-0.2-0.2c0.7,0,1.2,0,1.8,0c0,0.1,0,0.3,0,0.4c0,1.8,0,3.7,0,5.5c0,0.3,0,0.6,0.4,0.7c0,0,0.1,0.1,0.1,0.2
-	C142.1,8.4,141.4,8.4,140.6,8.4z"/>
-<path class="st15" d="M243.5,28.6c0-0.3,0-0.5,0-0.8c1.3-0.2,2.2-0.9,2.5-2.2c0.1-0.4,0.1-0.8,0.1-1.2c0-5.7,0-11.5,0-17.2
+	C142.1,8.4,141.4,8.4,140.6,8.4z" />
+                    <path class="st15" d="M243.5,28.6c0-0.3,0-0.5,0-0.8c1.3-0.2,2.2-0.9,2.5-2.2c0.1-0.4,0.1-0.8,0.1-1.2c0-5.7,0-11.5,0-17.2
 	c0-0.7,0-1.4,0-2.1c0.1-1.7-1.1-2.9-2.7-3c0-0.3,0-0.6,0-0.9c0.1,0,0.3,0,0.4,0c5.5,0,11,0,16.5,0c0.4,0,0.4,0.1,0.4,0.4
 	c0,2.3,0,4.7,0,7c0,0.1,0,0.2,0,0.4c-0.4,0-0.7,0-1,0c-0.1-0.6-0.1-1.2-0.2-1.8c-0.3-1.5-1.2-2.6-2.4-3.5c-0.9-0.7-1.8-1.2-2.9-1.4
 	c-0.5-0.1-1-0.1-1.6-0.1c-0.3,0-0.4,0.1-0.4,0.4c0,1.8,0,3.6,0,5.4c0,1.9,0,3.7,0,5.6c0,0.3,0.1,0.5,0.4,0.4c0.7-0.1,1.3,0,2-0.2
 	c1.1-0.3,1.9-1.4,1.9-2.5c0-0.3,0-0.7,0-1c0.3,0,0.6,0,0.9,0c0,3.2,0,6.3,0,9.5c-0.4,0-0.7,0-1.2,0c0-0.3,0-0.7,0-1.1
 	c0-0.5,0-1-0.1-1.5c-0.2-1.1-1.1-1.8-2.2-1.9c-0.5,0-1,0-1.5,0c-0.1,0-0.2,0.1-0.2,0.2s0,0.2,0,0.2c0,3.7,0,7.4,0,11.1
 	c0,0.4,0.1,0.5,0.4,0.5c1.8,0.1,3.4-0.4,4.7-1.5c0.9-0.8,1.8-1.7,2.2-2.8c0.2-0.7,0.4-1.4,0.6-2.1c0.1,0,0.3,0,0.5,0
-	c0,2.5,0,4.9,0,7.4C255,28.6,249.3,28.6,243.5,28.6z"/>
-<path class="st15" d="M256.3,26.4c0-1.9,0-3.8,0-5.8c0.4,0.6,0.8,1.2,1.2,1.8c0.4,0.6,0.8,1.1,1.3,1.7C258.3,24.8,257,26,256.3,26.4
-	z"/>
-<path class="st15" d="M163.7,21.2c0,2.5,0,5,0,7.5c-5.2,0-10.5,0-15.8,0c0-0.4,0-0.7,0-1.1c0-0.1,0.2-0.2,0.3-0.3
+	c0,2.5,0,4.9,0,7.4C255,28.6,249.3,28.6,243.5,28.6z" />
+                    <path class="st15" d="M256.3,26.4c0-1.9,0-3.8,0-5.8c0.4,0.6,0.8,1.2,1.2,1.8c0.4,0.6,0.8,1.1,1.3,1.7C258.3,24.8,257,26,256.3,26.4
+	z" />
+                    <path class="st15" d="M163.7,21.2c0,2.5,0,5,0,7.5c-5.2,0-10.5,0-15.8,0c0-0.4,0-0.7,0-1.1c0-0.1,0.2-0.2,0.3-0.3
 	c1.6-0.9,3.1-2,4.3-3.4c2-2.1,3.3-4.5,3.7-7.4c0.2-1.2,0.3-2.3,0.4-3.5c0.1-1.5,0.1-2.9,0.1-4.4c0-1.4-0.2-2.7-0.7-4
 	c-0.3-0.8-0.8-1.5-1.7-1.7c-1.2-0.3-2.2,0-3,1c-1,1.3-1.3,2.7-0.9,4.2c0,0.1,0,0.2,0.1,0.2c0.1,0.3,0.3,0.3,0.5,0.1
 	c0.5-0.6,1-1.1,1.7-1.4c1.1-0.4,2.1-0.1,2.6,1c0.2,0.6,0.4,1.2,0.5,1.8c0.1,1.2,0,2.4-0.4,3.5c-0.3,0.8-0.7,1.6-1.5,2
 	c-1,0.6-2.3,0.4-3.4-0.4c-1.2-0.9-1.8-2.2-2-3.6c-0.3-2.8,0.2-5.3,1.8-7.6c1.1-1.6,2.6-2.5,4.5-2.7c3.3-0.3,6.1,1,7.7,4.3
 	c0.6,1.3,1,2.7,1.1,4.2c0.2,2.1-0.1,4.2-1,6.1c-1,2.1-2.4,3.8-4.2,5.2c-0.8,0.7-1.8,1.2-2.6,1.8c-0.1,0.1-0.1,0.2-0.2,0.3
 	c0.1,0.1,0.2,0.2,0.3,0.2c1.3,0,2.5,0,3.8,0c0.4,0,0.9,0,1.3-0.1c0.9-0.2,1.4-0.7,1.7-1.5c0.1-0.2,0.1-0.3,0.4-0.3
-	C163.3,21.2,163.5,21.2,163.7,21.2z"/>
-<path class="st15" d="M240,28c0,0.2,0,0.4,0,0.7c-0.1,0-0.3,0-0.4,0c-1.8,0-3.6,0-5.4,0c-0.9,0-1.6-0.4-2.1-1.1
+	C163.3,21.2,163.5,21.2,163.7,21.2z" />
+                    <path class="st15" d="M240,28c0,0.2,0,0.4,0,0.7c-0.1,0-0.3,0-0.4,0c-1.8,0-3.6,0-5.4,0c-0.9,0-1.6-0.4-2.1-1.1
 	c-0.7-0.8-1-1.8-0.9-2.9c0.1-1.7,0-3.4,0-5.1c0-0.7,0-1.5-0.1-2.2c-0.3-1.2-1.1-1.9-2.3-1.9c-0.5,0-1,0-1.5-0.1
 	c-0.2,0-0.3,0.1-0.3,0.3c0,3.2,0,6.4,0,9.6c0,1.2,1.2,2.4,2.4,2.4c0.1,0,0.1,0,0.2,0c0,0.3,0,0.6,0,0.9c-3.8,0-7.5,0-11.3,0
 	c0-0.3,0-0.5,0-0.8c0.9-0.1,1.6-0.6,2.1-1.3c0.4-0.6,0.5-1.3,0.5-2c0-6.5,0-12.9,0-19.4c0-0.4,0-0.9-0.1-1.3
@@ -1118,34 +1196,34 @@
 	c0.1,0.1,0.2,0.2,0.2,0.2c0.5,0.3,1.1,0.5,1.5,0.9c1.3,1.1,2.1,2.4,2.1,4.2c0,1.8,0,3.7,0,5.5c0,1,1,2,1.9,2.1
 	C239.8,27.9,239.9,27.9,240,28z M227,8.3c0,1.9,0,3.7,0,5.6c0,0.3,0.1,0.4,0.3,0.4c0.4,0,0.8,0,1.3,0c1.1-0.1,2.1-0.5,2.6-1.6
 	c0.2-0.5,0.4-1.2,0.4-1.8c0.1-1.6,0-3.2,0-4.8c0-0.6-0.1-1.2-0.2-1.7c-0.3-1-0.9-1.8-2-1.9c-0.6-0.1-1.3-0.1-1.9-0.1
-	c-0.3,0-0.4,0.1-0.4,0.4C227,4.6,227,6.5,227,8.3z"/>
-<path class="st15" d="M176.7,1.5c2.1,0.4,4.3,0.4,6.4-0.1c0,0.2,0,0.3,0,0.4c0,6.3,0,12.6,0,19c0,0.5,0,0.5,0.5,0.5c1,0,2,0,3,0
+	c-0.3,0-0.4,0.1-0.4,0.4C227,4.6,227,6.5,227,8.3z" />
+                    <path class="st15" d="M176.7,1.5c2.1,0.4,4.3,0.4,6.4-0.1c0,0.2,0,0.3,0,0.4c0,6.3,0,12.6,0,19c0,0.5,0,0.5,0.5,0.5c1,0,2,0,3,0
 	c0.1,0,0.2,0,0.3,0c0,0.4,0,0.7,0,1.1c-0.2,0-0.4,0-0.5,0c-1,0-2,0-2.9,0c-0.3,0-0.4,0.1-0.3,0.4c0,0.9,0,1.9,0,2.8
 	c0,1.1,1.1,2.2,2.1,2.2c0.5,0,1.1,0,1.6,0c0,0.4,0,0.7,0,1.1c-4.4,0-8.7,0-13.1,0c0-0.3,0-0.5,0-0.8c0.3,0,0.7,0,1-0.1
 	c1-0.2,1.7-0.8,2.2-1.8c0.1-0.1,0.1-0.3,0.1-0.4c0-1,0-1.9,0-2.9c0-0.3-0.1-0.4-0.4-0.4c-2.9,0-5.9,0-8.8,0c-0.1,0-0.3,0-0.4,0
 	c0-0.5-0.1-1,0-1.4c0.1-0.3,0.4-0.5,0.6-0.8c2.2-2.5,3.9-5.2,5.3-8.2c1.1-2.3,2.1-4.6,2.7-7c0.3-1.1,0.5-2.2,0.7-3.3
 	C176.7,1.6,176.7,1.5,176.7,1.5z M177,14.1c0-2.2,0-4.4,0-6.7c0-0.1,0-0.2,0-0.2c0-0.1-0.1-0.2-0.1-0.2c-0.1,0-0.2,0.1-0.2,0.1
 	c-0.1,0.1-0.1,0.2-0.1,0.2c-0.6,1.3-1.1,2.6-1.8,3.8c-1.6,3.3-3.5,6.5-5.5,9.5c-0.1,0.1-0.1,0.2-0.1,0.4c0.1,0,0.2,0.1,0.4,0.1
-	c2.4,0,4.7,0,7.1,0c0.3,0,0.4-0.1,0.4-0.4C177,18.6,177,16.4,177,14.1z"/>
-<path class="st15" d="M214.4,15.1c0,3.2-0.6,6.3-2.1,9.2c-0.9,1.7-2,3.3-3.7,4.3c-2.4,1.6-5.2,1.4-7.4-0.3c-1.9-1.5-3.1-3.5-4-5.7
+	c2.4,0,4.7,0,7.1,0c0.3,0,0.4-0.1,0.4-0.4C177,18.6,177,16.4,177,14.1z" />
+                    <path class="st15" d="M214.4,15.1c0,3.2-0.6,6.3-2.1,9.2c-0.9,1.7-2,3.3-3.7,4.3c-2.4,1.6-5.2,1.4-7.4-0.3c-1.9-1.5-3.1-3.5-4-5.7
 	c-0.6-1.6-1-3.3-1.2-5c-0.4-3.7,0-7.2,1.5-10.6c0.7-1.6,1.6-3.1,2.9-4.4c1.1-1,2.3-1.8,3.8-2c1.8-0.3,3.3,0.2,4.7,1.2
 	c1.7,1.2,2.8,2.9,3.7,4.8c0.8,1.9,1.4,3.8,1.6,5.8C214.3,13.4,214.3,14.2,214.4,15.1z M203,15.1c0,3.6,0,7.2,0,10.8
 	c0,0.2,0,0.5,0.1,0.7c0.3,1.3,1.7,2.1,2.9,1.5c0.9-0.4,1.3-1.2,1.3-2.1c0-7.2,0-14.3,0-21.5c0-0.2,0-0.5-0.1-0.7
-	c-0.2-1.2-1.4-2-2.6-1.7c-0.9,0.2-1.6,1.2-1.6,2.2C203,7.8,203,11.4,203,15.1z"/>
-<path class="st15" d="M137.7,6.3c0-0.6,0.1-1.1,0.1-1.6c0.1-0.6,0.5-0.9,0.9-0.6c0.2,0.1,0.4,0.4,0.4,0.7c0,0.9,0,1.9,0,2.8
-	c0,0.5-0.3,0.7-0.6,0.7c-0.3,0-0.5-0.2-0.6-0.5C137.8,7.2,137.8,6.7,137.7,6.3z"/>
-<path class="st15" d="M144.3,5.5c0.1-0.4,0.1-0.8,0.2-1.1c0.1-0.3,0.2-0.4,0.5-0.4c0.3,0,0.4,0.2,0.5,0.5c0.1,0.4,0.1,0.7,0.1,1.1
-	C145.2,5.5,144.8,5.5,144.3,5.5z"/>
-<path d="M227,8.3c0-1.8,0-3.7,0-5.5c0-0.3,0.1-0.4,0.4-0.4c0.6,0,1.3,0,1.9,0.1c1.1,0.1,1.7,0.9,2,1.9c0.1,0.6,0.2,1.1,0.2,1.7
+	c-0.2-1.2-1.4-2-2.6-1.7c-0.9,0.2-1.6,1.2-1.6,2.2C203,7.8,203,11.4,203,15.1z" />
+                    <path class="st15" d="M137.7,6.3c0-0.6,0.1-1.1,0.1-1.6c0.1-0.6,0.5-0.9,0.9-0.6c0.2,0.1,0.4,0.4,0.4,0.7c0,0.9,0,1.9,0,2.8
+	c0,0.5-0.3,0.7-0.6,0.7c-0.3,0-0.5-0.2-0.6-0.5C137.8,7.2,137.8,6.7,137.7,6.3z" />
+                    <path class="st15" d="M144.3,5.5c0.1-0.4,0.1-0.8,0.2-1.1c0.1-0.3,0.2-0.4,0.5-0.4c0.3,0,0.4,0.2,0.5,0.5c0.1,0.4,0.1,0.7,0.1,1.1
+	C145.2,5.5,144.8,5.5,144.3,5.5z" />
+                    <path d="M227,8.3c0-1.8,0-3.7,0-5.5c0-0.3,0.1-0.4,0.4-0.4c0.6,0,1.3,0,1.9,0.1c1.1,0.1,1.7,0.9,2,1.9c0.1,0.6,0.2,1.1,0.2,1.7
 	c0,1.6,0,3.2,0,4.8c0,0.6-0.2,1.2-0.4,1.8c-0.5,1.1-1.4,1.5-2.6,1.6c-0.4,0-0.8,0-1.3,0c-0.3,0-0.3-0.1-0.3-0.4
-	C227,12.1,227,10.2,227,8.3z"/>
-<path d="M177,14.1c0,2.2,0,4.4,0,6.7c0,0.3-0.1,0.4-0.4,0.4c-2.4,0-4.7,0-7.1,0c-0.1,0-0.2-0.1-0.4-0.1c0-0.1,0.1-0.3,0.1-0.4
+	C227,12.1,227,10.2,227,8.3z" />
+                    <path d="M177,14.1c0,2.2,0,4.4,0,6.7c0,0.3-0.1,0.4-0.4,0.4c-2.4,0-4.7,0-7.1,0c-0.1,0-0.2-0.1-0.4-0.1c0-0.1,0.1-0.3,0.1-0.4
 	c2.1-3,3.9-6.2,5.5-9.5c0.6-1.2,1.2-2.5,1.8-3.8c0-0.1,0.1-0.2,0.1-0.2c0.1-0.1,0.2-0.1,0.2-0.1s0.1,0.1,0.1,0.2s0,0.2,0,0.2
-	C177,9.7,177,11.9,177,14.1z M176.6,17.3L176.6,17.3c-0.7,1.1-1.3,2.3-2,3.5c0.7,0,1.3,0,2,0C176.6,19.6,176.6,18.5,176.6,17.3z"/>
-<path d="M203,15.1c0-3.6,0-7.2,0-10.9c0-1,0.7-2,1.6-2.2c1.2-0.3,2.4,0.4,2.6,1.7c0,0.2,0.1,0.5,0.1,0.7c0,7.2,0,14.3,0,21.5
-	c0,1-0.4,1.7-1.3,2.1c-1.2,0.6-2.6-0.2-2.9-1.5c-0.1-0.2-0.1-0.5-0.1-0.7C203,22.2,203,18.6,203,15.1z"/>
-<path class="st15" d="M176.6,17.3c0,1.1,0,2.3,0,3.5c-0.6,0-1.3,0-2,0C175.3,19.6,175.9,18.5,176.6,17.3L176.6,17.3z"/>
-</svg>
+	C177,9.7,177,11.9,177,14.1z M176.6,17.3L176.6,17.3c-0.7,1.1-1.3,2.3-2,3.5c0.7,0,1.3,0,2,0C176.6,19.6,176.6,18.5,176.6,17.3z" />
+                    <path d="M203,15.1c0-3.6,0-7.2,0-10.9c0-1,0.7-2,1.6-2.2c1.2-0.3,2.4,0.4,2.6,1.7c0,0.2,0.1,0.5,0.1,0.7c0,7.2,0,14.3,0,21.5
+	c0,1-0.4,1.7-1.3,2.1c-1.2,0.6-2.6-0.2-2.9-1.5c-0.1-0.2-0.1-0.5-0.1-0.7C203,22.2,203,18.6,203,15.1z" />
+                    <path class="st15" d="M176.6,17.3c0,1.1,0,2.3,0,3.5c-0.6,0-1.3,0-2,0C175.3,19.6,175.9,18.5,176.6,17.3L176.6,17.3z" />
+                </svg>
 
             </div>
 
