@@ -498,10 +498,7 @@
                $(this).animate({
                    opacity: .2
                }, 50);
-
-
            });
-
        }
 
        //WAYPOINTS GRAFICO ORE PERSONALIZZATI----------------------------------------------------------------------------------------------
@@ -512,7 +509,7 @@
            element: document.getElementById('grafico_automatico'), //byId con l'id...
 
            handler: function () {
-               console.log("Hello world!");
+               //console.log("Hello world!");
                //scendi le barra
                $("#utente-mattina").css("transform", `translateY(${-(altezza_mattina)+1.5}px)`);
 
@@ -523,30 +520,30 @@
 
                $("#italiano-mattina").delay(0).animate({
                    height: 48.3
-               }, 3000);
+               }, 2000);
 
                $("#italiano-pomeriggio").delay(500).animate({
                    height: 108.3
-               }, 3000);
+               }, 2000);
 
                $("#italiano-sera").delay(1500).animate({
                    height: 125.6
-               }, 3000);
+               }, 2000);
 
                $("#utente-mattina").delay(0).animate({
                    height: altezza_mattina
-               }, 3000);
+               }, 2000);
 
                $("#utente-pomeriggio").delay(1000).animate({
                    height: altezza_pomeriggio
-               }, 3000);
+               }, 2000);
 
                $("#utente-sera").delay(2000).animate({
                    height: altezza_sera
-               }, 3000);
+               }, 2000);
 
            },
-           offset: '80%'
+           offset: '60%'
        });
 
 
