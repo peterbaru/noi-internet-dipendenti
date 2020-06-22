@@ -239,29 +239,6 @@ p {
     z-index: 10;
 }
 
-/*
-#studio_lavoro {
-    position: relative;
-    left: 43%;
-    float: left;
-}
-
-#svago {
-    position: relative;
-    left: -34%;
-    float: left;
-}
-*/
-
-/*
-#nomi_svagoelav {
-    position: absolute;
-    left: 50%;
-    top: 15vh;
-    transform: translate(-50%, -50%)
-}
-*/
-
 #valori_numerici {
     position: relative;
     left: 50%;
@@ -293,20 +270,6 @@ ul.ul-slider {
     padding: 0;
     margin-bottom: 0px;
 }
-
-/*
-#numero_svago {
-    float: left;
-    margin-left: 10%;
-    position: relative;
-}
-
-#numero_studio {
-    float: left;
-    margin-left: 32%;
-    position: relative;
-}
-*/
 
 .slidecontainer {
     width: 253px;
@@ -342,7 +305,7 @@ ul.ul-slider {
 
 .barra-numeri {
     position: relative;
-    transform: translate(0px, -75px);
+    transform: translate(0px, -82px);
     z-index: -1;
 }
 
@@ -365,16 +328,6 @@ ul.ul-slider {
     margin-bottom: 3%;
     color: var(--blu-color);
 }
-
-/*
-.pulsante {
-    float: left;
-    width: 76px;
-    margin-left: 10%;
-    position: relative;
-    cursor: pointer;
-}
-*/
 
 ul li.pulsante {
     display: inline-block;
@@ -541,7 +494,7 @@ ul.ul-pulsante {
 }
 
 #consumo_medio_bubble {
-margin-top: -53%;
+    margin-top: -53%;
     padding: 30p;
     position: absolute;
     left: 50%;
@@ -596,7 +549,7 @@ margin-top: -53%;
 }
 
 #descrizione_numero {
-margin-top: -33px;
+    margin-top: -33px;
     color: var(--rosso-color);
 }
 
@@ -1072,25 +1025,39 @@ ul.ul-nazioni {
     border-radius: 10px;
 }
 
-#ringraziamenti h3 {
-    margin-top: 20%;
-    text-align: left;
-}
-
 #ringraziamenti p {
     color: var(--blu-color);
-    padding-left: 10%;
-    padding-right: 10%;
+    padding: 0;
     margin-top: 30px;
 }
 
-#collaborazione {
-    margin-top: 10%;
-    margin-bottom: 10%;
+ul li.li-logo {
+    display: inline-block;
+    width: 83px;
+    padding: 0;
     position: relative;
-    width: 78%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: -13vh;
+}
+
+ul li.li-collaborazione {
+    display: inline-block;
+    width: 83%;
+    padding: 0;
+    margin-left: 15px;
+    text-align: left;
+}
+
+ul.ul-ringraziamenti {
+    list-style-type: none;
+    margin-top: 30px;
+    padding-right: 10%;
+    padding-left: 10%;
+    margin-bottom: 0px;
+}
+
+
+.logo-ud {
+    fill: var(--blu-color);
 }
 
 #loading {
@@ -1102,7 +1069,7 @@ ul.ul-nazioni {
 }
 
 .note {
-font-size: 1rem;
+    font-size: 1rem;
     text-align: left;
     color: #b5b5b5;
     margin-left: 5%;
@@ -1132,6 +1099,6 @@ a:hover {
 }
 
 .modifica_grafico {
- margin: 5%;
-        
+    margin: 5%;
+
 }
