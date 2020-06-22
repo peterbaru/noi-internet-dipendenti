@@ -1,0 +1,183 @@
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+Note: The best way to structure the use of media queries is to create the queries
+near the relevant code. For example, if you wanted to change the styles for buttons
+on small devices, paste the mobile query code up in the buttons section and style it
+there.
+*/
+
+/* iPhone 5/SE */
+@media (min-width: 320px) {
+
+    h1 {
+        font-size: 29px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 13px;
+    }
+
+    #slider_domanda3 {
+        top: 79vh;
+    }
+
+    .indietro {
+        transform: translate(124%, -50%);
+    }
+
+    #domanda2 p {
+        margin-top: 13vh;
+    }
+
+    #titolo_mattina {
+        top: -3vh;
+    }
+
+    #titolo_pomeriggio {
+        top: 5vh;
+    }
+
+    #titolo_sera {
+        top: 13vh;
+    }
+
+    #consumo_medio_bubble {
+        margin-top: -63%;
+    }
+
+    ul.ul-nazioni {
+        margin-top: -30px;
+    }
+
+    ul.ul-ringraziamenti {
+        list-style-type: none;
+        margin-top: 30px;
+        padding-left: 5%;
+        margin-bottom: 0px;
+    }
+
+    #ringraziamenti p {
+        font-size: 10px;
+    }
+
+    b,
+    strong {
+        font-size: 10px;
+    }
+
+    ul li.li-collaborazione {
+        width: 62%;
+    }
+
+    l li.li-logo {
+        top: -15vh;
+    }
+}
+
+/* GT */
+@media (min-width: 360px) {
+
+    #slider_domanda3 {
+        top: 72vh;
+    }
+
+    .indietro {
+        transform: translate(200%, -50%);
+    }
+
+    #domanda2 p {
+        margin-top: 16vh;
+    }
+
+    #titolo_mattina {
+        top: -3vh;
+    }
+
+    #titolo_pomeriggio {
+        top: 5vh;
+    }
+
+    #titolo_sera {
+        top: 13vh;
+    }
+
+    #consumo_medio_bubble {
+        margin-top: -55%;
+    }
+}
+
+/* iPhone 6/7/8 */
+@media (min-width: 375px) {
+
+    h1 {
+        font-size: 38px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    #slider_domanda3 {
+        top: 72vh;
+    }
+
+    .indietro {
+        transform: translate(200%, -50%);
+    }
+
+    #domanda2 p {
+        margin-top: 16vh;
+    }
+
+    #consumo_medio_bubble {
+        margin-top: -55%;
+    }
+
+    ul.ul-nazioni {
+        margin-top: -30px;
+    }
+}
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+
+    #titolo_mattina {
+        top: -1vh;
+    }
+
+    #titolo_pomeriggio {
+        top: 8vh;
+    }
+
+    #titolo_sera {
+        top: 17vh;
+    }
+
+    .indietro {
+        transform: translate(270%, -55%);
+    }
+
+    ul li.li-collaborazione {
+        width: 70%;
+    }
+
+    ul li.li-logo {
+        top: -9vh;
+    }
+}
+
+/* Ipad */
+@media (min-width: 550px) {
+
+
+}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {
+    
+}
