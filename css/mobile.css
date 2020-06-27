@@ -110,30 +110,34 @@ there.
 
     #domanda1 h2 {
         position: relative;
-        top: 13vh;
+        top: 10vh;
     }
 
     #domanda2 h2 {
         position: relative;
-        top: 13vh;
+        top: 10vh;
     }
 
     #domanda3 h2 {
         position: relative;
-        top: 13vh;
+        top: 10vh;
     }
 
     #domanda2 p {
-        margin-top: 9vh;
+        margin-top: 7vh;
     }
 
     #domanda1 p {
-        margin-top: 9vh;
+        margin-top: 7vh;
     }
 
     #domanda3 p {
-        margin-top: 9vh;
+        margin-top: 7vh;
     }
+    
+    #paragrafo1 h2 {
+    margin-top: 13vh;
+}
 
 
 }
