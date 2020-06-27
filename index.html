@@ -90,10 +90,6 @@
 
     <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <!-- <div id="banner">
-        &nbsp;
-    </div>-->
-    <!-- chiusura banner -->
 
     <div class="container">
 
@@ -102,7 +98,7 @@
                 <div class="columns offset-by-four four">
 
                     <h1>Noi, </br>internet-dipendenti</h1>
-                    <p>
+                    <p id="descrizione">
                         Le nostre vite, società e relazioni sono internet-dipendenti. Ma le crisi recenti ci hanno rivelato anche quanto queste connessioni possano essere fragili. Quanto sappiamo davvero di come funziona la rete e di quello che possiamo fare per preservarla?
                     </p>
 
@@ -179,6 +175,7 @@
 
                     <!-- il bottone con class selezionato è quello inizialmente attivo -->
 
+                    <div id="generale_pulsanti">
                     <ul class="ul-pulsante">
                         <li class="pulsante" id="pulsante-social" data-nome="social">
                             <img src="images/icone/non-premute/social.svg" />
@@ -213,6 +210,7 @@
                             <h3>ACQUISTI</h3>
                         </li>
                     </ul>
+                        </div>
 
                     <div class="indietro">
                         <a href="#domanda3"> <img src="images/indietro.svg" /> </a>
@@ -230,6 +228,7 @@
                     <h2>Dimmi come consumi internet e ti dirò chi sei</h2>
                     <p>Quante ore passi su internet in ogni momento della giornata, in media?</p>
 
+                    <div id="sliders">
 
                     <h3 id="titolo_mattina">MATTINA</h3>
                     <div class="slidecontainer" id="slider_domanda2_mattina">
@@ -293,6 +292,7 @@
                             <text id="sera-ora-1" transform="matrix(1 0 0 1 45.2041 9.9473)" class="barra_3 barra_4 barra_5">1</text>
                         </svg>
                     </div>
+                        </div>
 
                     <div class="indietro">
                         <a href="#domanda1"> <img src="images/indietro.svg" /> </a>
@@ -408,12 +408,12 @@
                 </div>
                 <div class="panel" id="caption-2">
                     <div class="caption">
-                        <h3>Potra sembrare un punto irrisorio rispetto al consumo totale dell'Italia...</h3>
+                        <h3>Potrà sembrare un punto irrisorio rispetto al consumo totale dell'Italia...</h3>
                     </div>
                 </div>
                 <div class="panel" id="caption-3">
                     <div class="caption">
-                        <h3>ma come sarebbe il consumo di dati in Italia se tutti si connettessero come te?</h3>
+                        <h3>...ma come sarebbe il consumo di dati in Italia se tutti si connettessero come te?</h3>
                     </div>
                 </div>
 
@@ -784,19 +784,22 @@
 
         <div class="row" id="paragrafo6">
             <div class="columns offset-by-three six">
+      
 
                 <h2>Internet può collassare?</h2>
 
                 <p>
                     A pesare sulla rete internet durante la crisi del coronavirus non è stata solo l’intensità di utilizzo, ma anche la tipologia di sovraccarico sofferta dall’infrastruttura: con lo smart working e milioni di lavoratori collegati in videoconferenza dalle loro case, il consumo di banda si è spostato dalle connessioni aziendali (progettate, almeno in teoria, per sopportare la trasmissione di ingenti flussi di dati) ai nodi privati delle singole abitazioni, mettendo sotto stress una miriade di punti di connessione decentralizzati. Questa situazione anomala ha spinto gli analisti del settore a prevedere la possibilità di un ‘blackout’ di internet.
                 </p>
+         
             </div>
+     </div> <!-- chiusura paragrafo6-->
 
             <div id="groviglio">
-
             </div>
 
-            <div id="paragrafo6_pt2" class="columns offset-by-three six">
+<div class="row" id="paragrafo6_pt2">
+            <div  class="columns offset-by-three six">
 
                 <p>
                     Ma la rete, per nostra fortuna, è stata progettata per assorbire gli shock: se un server è fuori uso, i dati in arrivo vengono dirottati su un nodo funzionante, e questo senza che l’utente se ne accorga. E anche quando alcuni di questi dati vanno perduti, i problemi sono limitati: la rete è stata infatti progettata per tollerare i cosiddetti “packet loss”, all’interno di un certo margine. Lo vediamo accadere ogni tanto anche in prima persona, quando il nostro video va in buffering oppure la qualità dello streaming si riduce automaticamente per adeguarsi alla banda disponibile. Quindi, nonostante i timori, anche in un periodo emergenziale non si sono verificati particolari disservizi: internet ha dimostrato quindi di poter reggere urti di grandi dimensioni.
@@ -812,14 +815,12 @@
                     Ricordiamoci però che la rete è una casa fragile, instabile, che non possiamo dare per scontata. E allora ricordiamoci di proteggerla. Perché anche per superare la prossima crisi avremo bisogno di internet. Ecco quindi alcuni consigli su come possiamo limitare il nostro consumo di internet, o almeno, per riuscire a utilizzarlo in modo più consapevole.
                 </p>
             </div>
-
-        </div> <!-- chiusura paragrafo6-->
+    </div>
 
         <div class="row" id="suggerimenti">
             <div class="columns offset-by-three six">
 
                 <h2> Consumare meno banda: una mini-guida </h2>
-
 
 
                 <h3>Riduci la qualità del tuo streaming</h3>
