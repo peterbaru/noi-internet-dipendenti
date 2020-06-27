@@ -7,177 +7,281 @@ on small devices, paste the mobile query code up in the buttons section and styl
 there.
 */
 
-/* iPhone 5/SE */
+/* iPhone 5/SE e 4 */
 @media (min-width: 320px) {
 
     h1 {
-        font-size: 29px;
+        font-size: 30px;
+        margin-top: 26vh;
     }
 
     h2 {
-        font-size: 24px;
+        font-size: 26px;
     }
 
-    h3 {
-        font-size: 13px;
+    h4 {
+        margin-bottom: 1rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    #domanda3 p {
+        margin-top: 12vh;
+    }
+
+    ul.ul-slider {
+        margin-top: 17%;
     }
 
     #slider_domanda3 {
-        top: 79vh;
+        top: -6vh;
     }
 
-    .indietro {
-        transform: translate(124%, -50%);
+    h3#svago {
+        margin-top: 10px;
     }
 
-    #domanda2 p {
-        margin-top: 13vh;
+    #domanda1 p {
+        margin-top: 12vh;
+    }
+
+
+    ul li.pulsante {
+        width: 18%;
+    }
+
+    ul.ul-pulsante {
+        margin-top: -27px;
+    }
+
+    .pulsante h3 {
+        font-size: 10px;
+    }
+
+    #generale_pulsanti {
+        margin-top: 11%;
+    }
+
+    #valori_numerici {
+        transform: translate(-50%, -46%);
+    }
+
+    .barra-numeri {
+        transform: translate(0px, -76px);
+    }
+
+    #slider_domanda2_mattina {
+        top: 34px;
     }
 
     #titolo_mattina {
-        top: -3vh;
+        top: -17px;
     }
 
-    #titolo_pomeriggio {
-        top: 5vh;
-    }
-
-    #titolo_sera {
-        top: 13vh;
+    ul li.li-logo {
+        top: 4vh;
+        left: 3vh;
     }
 
     #consumo_medio_bubble {
-        margin-top: -63%;
+        margin-top: -61%;
     }
 
-    ul.ul-nazioni {
-        margin-top: -30px;
+    .conferma_iniziale {
+        top: 86vh;
     }
 
-    ul.ul-ringraziamenti {
-        list-style-type: none;
-        margin-top: 30px;
-        padding-left: 5%;
-        margin-bottom: 0px;
+    .conferma {
+        top: 86vh;
     }
 
-    #ringraziamenti p {
-        font-size: 10px;
+    .indietro {
+        top: 86.9vh;
     }
 
-    b,
-    strong {
-        font-size: 10px;
+    #domanda1 h2 {
+        position: relative;
+        top: 17vh;
     }
 
-    ul li.li-collaborazione {
-        width: 62%;
+    #domanda1 p {
+        margin-top: 12vh;
     }
 
-    l li.li-logo {
-        top: -15vh;
+    #domanda2 p {
+        margin-top: 12vh;
+    }
+
+    #titolo_pomeriggio {
+        top: -76px;
+    }
+
+    #slider_domanda2_sera {
+        top: -86px;
+    }
+
+    #slider_domanda2_pomeriggio {
+        top: -23px;
+    }
+
+    #titolo_sera {
+        top: -135px;
     }
 }
 
 /* GT */
 @media (min-width: 360px) {
-
-    #slider_domanda3 {
-        top: 72vh;
-    }
-
-    .indietro {
-        transform: translate(200%, -50%);
-    }
-
-    #domanda2 p {
-        margin-top: 16vh;
-    }
-
-    #titolo_mattina {
-        top: -3vh;
-    }
-
-    #titolo_pomeriggio {
-        top: 5vh;
-    }
-
-    #titolo_sera {
-        top: 13vh;
-    }
-
-    #consumo_medio_bubble {
-        margin-top: -55%;
-    }
-}
-
-/* iPhone 6/7/8 */
-@media (min-width: 375px) {
-
     h1 {
-        font-size: 38px;
+        font-size: 36px;
     }
 
-    h2 {
-        font-size: 30px;
+    p {
+        font-size: 1.3rem;
     }
 
-    #slider_domanda3 {
-        top: 72vh;
+    ul.ul-slider {
+        margin-top: 28%;
     }
 
-    .indietro {
-        transform: translate(200%, -50%);
+    #domanda3 p {
+        margin-top: 14vh;
+    }
+
+    #domanda1 p {
+        margin-top: 14vh;
     }
 
     #domanda2 p {
-        margin-top: 16vh;
-    }
-
-    #consumo_medio_bubble {
-        margin-top: -55%;
-    }
-
-    ul.ul-nazioni {
-        margin-top: -30px;
-    }
-}
-
-/* Larger than mobile */
-@media (min-width: 400px) {
-
-    #titolo_mattina {
-        top: -1vh;
-    }
-
-    #titolo_pomeriggio {
-        top: 8vh;
-    }
-
-    #titolo_sera {
-        top: 17vh;
+        margin-top: 14vh;
     }
 
     .indietro {
-        transform: translate(270%, -55%);
+        transform: translate(150%, -56%);
+    }
+
+    #ringraziamenti p {
+        font-size: 0.9rem;
+    }
+
+    #ringraziamenti p b {
+        font-size: 0.9rem;
     }
 
     ul li.li-collaborazione {
-        width: 70%;
+        display: inline-block;
+        width: 50%;
     }
 
     ul li.li-logo {
-        top: -9vh;
+        top: -19vh;
+        left: 0vh;
+    }
+
+    .pulsante h3 {
+        font-size: 12px;
+    }
+
+    #consumo_medio_bubble {
+        margin-top: -55%;
     }
 }
 
-/* Ipad */
-@media (min-width: 550px) {
 
+/* Larger than mobile */
+@media (min-width: 400px) {
+    ul li.li-logo {
+        top: -14vh;
+    }
+}
+
+
+@media (min-width: 414px) {
+
+    #generale_pulsanti {
+        margin-top: 16%;
+    }
+
+    #sliders {
+        margin-top: 5vh;
+    }
+
+    ul li.li-logo {
+        top: -12vh;
+    }
 
 }
 
-/* Larger than Desktop HD */
+/* TABLET */
+@media (min-width: 700px) {
+    
+    #domanda3 p {
+    margin-top: 19vh;
+}
+    #domanda2 p {
+    margin-top: 19vh;
+}
+    #domanda1 p {
+    margin-top: 19vh;
+}
+    #studio_percentuale {
+    font-size: 42px;
+}
+    #svago_percentuale {
+    font-size: 42px;
+}
+    
+    #slider_domanda3 {
+    top: 1vh;
+}
+    ul.ul-slider {
+    margin-top: 53%;
+}
+    .indietro {
+    transform: translate(-150%, -63%);
+}
+    
+    ul li.pulsante {
+    width: 23%;
+}
+    
+    #generale_pulsanti {
+    margin-top: 45%;
+}
+    
+    ul li.li-logo {
+    top: -11vh;
+}
+}
+
 @media (min-width: 1200px) {
     
+    #descrizione { 
+    margin-top: 100px;
+    }
+    
+    #valori_numerici {
+    transform: translate(-50%, -134%);
+}
+    
+    #slider_domanda3 {
+    top: -13vh;
+}
+    
+    .indietro {
+    transform: translate(153%, -63%);
+    }
+    
+    ul li.pulsante {
+    width: 18%;
+}
+    
+    #generale_pulsanti {
+    margin-top: 9%;
+}
+    
+    ul li.li-logo {
+    top: -7vh;
+}
 }
