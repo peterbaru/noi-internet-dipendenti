@@ -111,7 +111,19 @@ p {
     position: fixed;
     width: 100%;
     background-size: cover;
-    z-index: 100;
+    z-index: 90000000000000000000;
+}
+
+#banner1 {
+    background-color: green;
+    bottom: 0;
+    left: 0;
+    opacity: 50%;
+    height: 8vh;
+    position: fixed;
+    width: 100%;
+    background-size: cover;
+    z-index: 90000000000000000000;
 }
 
 .container {
@@ -273,7 +285,7 @@ ul.ul-slider {
 
 .slidecontainer {
     width: 253px;
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--trasparente-color);
@@ -349,7 +361,7 @@ ul.ul-pulsante {
 
 .conferma_iniziale {
     width: 170px;
-    height: 30px;
+    height: 35px;
     border-radius: 100px;
     background-color: var(--grigio-color);
     position: absolute;
@@ -360,13 +372,13 @@ ul.ul-pulsante {
 }
 
 .conferma_iniziale p {
-    padding: 5px;
+    padding: 9px;
     color: var(--blu-color);
 }
 
 .conferma {
     width: 170px;
-    height: 30px;
+    height: 35px;
     border-radius: 100px;
     background-color: var(--blu-color);
     position: absolute;
@@ -377,34 +389,34 @@ ul.ul-pulsante {
 }
 
 .conferma#pulsante_cominciamo p {
-    padding: 5px;
+    padding: 9px;
     margin: 0;
     color: var(--grigio-color);
 }
 
 .conferma#conferma_svago p {
-    padding: 5px;
+    padding: 9px;
     margin: 0;
     color: var(--grigio-color);
 }
 
 .conferma#conferma_pulsanti p {
-    padding: 5px;
+    padding: 9px;
     margin: 0;
     color: var(--grigio-color);
 }
 
 .conferma#conferma_ore p {
-    padding: 5px;
+    padding: 9px;
     margin: 0;
     color: var(--grigio-color);
 }
 
 .indietro {
-    width: 30px;
+    width: 35px;
     position: absolute;
-    top: 90.7vh;
-    transform: translate(160%, -50%);
+    top: 90.9vh;
+    transform: translate(100%, -50%);
 }
 
 #conferma_ore {
@@ -583,6 +595,7 @@ ul.ul-pulsante {
     transform: scale(1);
     transition: all 0.5s;
     position: relative;
+    z-index: 10;
 }
 
 .bubble1 {
@@ -598,6 +611,7 @@ ul.ul-pulsante {
     transform: translate(-50%, -50%);
     margin-top: -10px;
     overflow-x: hidden;
+    z-index: 11;
 }
 
 #chart {
@@ -954,12 +968,30 @@ ul.ul-nazioni {
 }
 
 #groviglio {
+     height: 100vh;
     position: relative;
-    height: 100vh;
     background-image: url(../images/gif/groviglio.gif);
     background-size: cover;
     background-position: center;
 }
+
+#paragrafo6_pt2 {
+    position: relative;
+    background-color: var(--grigio-color);
+}
+
+#paragrafo6_pt2 h2 {
+    padding-top: 40px;
+    color: var(--blu-color);
+}
+
+#paragrafo6_pt2 p {
+    color: var(--blu-color);
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 0px;
+}
+
 
 .nomi {
     width: 32%;
@@ -1054,7 +1086,6 @@ ul.ul-ringraziamenti {
     padding-left: 10%;
     margin-bottom: 0px;
 }
-
 
 .logo-ud {
     fill: var(--blu-color);
