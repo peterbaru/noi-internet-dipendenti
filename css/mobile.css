@@ -12,7 +12,7 @@ there.
 
     h1 {
         font-size: 30px;
-        margin-top: 26vh;
+        margin-top: 21vh;
     }
 
     h2 {
@@ -27,10 +27,6 @@ there.
         font-size: 1.2rem;
     }
 
-    #domanda3 p {
-        margin-top: 12vh;
-    }
-
     ul.ul-slider {
         margin-top: 17%;
     }
@@ -42,11 +38,6 @@ there.
     h3#svago {
         margin-top: 10px;
     }
-
-    #domanda1 p {
-        margin-top: 12vh;
-    }
-
 
     ul li.pulsante {
         width: 18%;
@@ -101,19 +92,6 @@ there.
         top: 86.9vh;
     }
 
-    #domanda1 h2 {
-        position: relative;
-        top: 17vh;
-    }
-
-    #domanda1 p {
-        margin-top: 12vh;
-    }
-
-    #domanda2 p {
-        margin-top: 12vh;
-    }
-
     #titolo_pomeriggio {
         top: -76px;
     }
@@ -129,6 +107,35 @@ there.
     #titolo_sera {
         top: -135px;
     }
+
+#domanda1 h2 {
+    position: relative;
+    top: 13vh;
+}
+
+#domanda2 h2 {
+    position: relative;
+    top: 13vh;
+}
+
+#domanda3 h2 {
+    position: relative;
+    top: 13vh;
+}
+
+#domanda2 p {
+    margin-top: 9vh;
+}
+    
+    #domanda1 p {
+    margin-top: 9vh;
+}
+    
+    #domanda3 p {
+    margin-top: 9vh;
+}
+
+
 }
 
 /* GT */
