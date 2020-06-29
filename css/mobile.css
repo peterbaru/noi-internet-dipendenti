@@ -64,16 +64,11 @@ there.
     }
 
     #slider_domanda2_mattina {
-        top: 29px
+        top: 37px
     }
 
     #titolo_mattina {
         top: -17px;
-    }
-
-    ul li.li-logo {
-        top: 4vh;
-        left: 3vh;
     }
 
     #consumo_medio_bubble {
@@ -93,46 +88,46 @@ there.
     }
 
     #titolo_pomeriggio {
-        top: -87px;
+        top: -74px;
     }
 
     #slider_domanda2_sera {
-        top: -112px;
+        top: -78px;
     }
 
     #slider_domanda2_pomeriggio {
-        top: -42px;
+        top: -21px;
     }
 
     #titolo_sera {
-        top: -156px;
+        top: -131px;
     }
 
     #domanda1 h2 {
         position: relative;
-        top: 10vh;
+        top: 13vh;
     }
 
     #domanda2 h2 {
         position: relative;
-        top: 10vh;
+        top: 13vh;
     }
 
     #domanda3 h2 {
         position: relative;
-        top: 10vh;
+        top: 13vh;
     }
 
     #domanda2 p {
-        margin-top: 7vh;
+        margin-top: 10vh;
     }
 
     #domanda1 p {
-        margin-top: 7vh;
+        margin-top: 10vh;
     }
 
     #domanda3 p {
-        margin-top: 7vh;
+        margin-top: 10vh;
     }
     
     #paragrafo1 h2 {
@@ -172,38 +167,12 @@ there.
         transform: translate(150%, -56%);
     }
 
-    #ringraziamenti p {
-        font-size: 0.9rem;
-    }
-
-    #ringraziamenti p b {
-        font-size: 0.9rem;
-    }
-
-    ul li.li-collaborazione {
-        display: inline-block;
-        width: 50%;
-    }
-
-    ul li.li-logo {
-        top: -19vh;
-        left: 0vh;
-    }
-
     .pulsante h3 {
         font-size: 12px;
     }
 
     #consumo_medio_bubble {
         margin-top: -55%;
-    }
-}
-
-
-/* Larger than mobile */
-@media (min-width: 400px) {
-    ul li.li-logo {
-        top: -14vh;
     }
 }
 
@@ -216,10 +185,6 @@ there.
 
     #sliders {
         margin-top: 5vh;
-    }
-
-    ul li.li-logo {
-        top: -12vh;
     }
 
 }
@@ -266,10 +231,18 @@ there.
     #generale_pulsanti {
         margin-top: 45%;
     }
-
-    ul li.li-logo {
-        top: -11vh;
+    
+    #paragrafo2 {
+    height: 592vh;
     }
+}
+
+@media (min-width: 1024px){
+    
+    #paragrafo2 {
+    height: 525vh;
+}
+
 }
 
 @media (min-width: 1200px) {
@@ -297,8 +270,7 @@ there.
     #generale_pulsanti {
         margin-top: 9%;
     }
-
-    ul li.li-logo {
-        top: -7vh;
-    }
+        #consumo_medio_bubble {
+    margin-top: -31%;
+}
 }
