@@ -103,15 +103,19 @@ p {
 }
 
 #banner {
-    background-color: green;
+    background-color: black;
     top: 0;
     left: 0;
-    opacity: 50%;
-    height: 15vh;
+    height: 55px;
     position: fixed;
     width: 100%;
     background-size: cover;
     z-index: 90000000000000000000;
+}
+
+#banner p {
+text-align: center;
+    font-size: 1.5rem;
 }
 
 #banner1 {
@@ -968,7 +972,7 @@ ul.ul-nazioni {
 }
 
 #groviglio {
-     height: 100vh;
+    height: 100vh;
     position: relative;
     background-image: url(../images/gif/groviglio.gif);
     background-size: cover;
@@ -1057,40 +1061,6 @@ ul.ul-nazioni {
     border-radius: 10px;
 }
 
-#ringraziamenti p {
-    color: var(--blu-color);
-    padding: 0;
-    margin-top: 30px;
-}
-
-ul li.li-logo {
-    display: inline-block;
-    width: 83px;
-    padding: 0;
-    position: relative;
-    top: -13vh;
-}
-
-ul li.li-collaborazione {
-    display: inline-block;
-    width: 83%;
-    padding: 0;
-    margin-left: 15px;
-    text-align: left;
-}
-
-ul.ul-ringraziamenti {
-    list-style-type: none;
-    margin-top: 30px;
-    padding-right: 10%;
-    padding-left: 10%;
-    margin-bottom: 0px;
-}
-
-.logo-ud {
-    fill: var(--blu-color);
-}
-
 #loading {
     margin-top: 10%;
     position: relative;
@@ -1132,4 +1102,35 @@ a:hover {
 .modifica_grafico {
     margin: 5%;
 
+}
+
+#crediti {
+    position: relative;
+    text-align: center;
+    background-color: var(--blu-color);
+    padding: 3%;
+    margin: auto;
+}
+
+.crediti_logo {
+    position: relative;
+    width: 75px;
+}
+
+.crediti_logo img {
+    padding: 20px;
+    width: 70px;
+    float: left;
+}
+
+.crediti_contenuto {
+    position: relative;
+    text-align: left;
+    margin: auto;
+    padding-left: 90px;
+}
+
+.crediti_contenuto p {
+    font-family: 'Sole24Sans-Regular';
+    font-size: 1.2rem;
 }
